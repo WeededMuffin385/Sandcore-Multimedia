@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{2c7a9e98-5779-4ebc-9f96-2c171186ebee}</ProjectGuid>
+    <RootNamespace>SandcoreMultimedia</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\Libraries\glew\include;$(SolutionDir)\..\..\Libraries\glfw\include;$(SolutionDir)\..\Libraries\glm\include;$(SolutionDir)\..\Libraries\stb\include;$(SolutionDir)\..\Libraries\asio\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;glew32s.lib;glfw3.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\Libraries\glew\include;$(SolutionDir)\..\..\Libraries\glfw\include;$(SolutionDir)\..\Libraries\glm\include;$(SolutionDir)\..\Libraries\stb\include;$(SolutionDir)\..\Libraries\asio\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;glew32s.lib;glfw3.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\Libraries\glew\include;$(SolutionDir)\..\..\Libraries\glfw\include;$(SolutionDir)\..\..\Libraries\glm\include;$(SolutionDir)\..\..\Libraries\stb\include;$(SolutionDir)\..\..\Libraries\asio\include</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;glew32s.lib;glfw3.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\..\..\Libraries\glew\lib\Release\x64;$(SolutionDir)\..\..\Libraries\glfw\lib-vc2022;</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\Libraries\glew\include;$(SolutionDir)\..\..\Libraries\glfw\include;$(SolutionDir)\..\..\Libraries\glm\include;$(SolutionDir)\..\..\Libraries\stb\include;$(SolutionDir)\..\..\Libraries\asio\include</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;glew32s.lib;glfw3.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\..\..\Libraries\glew\lib\Release\x64;$(SolutionDir)\..\..\Libraries\glfw\lib-vc2022;</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Sandcore Engine\Common\Clock\Clock.cpp" />
+    <ClCompile Include="..\..\Sandcore Engine\Common\Clock\Clock.ixx" />
+    <ClCompile Include="..\..\Sandcore Engine\Common\ThreadSafeQueue\ThreadSafeQueue.cpp" />
+    <ClCompile Include="..\..\Sandcore Engine\Common\ThreadSafeQueue\ThreadSafeQueue.ixx" />
+    <ClCompile Include="..\..\Sandcore Engine\Common\Vector3D\Vector3D.cpp" />
+    <ClCompile Include="..\..\Sandcore Engine\Common\Vector3D\Vector3D.ixx" />
+    <ClCompile Include="..\..\Sandcore Engine\Common\Vector3D\Vector3DHash.ixx" />
+    <ClCompile Include="..\..\Sandcore Engine\Network\Connection\Connection.cpp" />
+    <ClCompile Include="..\..\Sandcore Engine\Network\Connection\Connection.ixx" />
+    <ClCompile Include="..\..\Sandcore Engine\Network\Message\Byte.ixx" />
+    <ClCompile Include="..\..\Sandcore Engine\Network\Message\Message.cpp" />
+    <ClCompile Include="..\..\Sandcore Engine\Network\Message\Message.ixx" />
+    <ClCompile Include="..\..\Sandcore Server\Sandcore Server\Source\World\Bounds\Bounds.ixx" />
+    <ClCompile Include="Source\Additional\Vector3DGLM.ixx" />
+    <ClCompile Include="Source\Engine\Controls\Controls.cpp" />
+    <ClCompile Include="Source\Engine\Controls\Controls.ixx" />
+    <ClCompile Include="Source\Engine\Engine.cpp" />
+    <ClCompile Include="Source\Engine\Engine.ixx" />
+    <ClCompile Include="Source\Engine\Render\Additional\Cube.ixx" />
+    <ClCompile Include="Source\Engine\Render\Render.cpp" />
+    <ClCompile Include="Source\Engine\Render\Render.ixx" />
+    <ClCompile Include="Source\Engine\Render\Additional\RenderCamera.cpp" />
+    <ClCompile Include="Source\Engine\Render\Additional\RenderVertex.cpp" />
+    <ClCompile Include="Source\Engine\Render\Additional\RenderChunk.cpp" />
+    <ClCompile Include="Source\Engine\Render\TexturePackage\TexturePackage.cpp" />
+    <ClCompile Include="Source\Engine\Render\TexturePackage\TexturePackage.ixx" />
+    <ClCompile Include="Source\Graphics\Camera\Camera.cpp" />
+    <ClCompile Include="Source\Graphics\Camera\Camera.ixx" />
+    <ClCompile Include="Source\Graphics\Framebuffer\Framebuffer.cpp" />
+    <ClCompile Include="Source\Graphics\Framebuffer\Framebuffer.ixx" />
+    <ClCompile Include="Source\Graphics\Image\Image.cpp" />
+    <ClCompile Include="Source\Graphics\Image\Image.ixx" />
+    <ClCompile Include="Source\Graphics\Mesh\Mesh.cpp" />
+    <ClCompile Include="Source\Graphics\Mesh\Mesh.ixx" />
+    <ClCompile Include="Source\Graphics\ShaderProgram\ShaderProgram.cpp" />
+    <ClCompile Include="Source\Graphics\ShaderProgram\ShaderProgram.ixx" />
+    <ClCompile Include="Source\Graphics\ShaderProgram\Shader\Shader.cpp" />
+    <ClCompile Include="Source\Graphics\ShaderProgram\Shader\Shader.ixx" />
+    <ClCompile Include="Source\Graphics\TextureArray\TextureArray.cpp" />
+    <ClCompile Include="Source\Graphics\TextureArray\TextureArray.ixx" />
+    <ClCompile Include="Source\Graphics\Texture\Texture.cpp" />
+    <ClCompile Include="Source\Graphics\Texture\Texture.ixx" />
+    <ClCompile Include="Source\Graphics\Vertex\Vertex.cpp" />
+    <ClCompile Include="Source\Graphics\Vertex\Vertex.ixx" />
+    <ClCompile Include="Source\Graphics\Window\Event\Event.cpp" />
+    <ClCompile Include="Source\Graphics\Window\Event\Event.ixx" />
+    <ClCompile Include="Source\Graphics\Window\Window.cpp" />
+    <ClCompile Include="Source\Graphics\Window\Window.ixx" />
+    <ClCompile Include="Source\main.cpp" />
+    <ClCompile Include="Source\Network\Client\Client.cpp" />
+    <ClCompile Include="Source\Network\Client\Client.ixx" />
+    <ClCompile Include="Source\World\Block.cpp" />
+    <ClCompile Include="Source\World\Chunk.cpp" />
+    <ClCompile Include="Source\World\Entity\Entity.cpp" />
+    <ClCompile Include="Source\World\Entity\Entity.ixx" />
+    <ClCompile Include="Source\World\Entity\EntityIdentification.ixx" />
+    <ClCompile Include="Source\World\Entity\MoveCondition\MoveCondition.cpp" />
+    <ClCompile Include="Source\World\Entity\MoveCondition\MoveCondition.ixx" />
+    <ClCompile Include="Source\World\World.cpp" />
+    <ClCompile Include="Source\World\World.ixx" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

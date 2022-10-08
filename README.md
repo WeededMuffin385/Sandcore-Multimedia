@@ -1,2 +1,2 @@
-# Sandcore-Multimedia
-Sandcore Multimedia is a Game Engine that is a part of "Sandcore Project".
+# Sandcore Multimedia
+Part of "Sandcore Project". The core of interaction with user throught graphics and input.

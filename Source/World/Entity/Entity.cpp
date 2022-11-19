@@ -17,7 +17,7 @@ namespace Sandcore {
 		return identification;
 	}
 
-	const Vector3D<double>& Entity::getSize() {
+	Vector3D<double>& Entity::getSize() {
 		return size;
 	}
 }

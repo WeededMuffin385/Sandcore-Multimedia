@@ -60,7 +60,6 @@ namespace Sandcore {
 			asio::connect(connection->socket, endpoints);
 		}
 		catch (std::exception& e) {
-
 			if (debug) {
 				std::cout << "[CLIENT] Connection failed! " << e.what() << "\n";
 			}

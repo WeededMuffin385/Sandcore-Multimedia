@@ -5,13 +5,15 @@
 
 #include <filesystem>
 
-export module Sandcore.ShaderProgram;
+export module Sandcore.Shader.Program;
 
-import Sandcore.Shader;
+import Sandcore.Shader.Object;
 
 export namespace Sandcore {
 	class ShaderProgram {
 	public:
+
+
 		ShaderProgram(std::filesystem::path path);
 		~ShaderProgram();
 
@@ -20,7 +22,7 @@ export namespace Sandcore {
 		void use();
 
 		void setInt(std::string title, int value);
-		void setdouble(std::string title, double value);
+		void setDouble(std::string title, double value);
 		void setMat4(std::string title, glm::mat4 value);
 
 	private:

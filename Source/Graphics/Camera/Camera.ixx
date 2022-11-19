@@ -24,7 +24,6 @@ export namespace Sandcore {
 		virtual void keyboardInput(Window& window);
 
 	protected:
-
 		virtual void updateVectors();
 
 		glm::vec3 position	= glm::vec3(0.0f, 0.0f, 0.0f);

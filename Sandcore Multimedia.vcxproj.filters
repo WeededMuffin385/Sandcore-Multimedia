@@ -5,44 +5,30 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Файлы заголовков">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Файлы ресурсов">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\Engine\Render\Additional\RenderCamera.cpp">
+    <ClCompile Include="Source\Application\Engine\Render\Camera\RenderCamera.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Engine\Render\Additional\RenderVertex.cpp">
+    <ClCompile Include="Source\Application\Engine\Render\TexturePackage\TexturePackage.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Engine\Render\Additional\RenderChunk.cpp">
+    <ClCompile Include="Source\Application\Engine\Render\TexturePackage\TexturePackage.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Engine\Render\TexturePackage\TexturePackage.cpp">
+    <ClCompile Include="Source\Application\Engine\Render\Cube.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Engine\Render\TexturePackage\TexturePackage.ixx">
+    <ClCompile Include="Source\Application\Engine\Render\Render.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Engine\Render\Additional\Cube.ixx">
+    <ClCompile Include="Source\Application\Engine\Render\Render.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Engine\Render\Render.cpp">
+    <ClCompile Include="Source\Application\Engine\Engine.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Engine\Render\Render.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Engine\Engine.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Engine\Engine.ixx">
+    <ClCompile Include="Source\Application\Engine\Engine.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Source\Graphics\Camera\Camera.cpp">
@@ -57,16 +43,16 @@
     <ClCompile Include="Source\Graphics\Image\Image.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Mesh\Mesh.cpp">
+    <ClCompile Include="Source\Graphics\Drawing\DrawObject\Mesh\Mesh.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Mesh\Mesh.ixx">
+    <ClCompile Include="Source\Graphics\Drawing\DrawObject\Mesh\Mesh.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\ShaderProgram\Shader\Shader.cpp">
+    <ClCompile Include="Source\Graphics\ShaderProgram\ShaderObject\ShaderObject.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\ShaderProgram\Shader\Shader.ixx">
+    <ClCompile Include="Source\Graphics\ShaderProgram\ShaderObject\ShaderObject.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Source\Graphics\ShaderProgram\ShaderProgram.cpp">
@@ -75,16 +61,16 @@
     <ClCompile Include="Source\Graphics\ShaderProgram\ShaderProgram.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Texture\Texture.cpp">
+    <ClCompile Include="Source\Graphics\Textures\Texture\Texture.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Texture\Texture.ixx">
+    <ClCompile Include="Source\Graphics\Textures\Texture\Texture.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\TextureArray\TextureArray.cpp">
+    <ClCompile Include="Source\Graphics\Textures\TextureArray\TextureArray.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\TextureArray\TextureArray.ixx">
+    <ClCompile Include="Source\Graphics\Textures\TextureArray\TextureArray.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Source\Graphics\Vertex\Vertex.cpp">
@@ -93,16 +79,16 @@
     <ClCompile Include="Source\Graphics\Vertex\Vertex.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Window\Event\Event.cpp">
+    <ClCompile Include="Source\Graphics\Drawing\Window\Event\Event.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Window\Event\Event.ixx">
+    <ClCompile Include="Source\Graphics\Drawing\Window\Event\Event.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Window\Window.cpp">
+    <ClCompile Include="Source\Graphics\Drawing\Window\Window.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Window\Window.ixx">
+    <ClCompile Include="Source\Graphics\Drawing\Window\Window.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Source\Network\Client\Client.cpp">
@@ -111,7 +97,7 @@
     <ClCompile Include="Source\Network\Client\Client.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\World\Chunk.cpp">
+    <ClCompile Include="Source\World\WorldChunk\WorldChunk.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Source\World\Entity\MoveCondition\MoveCondition.cpp">
@@ -135,13 +121,10 @@
     <ClCompile Include="Source\World\World.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Engine\Controls\Controls.ixx">
+    <ClCompile Include="Source\Application\Engine\Controls\Controls.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Engine\Controls\Controls.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\main.cpp">
+    <ClCompile Include="Source\Application\Engine\Controls\Controls.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Source\Additional\Vector3DGLM.ixx">
@@ -186,13 +169,103 @@
     <ClCompile Include="..\..\Sandcore Server\Sandcore Server\Source\World\Bounds\Bounds.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\World\Block.cpp">
+    <ClCompile Include="Source\Graphics\Drawing\Framebuffer\Framebuffer.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Framebuffer\Framebuffer.cpp">
+    <ClCompile Include="Source\Graphics\Drawing\Framebuffer\Framebuffer.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Framebuffer\Framebuffer.ixx">
+    <ClCompile Include="Source\Application\SceneStateMachine\Scene\Scene.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\SceneStateMachine\SceneStateMachine.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\SceneStateMachine\Scene\Scene.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sandcore Engine\Common\TPS\TPS.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\Application.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\Application.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sandcore Server\Sandcore Server\Source\World\Block\Block.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sandcore Server\Sandcore Server\Source\World\Block\Block.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Interface\Vector2D\Vector2D.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Interface\Vector2D\Vector2D.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\Menu\Menu.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\World\WorldChunk\WorldChunk.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\Engine\Render\Chunk\Vertex\RenderChunkVertex.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\Engine\Render\Chunk\Vertex\RenderChunkVertex.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\Engine\Render\Chunk\RenderChunk.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\Engine\Render\Chunk\RenderChunk.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\Engine\Render\Camera\RenderCamera.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Drawing\Framebuffer\Vertex\FramebufferVertex.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Drawing\Framebuffer\Vertex\FramebufferVertex.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\Memory\Memory.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\Memory\Memory.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\SceneStateMachine\SceneStateMachine.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\main.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Interface\Rectangle\Rectangle.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Interface\Rectangle\Rectangle.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Interface\Button\Button.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Interface\Button\Button.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Drawing\DrawTarget\DrawTarget.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Drawing\DrawObject\DrawObject.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Drawing\DrawTarget\DrawTarget.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Drawing\DrawObject\DrawObject.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

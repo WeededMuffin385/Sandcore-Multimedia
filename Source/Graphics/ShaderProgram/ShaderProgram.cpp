@@ -8,9 +8,9 @@
 #include <filesystem>
 #include <iostream>
 
-import Sandcore.ShaderProgram;
+import Sandcore.Shader.Program;
 
-import Sandcore.Shader;
+import Sandcore.Shader.Object;
 
 namespace Sandcore {
 	ShaderProgram::ShaderProgram(std::filesystem::path path) {
@@ -26,15 +26,15 @@ namespace Sandcore {
 	}
 
 	void ShaderProgram::loadFromFile(std::filesystem::path path) {
-		Shader vertexShader(GL_VERTEX_SHADER);
-		Shader fragmentShader(GL_FRAGMENT_SHADER);
+		ShaderObject vertexShader(GL_VERTEX_SHADER);
+		ShaderObject fragmentShader(GL_FRAGMENT_SHADER);
 		vertexShader.loadFromFile(path / "shader.vert");
 		fragmentShader.loadFromFile(path / "shader.frag");
 
 		shaderProgram = glCreateProgram();
 
-		glAttachShader(shaderProgram, vertexShader.get());
-		glAttachShader(shaderProgram, fragmentShader.get());
+		glAttachShader(shaderProgram, vertexShader);
+		glAttachShader(shaderProgram, fragmentShader);
 		glLinkProgram(shaderProgram);
 
 		GLint success;
@@ -51,7 +51,7 @@ namespace Sandcore {
 		glUniform1i(glGetUniformLocation(shaderProgram, title.c_str()), value);
 	}
 
-	void ShaderProgram::setdouble(std::string title, double value) {
+	void ShaderProgram::setDouble(std::string title, double value) {
 		glUniform1f(glGetUniformLocation(shaderProgram, title.c_str()), value);
 	}
 

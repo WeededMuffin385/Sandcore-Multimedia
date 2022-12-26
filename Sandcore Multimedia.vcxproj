@@ -76,7 +76,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\Libraries\glew\include;$(SolutionDir)\..\..\Libraries\glfw\include;$(SolutionDir)\..\Libraries\glm\include;$(SolutionDir)\..\Libraries\stb\include;$(SolutionDir)\..\Libraries\asio\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\Sandcore-Engine\Libraries\glew\include;$(SolutionDir)\..\Sandcore-Engine\Libraries\glfw\include;$(SolutionDir)\..\Sandcore-Engine\Libraries\glm\include;$(SolutionDir)\..\Sandcore-Engine\Libraries\stb\include;$(SolutionDir)\..\Sandcore-Engine\Libraries\asio\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -92,7 +92,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\Libraries\glew\include;$(SolutionDir)\..\..\Libraries\glfw\include;$(SolutionDir)\..\Libraries\glm\include;$(SolutionDir)\..\Libraries\stb\include;$(SolutionDir)\..\Libraries\asio\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\Sandcore-Engine\Libraries\glew\include;$(SolutionDir)\..\Sandcore-Engine\Libraries\glfw\include;$(SolutionDir)\..\Sandcore-Engine\Libraries\glm\include;$(SolutionDir)\..\Sandcore-Engine\Libraries\stb\include;$(SolutionDir)\..\Sandcore-Engine\Libraries\asio\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -108,7 +108,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\Libraries\glew\include;$(SolutionDir)\..\..\Libraries\glfw\include;$(SolutionDir)\..\..\Libraries\glm\include;$(SolutionDir)\..\..\Libraries\stb\include;$(SolutionDir)\..\..\Libraries\asio\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\Sandcore-Engine\Libraries\glew\include;$(SolutionDir)\..\Sandcore-Engine\Libraries\glfw\include;$(SolutionDir)\..\Sandcore-Engine\Libraries\glm\include;$(SolutionDir)\..\Sandcore-Engine\Libraries\stb\include;$(SolutionDir)\..\Sandcore-Engine\Libraries\asio\include</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
@@ -116,7 +116,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>opengl32.lib;glew32s.lib;glfw3.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)\..\..\Libraries\glew\lib\Release\x64;$(SolutionDir)\..\..\Libraries\glfw\lib-vc2022;</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)\..\Sandcore-Engine\Libraries\glew\lib\Release\x64;$(SolutionDir)\..\Sandcore-Engine\Libraries\glfw\lib-vc2022</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -127,7 +127,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\Libraries\glew\include;$(SolutionDir)\..\..\Libraries\glfw\include;$(SolutionDir)\..\..\Libraries\glm\include;$(SolutionDir)\..\..\Libraries\stb\include;$(SolutionDir)\..\..\Libraries\asio\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\Sandcore-Engine\Libraries\glew\include;$(SolutionDir)\..\Sandcore-Engine\Libraries\glfw\include;$(SolutionDir)\..\Sandcore-Engine\Libraries\glm\include;$(SolutionDir)\..\Sandcore-Engine\Libraries\stb\include;$(SolutionDir)\..\Sandcore-Engine\Libraries\asio\include</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
@@ -137,26 +137,26 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>opengl32.lib;glew32s.lib;glfw3.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)\..\..\Libraries\glew\lib\Release\x64;$(SolutionDir)\..\..\Libraries\glfw\lib-vc2022;</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)\..\Sandcore-Engine\Libraries\glew\lib\Release\x64;$(SolutionDir)\..\Sandcore-Engine\Libraries\glfw\lib-vc2022</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Sandcore Engine\Common\Clock\Clock.cpp" />
-    <ClCompile Include="..\..\Sandcore Engine\Common\Clock\Clock.ixx" />
-    <ClCompile Include="..\..\Sandcore Engine\Common\TPS\TPS.ixx" />
-    <ClCompile Include="..\..\Sandcore Engine\Common\Vector3D\Vector3D.cpp" />
-    <ClCompile Include="..\..\Sandcore Engine\Common\Vector3D\Vector3D.ixx" />
-    <ClCompile Include="..\..\Sandcore Engine\Common\Vector3D\Vector3DHash.ixx" />
-    <ClCompile Include="..\..\Sandcore Engine\Network\Connection\Connection.cpp" />
-    <ClCompile Include="..\..\Sandcore Engine\Network\Connection\Connection.ixx" />
-    <ClCompile Include="..\..\Sandcore Engine\Network\Message\Byte.ixx" />
-    <ClCompile Include="..\..\Sandcore Engine\Network\Message\Message.cpp" />
-    <ClCompile Include="..\..\Sandcore Engine\Network\Message\Message.ixx" />
-    <ClCompile Include="..\..\Sandcore Engine\Network\ThreadSafeQueue\ThreadSafeQueue.cpp" />
-    <ClCompile Include="..\..\Sandcore Engine\Network\ThreadSafeQueue\ThreadSafeQueue.ixx" />
-    <ClCompile Include="..\..\Sandcore Server\Sandcore Server\Source\World\Block\Block.cpp" />
-    <ClCompile Include="..\..\Sandcore Server\Sandcore Server\Source\World\Block\Block.ixx" />
-    <ClCompile Include="..\..\Sandcore Server\Sandcore Server\Source\World\Bounds\Bounds.ixx" />
+    <ClCompile Include="..\Sandcore-Engine\Common\Clock\Clock.cpp" />
+    <ClCompile Include="..\Sandcore-Engine\Common\Clock\Clock.ixx" />
+    <ClCompile Include="..\Sandcore-Engine\Common\TPS\TPS.ixx" />
+    <ClCompile Include="..\Sandcore-Engine\Common\Vector3D\Vector3D.cpp" />
+    <ClCompile Include="..\Sandcore-Engine\Common\Vector3D\Vector3D.ixx" />
+    <ClCompile Include="..\Sandcore-Engine\Common\Vector3D\Vector3DHash.ixx" />
+    <ClCompile Include="..\Sandcore-Engine\Network\Connection\Connection.cpp" />
+    <ClCompile Include="..\Sandcore-Engine\Network\Connection\Connection.ixx" />
+    <ClCompile Include="..\Sandcore-Engine\Network\Message\Byte.ixx" />
+    <ClCompile Include="..\Sandcore-Engine\Network\Message\Message.cpp" />
+    <ClCompile Include="..\Sandcore-Engine\Network\Message\Message.ixx" />
+    <ClCompile Include="..\Sandcore-Engine\Network\ThreadSafeQueue\ThreadSafeQueue.cpp" />
+    <ClCompile Include="..\Sandcore-Engine\Network\ThreadSafeQueue\ThreadSafeQueue.ixx" />
+    <ClCompile Include="..\Sandcore-Server\Source\World\Block\Block.cpp" />
+    <ClCompile Include="..\Sandcore-Server\Source\World\Block\Block.ixx" />
+    <ClCompile Include="..\Sandcore-Server\Source\World\Bounds\Bounds.ixx" />
     <ClCompile Include="Source\Additional\Vector3DGLM.ixx" />
     <ClCompile Include="Source\Application\Application.cpp" />
     <ClCompile Include="Source\Application\Application.ixx" />

@@ -7,48 +7,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Sandcore Engine\Common\Clock\Clock.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Sandcore Engine\Common\Clock\Clock.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Sandcore Engine\Common\Vector3D\Vector3D.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Sandcore Engine\Common\Vector3D\Vector3D.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Sandcore Engine\Common\Vector3D\Vector3DHash.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Sandcore Engine\Network\Connection\Connection.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Sandcore Engine\Network\Connection\Connection.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Sandcore Engine\Network\Message\Byte.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Sandcore Engine\Network\Message\Message.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Sandcore Engine\Network\Message\Message.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Sandcore Server\Sandcore Server\Source\World\Bounds\Bounds.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Sandcore Engine\Common\TPS\TPS.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Sandcore Server\Sandcore Server\Source\World\Block\Block.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Sandcore Server\Sandcore Server\Source\World\Block\Block.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="Source\World\Entity\Entity.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
@@ -271,10 +229,52 @@
     <ClCompile Include="Source\main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Sandcore Engine\Network\ThreadSafeQueue\ThreadSafeQueue.cpp">
+    <ClCompile Include="..\Sandcore-Server\Source\World\Block\Block.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Sandcore Engine\Network\ThreadSafeQueue\ThreadSafeQueue.ixx">
+    <ClCompile Include="..\Sandcore-Server\Source\World\Block\Block.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore-Server\Source\World\Bounds\Bounds.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore-Engine\Network\Connection\Connection.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore-Engine\Network\Connection\Connection.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore-Engine\Network\Message\Byte.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore-Engine\Network\Message\Message.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore-Engine\Network\Message\Message.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore-Engine\Network\ThreadSafeQueue\ThreadSafeQueue.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore-Engine\Network\ThreadSafeQueue\ThreadSafeQueue.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore-Engine\Common\Clock\Clock.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore-Engine\Common\Clock\Clock.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore-Engine\Common\TPS\TPS.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore-Engine\Common\Vector3D\Vector3D.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore-Engine\Common\Vector3D\Vector3D.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore-Engine\Common\Vector3D\Vector3DHash.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

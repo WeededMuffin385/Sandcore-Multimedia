@@ -43,13 +43,17 @@ export namespace Sandcore {
 			} window;
 		};
 
+	private:
+		friend class Window;
 		static bool pollEvent(Event& event, GLFWwindow* window);
-		static void setCurrent(GLFWwindow* window);
+		static void setCurrentWindow(GLFWwindow* window);
+
+		static void setWindowCallback(GLFWwindow* window);
+		static void removeWindowCallback(GLFWwindow* window);
 
 		static GLFWwindow* current;
 		static std::queue<Event> events;
 
-	private:
 		static void cursor_position_callback(GLFWwindow* window, double xpos, double ypos);
 		static void mouse_button_callback(GLFWwindow* window, int button, int action, int mode);
 		static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode);

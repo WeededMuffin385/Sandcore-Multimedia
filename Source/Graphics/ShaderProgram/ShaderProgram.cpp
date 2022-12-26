@@ -6,7 +6,8 @@
 #include <GLFW/glfw3.h>
 
 #include <filesystem>
-#include <iostream>
+
+
 
 import Sandcore.Shader.Program;
 
@@ -43,7 +44,6 @@ namespace Sandcore {
 		glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
 		if (!success) {
 			glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
-			std::cout << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
 		}
 	}
 

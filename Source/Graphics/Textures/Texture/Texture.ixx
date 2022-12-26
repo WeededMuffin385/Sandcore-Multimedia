@@ -1,38 +1,24 @@
 #define GLEW_STATIC
 #include <GL/glew.h>
-#include <GLFW/glfw3.h>
 
-#include <filesystem>
-
-export module Sandcore.Texture;
+export module Sandcore.Graphics.Texture;
 
 export namespace Sandcore {
 	class Texture {
 	public:
-		Texture() {};
+
+		Texture();
 		~Texture();
 
-		GLuint get();
+		virtual void bind() final;
+		virtual void unbind() final;
 
-		void create(int width, int height, const void* pixels = nullptr);
-		void resize(int width, int height);
+		virtual operator GLuint() final;
 
-		void loadFromFile(std::filesystem::path path);
-
-		void bind();
-		void unbind();
-
-
-		Texture(const Texture& other) = delete;
-		Texture& operator=(const Texture& other) = delete;
-
-		Texture(Texture&& other);
-		Texture& operator=(Texture&& other);
-
-	private:
-
-		void release();
+	protected:
+		virtual void release() final;
 
 		GLuint texture = 0;
+		int type = 0;
 	};
 }

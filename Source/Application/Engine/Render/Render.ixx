@@ -1,6 +1,6 @@
 #include <unordered_map>
-#include <glm/glm.hpp>
 
+#include <glm/glm.hpp>
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
@@ -16,8 +16,11 @@ import Sandcore.TexturePackage;
 import Sandcore.Window;
 import Sandcore.Event;
 import Sandcore.Cube;
+import Sandcore.Graphics.Texture2D;
 
 import Sandcore.Framebuffer;
+import Sandcore.Framebuffer.Vertex;
+import Sandcore.Render.Chunk.Vertex;
 
 import Sandcore.Render.Chunk;
 import Sandcore.Render.Camera;
@@ -29,15 +32,18 @@ export namespace Sandcore {
 	public:
 		Render(Window& window, Event& event, World& world);
 
-		void tick();
 	private:
 
 		void draw();
-		void events();
 		void input();
+		void events();
+		void update();
 
 		void drawBlocks();
 		void drawBlocks(RenderChunk::Identification identification);
+
+		void drawScreenEffects();
+		void drawUnderwaterEffect();
 
 		void updateViewport();
 
@@ -50,8 +56,12 @@ export namespace Sandcore {
 
 		RenderCamera camera;
 		ShaderProgram blocksShader;
+		ShaderProgram screenShader;
 		TexturePackage texturePackage;
 		World& world;
+
+		Texture2D underwater;
+		Mesh<FramebufferVertex> mesh;
 
 		Window& window;
 		Event& event;

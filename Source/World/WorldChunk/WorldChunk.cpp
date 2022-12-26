@@ -7,11 +7,11 @@ namespace Sandcore {
 	WorldChunk::WorldChunk() {
 	}
 
-	Block& WorldChunk::getBlock(Vector3D<int> position) {
+	const Block& WorldChunk::getBlock(Vector3D<int> position) {
 		return getBlock(position.x, position.y, position.z);
 	}
 
-	Block& WorldChunk::getBlock(int x, int y, int z) {
+	const Block& WorldChunk::getBlock(int x, int y, int z) {
 		return blocks[x][y][z];
 	}
 
@@ -21,6 +21,7 @@ namespace Sandcore {
 
 	void WorldChunk::setBlock(int x, int y, int z, Block block) {
 		blocks[x][y][z] = block;
+		changed = true;
 	}
 
 	void WorldChunk::upload(std::string& data) {

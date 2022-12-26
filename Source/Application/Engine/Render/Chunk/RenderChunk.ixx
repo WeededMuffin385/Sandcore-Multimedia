@@ -4,7 +4,7 @@ export module Sandcore.Render.Chunk;
 
 import Sandcore.Mesh;
 import Sandcore.Render.Chunk.Vertex;
-
+import Sandcore.World.Chunk;
 import Sandcore.World.Block;
 
 export namespace Sandcore {
@@ -17,13 +17,13 @@ export namespace Sandcore {
 		};
 		static Identification getIdentification(Block::Identification identification);
 
-
+		void clear();
 		void update();
 
 		void setWanted();
 		bool isUnwanted(std::chrono::high_resolution_clock::time_point& end);
 
-		bool isLoaded = false;
+		bool loaded = false;
 
 		Mesh<RenderChunkVertex> meshes[size];
 

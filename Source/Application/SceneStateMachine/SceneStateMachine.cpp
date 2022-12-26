@@ -1,6 +1,6 @@
 #include <memory>
 
-import Sandcore.SceneStateMachine;
+import Sandcore.Scene.StateMachine;
 
 namespace Sandcore {
 	void SceneStateMachine::push(Scene* scene) {

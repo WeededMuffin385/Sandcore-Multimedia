@@ -1,8 +1,9 @@
+#include <filesystem>
+
+#include <asio.hpp>
 #define GLEW_STATIC
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
-
-#include <filesystem>
 
 import Sandcore.Application;
 
@@ -17,9 +18,6 @@ namespace Sandcore {
 
 		Image image("C:/Workbench/Sandcore/Resources/logo.png");
 		window.setIcon(image);
-
-		int width, height;
-		window.getFramebufferSize(&width, &height);
 
 		scenes.push(new Engine(window, event));
 	}

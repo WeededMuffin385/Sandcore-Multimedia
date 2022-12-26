@@ -1,8 +1,9 @@
 #include <asio.hpp>
-#include <iostream>
+
 #include <array>
 #include <sstream>
 #include <cstdint>
+
 
 import Sandcore.Client;
 
@@ -19,19 +20,16 @@ namespace Sandcore {
 	}
 
 	void Client::start() {
-		
-		connection->loop();
+		connection->start();
 
 		try {
 			thread = std::thread([this]() { ioContext.run(); });
 		}
 		catch (std::exception& e) {
 			if (debug) {
-				std::cerr << "[CLIENT] Exception: " << e.what() << "\n";
 			}
 		}
 		if (debug) {
-			std::cout << "[CLIENT] Started!\n";
 		}
 	}
 
@@ -42,7 +40,6 @@ namespace Sandcore {
 			thread.join();
 
 		if (debug) {
-			std::cout << "[CLIENT] Stopped!\n";
 		}
 	}
 
@@ -51,9 +48,7 @@ namespace Sandcore {
 			asio::ip::tcp::resolver::results_type endpoints = resolver.resolve(address, port);
 
 			if (debug) {
-				std::cout << "[CLIENT] Endpoints:\n";
 				for (auto a : endpoints) {
-					std::cout << ">>>>>>>> " << a.endpoint() << "\n";
 				}
 			}
 
@@ -61,14 +56,12 @@ namespace Sandcore {
 		}
 		catch (std::exception& e) {
 			if (debug) {
-				std::cout << "[CLIENT] Connection failed! " << e.what() << "\n";
 			}
 
 			return false;
 		}
 
 		if (debug) {
-			std::cout << "[CLIENT] Connection succeeded!\n";
 		}
 		return true;
 	}

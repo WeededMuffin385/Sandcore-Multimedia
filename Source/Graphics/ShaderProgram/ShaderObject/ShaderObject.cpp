@@ -1,7 +1,8 @@
 #include <string>
 #include <filesystem>
 #include <fstream>
-#include <iostream>
+
+
 
 #define GLEW_STATIC
 #include <GL/glew.h>
@@ -44,15 +45,11 @@ namespace Sandcore{
 			glGetShaderInfoLog(shaderObject, 512, NULL, infoLog);
 			switch (type) {
 			case GL_VERTEX_SHADER:
-				std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED: ";
 				break;
 
 			case GL_FRAGMENT_SHADER:
-				std::cout << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED: ";
 				break;
 			}
-
-			std::cout << infoLog << std::endl;
 		}
 	}
 }

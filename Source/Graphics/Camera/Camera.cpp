@@ -3,7 +3,7 @@
 
 #include <GLFW/glfw3.h>
 
-#include <iostream>
+
 
 import Sandcore.Camera;
 
@@ -78,6 +78,10 @@ namespace Sandcore {
 		if (window.getKey(GLFW_KEY_D)) direction -= right;
 
 		return direction;
+	}
+
+	glm::vec3 Camera::getFront() {
+		return front;
 	}
 
 	void Camera::keyboardInput(Window& window){

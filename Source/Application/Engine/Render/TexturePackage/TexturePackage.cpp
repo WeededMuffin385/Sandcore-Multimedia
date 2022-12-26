@@ -3,7 +3,7 @@
 
 import Sandcore.TexturePackage;
 
-import Sandcore.TextureArray;
+import Sandcore.Graphics.Texture3D;
 
 namespace Sandcore {
 	TexturePackage::TexturePackage(std::filesystem::path path) {
@@ -33,7 +33,7 @@ namespace Sandcore {
 	void TexturePackage::loadBlocks(std::filesystem::path path) {
 		using TPBI = BlockIdentification;
 
-		blockTextures = TextureArray(width, height, static_cast<int>(TPBI::size));
+		blockTextures.create(width, height, static_cast<int>(TPBI::size));
 
 		loadBlock(TPBI::wrong, path / "wrong.png");
 

@@ -1,7 +1,5 @@
 import Sandcore.World.Entity;
 
-import Sandcore.World.Entity.Identification;
-
 import Sandcore.Vector3D;
 
 namespace Sandcore {
@@ -13,7 +11,7 @@ namespace Sandcore {
 		return chunkPosition;
 	}
 
-	EntityIdentification& Entity::getId() {
+	Entity::Identification& Entity::getId() {
 		return identification;
 	}
 

@@ -3,6 +3,8 @@
 
 #include <GLFW/glfw3.h>
 
+
+
 import Sandcore.Render.Camera;
 
 import Sandcore.World.Bounds;
@@ -42,5 +44,15 @@ namespace Sandcore {
 		front2D.y = std::cos(glm::radians(yaw));
 
 		right2D = glm::normalize(glm::cross(worldUp, front));
+	}
+
+	void RenderCamera::setPosition(Vector3D<int> worldPosition, Vector3D<double> chunkPosition) {
+		bounds<WorldChunk::size>(worldPosition, chunkPosition);
+
+		this->worldPosition = worldPosition;
+
+		position.x = chunkPosition.x;
+		position.y = chunkPosition.y;
+		position.z = chunkPosition.z;
 	}
 }

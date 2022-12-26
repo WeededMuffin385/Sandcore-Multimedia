@@ -12,8 +12,8 @@ export namespace Sandcore {
 
 		void upload(std::string& data);
 
-		Block& getBlock(Vector3D<int> position);
-		Block& getBlock(int x, int y, int z);
+		const Block& getBlock(Vector3D<int> position);
+		const Block& getBlock(int x, int y, int z);
 
 		void setBlock(Vector3D<int> position, Block block);
 		void setBlock(int x, int y, int z, Block block);
@@ -26,6 +26,8 @@ export namespace Sandcore {
 
 		bool loaded = false;
 		bool loadInProgress = false;
+
+		bool changed = false;
 
 		int drawCount = 0;
 	private:

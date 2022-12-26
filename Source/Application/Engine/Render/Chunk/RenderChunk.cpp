@@ -7,8 +7,14 @@ namespace Sandcore {
 	void RenderChunk::update() {
 		for (auto& mesh : meshes) mesh.update();
 		
+		loaded = true;
+	}
 
-		isLoaded = true;
+	void RenderChunk::clear() {
+		for (auto& mesh : meshes) {
+			mesh.indices.clear();
+			mesh.vertices.clear();
+		}
 	}
 
 	void RenderChunk::setWanted() {

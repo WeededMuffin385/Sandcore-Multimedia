@@ -12,8 +12,6 @@ import Sandcore.Shader.Object;
 export namespace Sandcore {
 	class ShaderProgram {
 	public:
-
-
 		ShaderProgram(std::filesystem::path path);
 		~ShaderProgram();
 

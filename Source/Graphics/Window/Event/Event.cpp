@@ -1,5 +1,6 @@
 #include <queue>
 
+
 #define GLEW_STATIC
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
@@ -7,11 +8,11 @@
 import Sandcore.Event;
 
 namespace Sandcore {
-	GLFWwindow* Event::current;
-	std::queue<Event> Event::events;
+	GLFWwindow* Event::current = nullptr;
+	std::queue<Event> Event::events = {};
 
 	bool Event::pollEvent(Event& event, GLFWwindow* window) {
-		if (window != current) setCurrent(window);
+		if (window != current) setCurrentWindow(window);
 		glfwPollEvents();
 
 		if (events.empty()) return false;
@@ -20,13 +21,27 @@ namespace Sandcore {
 		return true;
 	}
 
-	void Event::setCurrent(GLFWwindow* window) {
+	void Event::setCurrentWindow(GLFWwindow* window) {
+		if (current) removeWindowCallback(current);
+		setWindowCallback(window);
+
 		current = window;
 		events = {};
+	}
+
+
+	void Event::setWindowCallback(GLFWwindow* window) {
 		glfwSetCursorPosCallback(window, cursor_position_callback);
 		glfwSetMouseButtonCallback(window, mouse_button_callback);
 		glfwSetKeyCallback(window, key_callback);
 		glfwSetWindowSizeCallback(window, window_size_callback);
+	}
+
+	void Event::removeWindowCallback(GLFWwindow* window) {
+		glfwSetCursorPosCallback(window, NULL);
+		glfwSetMouseButtonCallback(window, NULL);
+		glfwSetKeyCallback(window, NULL);
+		glfwSetWindowSizeCallback(window, NULL);
 	}
 
 	void Event::cursor_position_callback(GLFWwindow* window, double xpos, double ypos) {

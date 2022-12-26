@@ -10,8 +10,7 @@ export namespace Sandcore {
 		Vector3D<int> getWorldPosition() { return worldPosition; }
 		Vector3D<double> getChunkPosition() { return Vector3D<double>(position.x, position.y, position.z); }
 
-		void setWorldPosition(Vector3D<int> worldPosition) { this->worldPosition = worldPosition; }
-		void setChunkPosition(Vector3D<double> chunkPosition) { position.x = chunkPosition.x; position.y = chunkPosition.y; position.z = chunkPosition.z; }
+		void setPosition(Vector3D<int> worldPosition, Vector3D<double> chunkPosition);
 
 		virtual Vector3D<double> getDirection(Window& window);
 

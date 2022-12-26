@@ -1,12 +1,32 @@
+#define GLEW_STATIC
+#include <GL/glew.h>
 #include <GLFW/glfw3.h>
+
+#include <GLFW/glfw3.h>
+
+#include <memory>
 
 import Sandcore.Window;
 
 import Sandcore.Event;
+import Sandcore.Image;
 
 namespace Sandcore {
 	Window::Window(int width, int height, const char* title, GLFWmonitor* monitor, GLFWwindow* share) {
+		glfwInit();
 		create(width, height, title, monitor, share);
+	}
+
+	Window::~Window() {
+		glfwDestroyWindow(window);
+	}
+
+	Window::operator GLFWwindow*() {
+		return window;
+	}
+
+	void Window::bindFramebuffer() {
+		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 	}
 
 	void Window::create(int width, int height, const char*title, GLFWmonitor*monitor, GLFWwindow*share) {
@@ -18,16 +38,23 @@ namespace Sandcore {
 		return Event::pollEvent(event, window);
 	}
 
-	void Window::destroy() {
-		glfwDestroyWindow(window);
+	void Window::setCurrent() {
+		return Event::setCurrentWindow(window);
+	}
+
+	void Window::setIcon(Image& image) {
+		GLFWimage icon;
+		icon.pixels = image.data;
+		icon.width = image.width;
+		icon.height = image.height;
+		glfwSetWindowIcon(window, 1, &icon);
 	}
 
 	void Window::setContext() {
 		glfwMakeContextCurrent(window);
-	}
 
-	void Window::setCurrent() {
-		Event::setCurrent(window);
+		glewExperimental = GL_TRUE;
+		glewInit();
 	}
 
 	void Window::getFramebufferSize(int*width, int*height) {
@@ -46,7 +73,7 @@ namespace Sandcore {
 		return glfwGetKey(window, key) == GLFW_PRESS;
 	}
 
-	bool Window::shouldClose() {
+	bool Window::isShouldClose() {
 		return glfwWindowShouldClose(window);
 	}
 
@@ -54,7 +81,7 @@ namespace Sandcore {
 		return glfwSetWindowShouldClose(window, GL_TRUE);
 	}
 
-	void Window::swapBuffers() {
+	void Window::display() {
 		glfwSwapBuffers(window);
 	}
 

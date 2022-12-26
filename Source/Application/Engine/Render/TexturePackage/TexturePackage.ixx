@@ -2,7 +2,7 @@
 
 export module Sandcore.TexturePackage;
 
-import Sandcore.TextureArray;
+import Sandcore.Graphics.Texture3D;
 
 export namespace Sandcore {
 	class TexturePackage {
@@ -18,19 +18,18 @@ export namespace Sandcore {
 			grassTop,
 			grassSide,
 
-			dirt,
-
 			waterTop,
 			waterSide,
 
+			dirt,
 			stone,
+			sand,
 
 			ironOre,
 			coalOre,
 			goldOre,
 
 			lava,
-			sand,
 
 			woodTop,
 			woodSide,
@@ -40,6 +39,7 @@ export namespace Sandcore {
 			size
 		};
 
+		Texture3D blockTextures;
 	private:
 
 		void load(std::filesystem::path path);
@@ -50,7 +50,5 @@ export namespace Sandcore {
 
 		int width;
 		int height;
-
-		TextureArray blockTextures;
 	};
 }

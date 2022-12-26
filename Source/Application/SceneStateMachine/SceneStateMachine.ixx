@@ -1,7 +1,7 @@
 #include <stack>
 #include <memory>
 
-export module Sandcore.SceneStateMachine;
+export module Sandcore.Scene.StateMachine;
 
 import Sandcore.Scene;
 

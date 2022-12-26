@@ -19,6 +19,7 @@ export namespace Sandcore {
 		void setFirst();
 
 		virtual Vector3D<double> getDirection(Window& window);
+		glm::vec3 getFront();
 
 		virtual void mouseInput(Window& window);
 		virtual void keyboardInput(Window& window);

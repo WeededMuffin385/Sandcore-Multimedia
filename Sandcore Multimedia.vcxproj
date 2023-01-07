@@ -147,6 +147,8 @@
     <ClCompile Include="..\Sandcore-Engine\Common\Vector3D\Vector3D.cpp" />
     <ClCompile Include="..\Sandcore-Engine\Common\Vector3D\Vector3D.ixx" />
     <ClCompile Include="..\Sandcore-Engine\Common\Vector3D\Vector3DHash.ixx" />
+    <ClCompile Include="..\Sandcore-Engine\Graphics\Image\Image.cpp" />
+    <ClCompile Include="..\Sandcore-Engine\Graphics\Image\Image.ixx" />
     <ClCompile Include="..\Sandcore-Engine\Network\Connection\Connection.cpp" />
     <ClCompile Include="..\Sandcore-Engine\Network\Connection\Connection.ixx" />
     <ClCompile Include="..\Sandcore-Engine\Network\Message\Byte.ixx" />
@@ -194,8 +196,6 @@
     <ClCompile Include="Source\Graphics\Drawing\Framebuffer\Framebuffer.ixx" />
     <ClCompile Include="Source\Graphics\Drawing\Framebuffer\Vertex\FramebufferVertex.cpp" />
     <ClCompile Include="Source\Graphics\Drawing\Framebuffer\Vertex\FramebufferVertex.ixx" />
-    <ClCompile Include="Source\Graphics\Image\Image.cpp" />
-    <ClCompile Include="Source\Graphics\Image\Image.ixx" />
     <ClCompile Include="Source\Graphics\ShaderProgram\ShaderObject\ShaderObject.cpp" />
     <ClCompile Include="Source\Graphics\ShaderProgram\ShaderObject\ShaderObject.ixx" />
     <ClCompile Include="Source\Graphics\ShaderProgram\ShaderProgram.cpp" />

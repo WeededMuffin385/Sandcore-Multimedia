@@ -136,12 +136,6 @@
     <ClCompile Include="Source\Graphics\Drawing\Framebuffer\Framebuffer.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Image\Image.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Image\Image.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Graphics\ShaderProgram\ShaderObject\ShaderObject.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
@@ -275,6 +269,12 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="..\Sandcore-Engine\Common\Vector3D\Vector3DHash.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore-Engine\Graphics\Image\Image.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore-Engine\Graphics\Image\Image.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

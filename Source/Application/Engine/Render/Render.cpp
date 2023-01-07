@@ -33,9 +33,9 @@ import Sandcore.Render.Chunk;
 
 namespace Sandcore {
 	Render::Render(Window& window, Event& event, World& world) : window(window), event(event), world(world),
-		blocksShader("C:/Workbench/Sandcore/Sandcore Multimedia/Sandcore Multimedia/Userdata/shaders/blocks_shader"),
-		screenShader("C:/Workbench/Sandcore/Sandcore Multimedia/Sandcore Multimedia/Userdata/shaders/screen_shader"),
-		texturePackage("C:/Workbench/Sandcore/Sandcore Multimedia/Sandcore Multimedia/Userdata/texture_package") {
+		blocksShader("C:/Users/Mi/Documents/GitHub/Sandcore-Multimedia/Userdata/shaders/blocks_shader"),
+		screenShader("C:/Users/Mi/Documents/GitHub/Sandcore-Multimedia/Userdata/shaders/screen_shader"),
+		texturePackage("C:/Users/Mi/Documents/GitHub/Sandcore-Multimedia/Userdata/texture_package") {
 
 		glEnable(GL_DEPTH_TEST);
 		glEnable(GL_CULL_FACE);
@@ -53,10 +53,10 @@ namespace Sandcore {
 		blocksShader.setDouble("capacity", texturePackage.getCapacity());
 
 		mesh.vertices = { {0}, {1}, {2}, {3} };
-		mesh.indices = { 1,0,2,1,2,3 };
+		mesh.indices = { 0, 1, 2, 0, 2, 3 };
 		mesh.update();
 
-		underwater.loadFromFile("C:/Workbench/Sandcore/Sandcore Multimedia/Sandcore Multimedia/Userdata/texture_package/blocks/water_3.png");
+		underwater.loadFromFile("C:/Users/Mi/Documents/GitHub/Sandcore-Multimedia/Userdata/texture_package/blocks/water_3.png");
 	}
 
 	void Render::update() {

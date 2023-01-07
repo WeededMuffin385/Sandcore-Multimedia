@@ -3,22 +3,16 @@ layout (location = 0) in float index;
 
 out vec2 TexCoords;
 
-vec2 frameCoords[6] = vec2[6](
+vec2 frameCoords[4] = vec2[4]( // 0 1 2 0 2 3
     vec2(-1.0f,  1.0f),
     vec2(-1.0f, -1.0f),
-    vec2( 1.0f, -1.0f),
-
-    vec2(-1.0f,  1.0f),
     vec2( 1.0f, -1.0f),
     vec2( 1.0f,  1.0f)
 );
 
-vec2 texCoords[6] = vec2[6](
+vec2 texCoords[4] = vec2[4](
     vec2(0.0f, 1.0f),
     vec2(0.0f, 0.0f),
-    vec2(1.0f, 0.0f),
-
-    vec2(0.0f, 1.0f),
     vec2(1.0f, 0.0f),
     vec2(1.0f, 1.0f)
 );

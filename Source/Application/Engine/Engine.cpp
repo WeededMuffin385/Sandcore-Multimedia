@@ -1,5 +1,6 @@
 #include <unordered_map>
 #include <fstream>
+#include <iostream>
 
 #include <asio.hpp>
 
@@ -24,7 +25,7 @@ import Sandcore.Vector3D.GLM;
 
 namespace Sandcore {
 	Engine::Engine(Window& window, Event& event) : Scene(window, event) , render(window, event, world) {
-		while (!connect());
+		while (!connect()) std::cout << "Re-connecting...\n";
 	}
 
 	Engine::~Engine() {

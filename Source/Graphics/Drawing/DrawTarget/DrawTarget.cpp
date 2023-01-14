@@ -2,12 +2,12 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
-import Sandcore.Graphics.Draw.Target;
+#include <filesystem>
 
+import Sandcore.Graphics.Draw.Target;
 import Sandcore.Graphics.Draw.Object;
 
 import Sandcore.Graphics.Texture;
-
 import Sandcore.Shader.Program;
 
 namespace Sandcore {
@@ -16,6 +16,17 @@ namespace Sandcore {
 		shaderProgram.use();
 		texture.bind();
 		drawObject.draw();
+		glBindFramebuffer(GL_FRAMEBUFFER, 0);
+	}
+
+	void DrawTarget::draw(Sprite& sprite) {
+		static ShaderProgram screenShader("C:/Users/Mi/Documents/GitHub/Sandcore-Multimedia/Userdata/shaders/screen_shader");
+
+
+		bindFramebuffer();
+		screenShader.use();
+		sprite.draw();
+		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 	}
 
 	void DrawTarget::clear(float red, float green, float blue, float alpha) {

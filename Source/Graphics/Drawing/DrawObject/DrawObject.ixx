@@ -7,7 +7,7 @@ export module Sandcore.Graphics.Draw.Object;
 
 export namespace Sandcore {
 	class DrawObject {
-	private:
+	public:
 		virtual void draw() = 0;
 
 		friend class DrawTarget;

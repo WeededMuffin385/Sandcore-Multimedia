@@ -25,13 +25,14 @@ export namespace Sandcore {
 
 		~Framebuffer();
 
-		virtual void bindFramebuffer();
 		virtual void draw();
 
 		GLuint& getRBO() { return RBO; };
 		operator Texture2D&() { return texture; }
 
 	private:
+		virtual void bindFramebuffer();
+
 		void createFramebuffer();
 		void createRenderbuffer(int width, int height);
 

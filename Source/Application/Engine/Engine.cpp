@@ -101,7 +101,7 @@ namespace Sandcore {
 	}
 
 	void Engine::createEntity(int id) {
-		if (world.getEntities().find(id) == world.getEntities().end()) {
+		if (!world.getEntities().contains(id)) {
 			world.getEntities()[id] = std::make_unique<Entity>(Entity());
 		}
 	}

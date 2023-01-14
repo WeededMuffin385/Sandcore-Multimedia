@@ -2,6 +2,8 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
+#include <iostream>
+
 import Sandcore.Framebuffer;
 
 import Sandcore.Render.Chunk.Vertex;
@@ -47,7 +49,7 @@ namespace Sandcore {
 	}
 
 	void Framebuffer::bindFramebuffer() {
-		if (!FBO);
+		if (!FBO) std::cout << "ERROR: FRAMEBUFFER DOESN'T EXISTS";
 
 		glBindFramebuffer(GL_FRAMEBUFFER, FBO);	
 	}

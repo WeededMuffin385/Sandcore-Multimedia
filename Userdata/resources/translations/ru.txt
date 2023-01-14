@@ -1,0 +1,32 @@
+singleplayer		singleplayer
+multiplayer		multiplayer
+settings		settings
+exit			exit
+
+add_world		add world
+add_server		add server
+
+change_world_settings	change world settings
+change_server_settings	change server settings
+
+world_name		world name
+server_name		server name
+
+size_x			size x
+size_y			size y
+size_z			size z
+seed			seed
+water_height		water height
+terrain_height		terrain height
+terrain_scale		terrain scale
+cave_height		cave height
+cave_scale		cave scale
+cave_size		cave size
+
+directory		directory
+
+ip_address		ip address
+port			port
+
+fullscreen		fullscreen
+window			window

@@ -326,7 +326,7 @@ namespace Sandcore {
 							if (drawn[position]) continue;
 
 
-							if (chunks.find(position) == chunks.end() || world.getChunk(position).changed) {
+							if (!chunks.contains(position) || world.getChunk(position).changed) {
 								if (isRelatedChunksLoaded(position)) {
 									generateChunkMesh(position);
 									world.getChunk(position).changed = false;
@@ -334,7 +334,7 @@ namespace Sandcore {
 							}
 							
 
-							if (chunks.find(position) != chunks.end()) {
+							if (chunks.contains(position)) {
 								blocksShader.setMat4("model", glm::translate(glm::mat4(1.0f), glm::vec3(WorldChunk::size::x * x, WorldChunk::size::y * y, WorldChunk::size::z * z)));
 
 								target.draw(chunks[position].meshes[identification], blocksShader, texturePackage.blockTextures);

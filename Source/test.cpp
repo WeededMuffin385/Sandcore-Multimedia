@@ -8,13 +8,15 @@ import Sandcore.Shader.Program;
 import Sandcore.Window;
 import Sandcore.Mesh;
 import Sandcore.Event;
-import Sandcore.Texture;
+import Sandcore.Graphics.Texture2D;
 import Sandcore.Framebuffer.Vertex;
 
 using namespace Sandcore;
 
 int main() {
-	Window window(700, 700, "Test Window");
+	int width = 700;
+	int height = 700;
+	Window window(width, height, "Test Window");
 	window.setContext();
 	window.setCurrent();
 	Event event;
@@ -22,24 +24,26 @@ int main() {
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-	Texture texture0, texture3;
-	texture0.loadFromFile("C:/Workbench/Sandcore/Sandcore Multimedia/Sandcore Multimedia/Userdata/texture_package/A.png");
-	texture3.loadFromFile("C:/Workbench/Sandcore/Sandcore Multimedia/Sandcore Multimedia/Userdata/texture_package/B.png");
+	Texture2D texture0, texture3;
+	texture0.loadFromFile("C:/Users/Mi/Documents/GitHub/Sandcore-Multimedia/Userdata/texture_package/A.png");
+	texture3.loadFromFile("C:/Users/Mi/Documents/GitHub/Sandcore-Multimedia/Userdata/texture_package/B.png");
 
-	ShaderProgram screenShader("C:/Workbench/Sandcore/Sandcore Multimedia/Sandcore Multimedia/Userdata/shaders/screen_shader");
+	ShaderProgram screenShader("C:/Users/Mi/Documents/GitHub/Sandcore-Multimedia/Userdata/shaders/screen_shader");
 	Mesh<FramebufferVertex> mesh;
 	mesh.vertices = { {0}, {1}, {2}, {3} };
-	mesh.indices = { 1,0,2,1,2,3 };
+	mesh.indices = { 0,1,2,0,2,3 };
 	mesh.update();
 
 	while (!window.isShouldClose()) {
 		window.pollEvent(event);
 
+		window.getSize(&width, &height);
+
 		window.clear();
-		texture0.bind();
-		window.draw(mesh, screenShader);
-		texture3.bind();
-		window.draw(mesh, screenShader);
+		glViewport(0, 0, width / 2.f, height / 2.f);
+		window.draw(mesh, screenShader, texture0);
+		glViewport(width / 2.f, height / 2.f, width / 2.f, height / 2.f);
+		window.draw(mesh, screenShader, texture3);
 		window.display();
 	}
 }

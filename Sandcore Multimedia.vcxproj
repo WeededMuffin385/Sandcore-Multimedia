@@ -180,10 +180,8 @@
     <ClCompile Include="Source\Application\Memory\Memory.cpp" />
     <ClCompile Include="Source\Application\Memory\Memory.ixx" />
     <ClCompile Include="Source\Application\Menu\Menu.ixx" />
-    <ClCompile Include="Source\Application\SceneStateMachine\SceneStateMachine.cpp" />
-    <ClCompile Include="Source\Application\SceneStateMachine\SceneStateMachine.ixx" />
-    <ClCompile Include="Source\Application\SceneStateMachine\Scene\Scene.cpp" />
-    <ClCompile Include="Source\Application\SceneStateMachine\Scene\Scene.ixx" />
+    <ClCompile Include="Source\Application\Scene\Scene.cpp" />
+    <ClCompile Include="Source\Application\Scene\Scene.ixx" />
     <ClCompile Include="Source\Graphics\Camera\Camera.cpp" />
     <ClCompile Include="Source\Graphics\Camera\Camera.ixx" />
     <ClCompile Include="Source\Graphics\Drawing\DrawObject\DrawObject.cpp" />

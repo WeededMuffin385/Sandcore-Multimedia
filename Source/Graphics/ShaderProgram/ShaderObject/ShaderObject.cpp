@@ -1,6 +1,7 @@
 #include <string>
 #include <filesystem>
 #include <fstream>
+#include <iostream>
 
 
 
@@ -26,6 +27,7 @@ namespace Sandcore{
 	}
 	
 	void ShaderObject::loadFromFile(std::filesystem::path path) {
+		if (!std::filesystem::exists(path)) std::cout << "SHADERS DOESN'T EXISTS ON: " << path << "\n";
 		std::ifstream file(path);
 		std::string source;
 		std::getline(file, source, '\0');

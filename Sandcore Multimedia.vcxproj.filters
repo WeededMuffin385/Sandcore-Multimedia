@@ -82,16 +82,10 @@
     <ClCompile Include="Source\Application\Menu\Menu.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Application\SceneStateMachine\Scene\Scene.cpp">
+    <ClCompile Include="Source\Application\Scene\Scene.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Application\SceneStateMachine\Scene\Scene.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Application\SceneStateMachine\SceneStateMachine.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Application\SceneStateMachine\SceneStateMachine.ixx">
+    <ClCompile Include="Source\Application\Scene\Scene.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Source\Application\Application.cpp">
@@ -220,9 +214,6 @@
     <ClCompile Include="Source\Network\Client\Client.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\main.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="..\Sandcore-Server\Source\World\Block\Block.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
@@ -275,6 +266,9 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="..\Sandcore-Engine\Graphics\Image\Image.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

@@ -13,7 +13,6 @@ export namespace Sandcore {
 		
 		~Window();
 
-		virtual void bindFramebuffer();
 
 		bool pollEvent(Event& event);
 
@@ -38,6 +37,8 @@ export namespace Sandcore {
 		operator GLFWwindow*();
 
 	private:
+		virtual void bindFramebuffer();
+
 		GLFWwindow* window = nullptr;
 		void create(int width, int height, const char* title, GLFWmonitor* monitor, GLFWwindow* share);
 	};

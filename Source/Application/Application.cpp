@@ -19,12 +19,17 @@ namespace Sandcore {
 		Image image("C:/Workbench/Sandcore/Resources/logo.png");
 		window.setIcon(image);
 
-		scenes.push(new Engine(window, event));
+
+		push(new Engine(window, event));
 	}
 
 	void Application::loop() {
-		while (!scenes.isEmpty() && !window.isShouldClose()) {
-			scenes.tick();
+		while (!scenes.empty() && !window.isShouldClose()) {
+			scenes.front()->tick();
 		}
+	}
+
+	void Application::push(Scene* scene) {
+		scenes.push(std::unique_ptr<Scene>(scene));
 	}
 }

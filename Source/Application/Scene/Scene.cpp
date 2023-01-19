@@ -16,9 +16,6 @@ namespace Sandcore {
 		}
 
 		update();
-	}
-
-	void Scene::render() {
 		draw();
 	}
 }

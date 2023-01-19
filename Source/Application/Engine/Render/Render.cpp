@@ -60,6 +60,7 @@ namespace Sandcore {
 	}
 
 	void Render::update() {
+		checkForChunks();
 		updateViewport();
 	}
 
@@ -125,7 +126,7 @@ namespace Sandcore {
 
 	void Render::draw() {
 		window.clear(0.52734375f, 0.8046875f, 0.91796875f);
-		
+
 		drawBlocks();
 		drawScreenEffects();
 
@@ -166,8 +167,8 @@ namespace Sandcore {
 	}
 
 	void extendRenderChunk(Mesh<RenderChunkVertex>& chunk) {
-		chunk.vertices.reserve(chunk.vertices.size() + 4);
-		chunk.indices.reserve(chunk.indices.size() + 6);
+		chunk.vertices.reserve(chunk.vertices.size() + 4 * 6);
+		chunk.indices.reserve(chunk.indices.size() + 6 * 6);
 	}
 
 	void Render::generateChunkMesh(Vector3D<int> position) {
@@ -182,17 +183,18 @@ namespace Sandcore {
 					if (id == Block::Identification::vacuum) continue;
 
 					Cube cube = Cube::getCube(id);
+					
+					extendRenderChunk(chunk);
 
 					if (!isBlocked(position, Vector3D<int>(x - 1, y, z), section)) {
 						int offset = chunk.vertices.size();
 						float light = 0.85f;
 
-						extendRenderChunk(chunk);
 
-						chunk.vertices.push_back({ { x,y,z }, light,cube.x.minus, 2  });
-						chunk.vertices.push_back({ { x,y + 1,z }, light,cube.x.minus, 3  });
-						chunk.vertices.push_back({ { x,y + 1,z + 1 }, light,cube.x.minus, 0  });
-						chunk.vertices.push_back({ { x,y,z + 1 },  light,cube.x.minus, 1  });
+						chunk.vertices.push_back({ { x,y,z }, light,cube.x.minus, 2 });
+						chunk.vertices.push_back({ { x,y + 1,z }, light,cube.x.minus, 3 });
+						chunk.vertices.push_back({ { x,y + 1,z + 1 }, light,cube.x.minus, 0 });
+						chunk.vertices.push_back({ { x,y,z + 1 },  light,cube.x.minus, 1 });
 
 
 						chunk.indices.push_back(offset + 0);
@@ -208,12 +210,10 @@ namespace Sandcore {
 						int offset = chunk.vertices.size();
 						float light = 0.95f;
 
-						extendRenderChunk(chunk);
-
-						chunk.vertices.push_back({ { x + 1,y,z }, light,cube.x.plus, 2  });
-						chunk.vertices.push_back({ { x + 1,y + 1,z }, light,cube.x.plus, 3  });
-						chunk.vertices.push_back({ { x + 1,y + 1,z + 1 }, light,cube.x.plus, 0  });
-						chunk.vertices.push_back({ { x + 1,y,z + 1 }, light,cube.x.plus, 1  });
+						chunk.vertices.push_back({ { x + 1,y,z }, light,cube.x.plus, 2 });
+						chunk.vertices.push_back({ { x + 1,y + 1,z }, light,cube.x.plus, 3 });
+						chunk.vertices.push_back({ { x + 1,y + 1,z + 1 }, light,cube.x.plus, 0 });
+						chunk.vertices.push_back({ { x + 1,y,z + 1 }, light,cube.x.plus, 1 });
 
 						chunk.indices.push_back(offset + 0);
 						chunk.indices.push_back(offset + 1);
@@ -229,12 +229,10 @@ namespace Sandcore {
 						int offset = chunk.vertices.size();
 						float light = 0.8f;
 
-						extendRenderChunk(chunk);
-
-						chunk.vertices.push_back({ { x,y,z }, light,cube.y.minus, 2  });
-						chunk.vertices.push_back({ { x + 1,y,z }, light,cube.y.minus, 3  });
-						chunk.vertices.push_back({ { x + 1,y,z + 1 }, light,cube.y.minus, 0  });
-						chunk.vertices.push_back({ { x,y,z + 1 }, light,cube.y.minus, 1  });
+						chunk.vertices.push_back({ { x,y,z }, light,cube.y.minus, 2 });
+						chunk.vertices.push_back({ { x + 1,y,z }, light,cube.y.minus, 3 });
+						chunk.vertices.push_back({ { x + 1,y,z + 1 }, light,cube.y.minus, 0 });
+						chunk.vertices.push_back({ { x,y,z + 1 }, light,cube.y.minus, 1 });
 
 						chunk.indices.push_back(offset + 0);
 						chunk.indices.push_back(offset + 1);
@@ -249,12 +247,10 @@ namespace Sandcore {
 						int offset = chunk.vertices.size();
 						float light = 0.9f;
 
-						extendRenderChunk(chunk);
-
-						chunk.vertices.push_back({ { x,y + 1,z }, light,cube.y.plus, 2  });
-						chunk.vertices.push_back({ { x + 1,y + 1,z }, light,cube.y.plus, 3  });
-						chunk.vertices.push_back({ { x + 1,y + 1,z + 1 }, light,cube.y.plus, 0  });
-						chunk.vertices.push_back({ { x,y + 1,z + 1 }, light,cube.y.plus, 1  });
+						chunk.vertices.push_back({ { x,y + 1,z }, light,cube.y.plus, 2 });
+						chunk.vertices.push_back({ { x + 1,y + 1,z }, light,cube.y.plus, 3 });
+						chunk.vertices.push_back({ { x + 1,y + 1,z + 1 }, light,cube.y.plus, 0 });
+						chunk.vertices.push_back({ { x,y + 1,z + 1 }, light,cube.y.plus, 1 });
 
 						chunk.indices.push_back(offset + 0);
 						chunk.indices.push_back(offset + 3);
@@ -271,12 +267,10 @@ namespace Sandcore {
 						int offset = chunk.vertices.size();
 						float light = 0.75f;
 
-						extendRenderChunk(chunk);
-
-						chunk.vertices.push_back({ { x ,y ,z }, light,cube.z.minus, 0  });
-						chunk.vertices.push_back({ { x ,y + 1 ,z }, light,cube.z.minus, 1  });
-						chunk.vertices.push_back({ { x + 1 ,y + 1 ,z }, light,cube.z.minus, 2  });
-						chunk.vertices.push_back({ { x + 1,y ,z }, light,cube.z.minus, 3  });
+						chunk.vertices.push_back({ { x ,y ,z }, light,cube.z.minus, 0 });
+						chunk.vertices.push_back({ { x ,y + 1 ,z }, light,cube.z.minus, 1 });
+						chunk.vertices.push_back({ { x + 1 ,y + 1 ,z }, light,cube.z.minus, 2 });
+						chunk.vertices.push_back({ { x + 1,y ,z }, light,cube.z.minus, 3 });
 
 						chunk.indices.push_back(offset + 0);
 						chunk.indices.push_back(offset + 1);
@@ -291,12 +285,10 @@ namespace Sandcore {
 						int offset = chunk.vertices.size();
 						float light = 1.0f;
 
-						extendRenderChunk(chunk);
-
-						chunk.vertices.push_back({ { x ,y ,z + 1 }, light,cube.z.plus, 0  });
-						chunk.vertices.push_back({ { x ,y + 1 ,z + 1 }, light,cube.z.plus, 1  });
-						chunk.vertices.push_back({ { x + 1 ,y + 1 ,z + 1 }, light,cube.z.plus, 2  });
-						chunk.vertices.push_back({ { x + 1,y ,z + 1 }, light,cube.z.plus, 3  });
+						chunk.vertices.push_back({ { x ,y ,z + 1 }, light,cube.z.plus, 0 });
+						chunk.vertices.push_back({ { x ,y + 1 ,z + 1 }, light,cube.z.plus, 1 });
+						chunk.vertices.push_back({ { x + 1 ,y + 1 ,z + 1 }, light,cube.z.plus, 2 });
+						chunk.vertices.push_back({ { x + 1,y ,z + 1 }, light,cube.z.plus, 3 });
 
 						chunk.indices.push_back(offset + 0);
 						chunk.indices.push_back(offset + 3);
@@ -326,14 +318,6 @@ namespace Sandcore {
 							if (drawn[position]) continue;
 
 
-							if (!chunks.contains(position) || world.getChunk(position).changed) {
-								if (isRelatedChunksLoaded(position)) {
-									generateChunkMesh(position);
-									world.getChunk(position).changed = false;
-								}
-							}
-							
-
 							if (chunks.contains(position)) {
 								blocksShader.setMat4("model", glm::translate(glm::mat4(1.0f), glm::vec3(WorldChunk::size::x * x, WorldChunk::size::y * y, WorldChunk::size::z * z)));
 
@@ -348,13 +332,33 @@ namespace Sandcore {
 	}
 
 	bool Render::isRelatedChunksLoaded(Vector3D<int> position) {
-		return world.getChunk(position).loaded 
-			&& world.getChunk(position + Vector3D<int>(1, 0, 0)).loaded
-			&& world.getChunk(position + Vector3D<int>(-1, 0, 0)).loaded
-			&& world.getChunk(position + Vector3D<int>(0, 1, 0)).loaded
-			&& world.getChunk(position + Vector3D<int>(0, -1, 0)).loaded
-			&& world.getChunk(position + Vector3D<int>(0, 0, 1)).loaded
-			&& world.getChunk(position + Vector3D<int>(0, 0, -1)).loaded;
+		return world.getChunk(position).loaded
+			&& world.getChunk(position + Vector3D(1, 0, 0)).loaded
+			&& world.getChunk(position - Vector3D(1, 0, 0)).loaded
+			&& world.getChunk(position + Vector3D(0, 1, 0)).loaded
+			&& world.getChunk(position - Vector3D(0, 1, 0)).loaded
+			&& world.getChunk(position + Vector3D(0, 0, 1)).loaded
+			&& world.getChunk(position - Vector3D(0, 0, 1)).loaded;
+	}
+
+	void Render::checkForChunks() {
+		for (int r = 0; r <= renderRadius; ++r) {
+			for (int x = -renderRadius; x <= renderRadius; ++x) {
+				for (int y = -renderRadius; y <= renderRadius; ++y) {
+					for (int z = -renderRadius; z <= renderRadius; ++z) {
+						if (x * x + y * y + z * z <= r * r) {
+							auto position = camera.getWorldPosition() + Vector3D(x, y, z);
+							if (!chunks.contains(position) || world.getChunk(position).changed) {
+								if (isRelatedChunksLoaded(position)) {
+									generateChunkMesh(position);
+									world.getChunk(position).changed = false;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
 

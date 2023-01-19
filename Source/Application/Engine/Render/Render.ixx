@@ -54,6 +54,8 @@ export namespace Sandcore {
 
 		void clearUnwantedChunks();
 
+		void checkForChunks();
+
 		RenderCamera camera;
 		ShaderProgram blocksShader;
 		ShaderProgram screenShader;

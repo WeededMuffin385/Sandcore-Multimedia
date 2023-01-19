@@ -9,7 +9,6 @@ export namespace Sandcore {
 		Scene(Window& window, Event& event);
 
 		virtual void tick() final;
-		virtual void render() final;
 	protected:
 		virtual void draw() = 0;
 		virtual void input() = 0;

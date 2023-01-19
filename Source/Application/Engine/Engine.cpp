@@ -162,6 +162,15 @@ namespace Sandcore {
 
 		Message::decompileBlockMessage(client.connection->recieve(), worldPosition, chunkPosition, id);
 		world.getChunk(worldPosition).setBlock(chunkPosition, Block(id));
+
+		if (chunkPosition.x == 0) render.generateChunkMesh(worldPosition - Vector3D(1, 0, 0));
+		if (chunkPosition.x == 15) render.generateChunkMesh(worldPosition + Vector3D(1, 0, 0));
+
+		if (chunkPosition.y == 0) render.generateChunkMesh(worldPosition - Vector3D(0, 1, 0));
+		if (chunkPosition.y == 15) render.generateChunkMesh(worldPosition + Vector3D(0, 1, 0));
+
+		if (chunkPosition.z == 0) render.generateChunkMesh(worldPosition - Vector3D(0, 0, 1));
+		if (chunkPosition.z == 15) render.generateChunkMesh(worldPosition + Vector3D(0, 0, 1));
 	}
 
 	void Engine::recieve() {

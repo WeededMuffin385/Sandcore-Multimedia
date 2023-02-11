@@ -1,6 +1,8 @@
 #include <unordered_map>
-
 #include <glm/glm.hpp>
+
+
+#define GLEW_STATIC
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
@@ -12,7 +14,7 @@ import Sandcore.World;
 import Sandcore.Vector3D;
 import Sandcore.Vector3D.Hash;
 import Sandcore.Mesh;
-import Sandcore.TexturePackage;
+import Sandcore.Render.Textures;
 import Sandcore.Window;
 import Sandcore.Event;
 import Sandcore.Cube;
@@ -25,10 +27,10 @@ import Sandcore.Render.Chunk.Vertex;
 import Sandcore.Render.Chunk;
 import Sandcore.Render.Camera;
 
+import Sandcore.Render.Chunks;
+
 export namespace Sandcore {
 	class Render {
-	public:
-		
 	public:
 		Render(Window& window, Event& event, World& world);
 
@@ -39,27 +41,15 @@ export namespace Sandcore {
 		void events();
 		void update();
 
-		void drawBlocks();
-		void drawBlocks(RenderChunk::Identification identification);
-
 		void drawScreenEffects();
 		void drawUnderwaterEffect();
 
 		void updateViewport();
 
-		void generateChunkMesh(Vector3D<int> position);
-		bool isBlocked(Vector3D<int> worldPosition, Vector3D<int> chunkPosition, RenderChunk::Identification section);
-
-		bool isRelatedChunksLoaded(Vector3D<int> position);
-
-		void clearUnwantedChunks();
-
-		void checkForChunks();
-
+		RenderChunks chunks;
 		RenderCamera camera;
-		ShaderProgram blocksShader;
 		ShaderProgram screenShader;
-		TexturePackage texturePackage;
+		RenderTextures textures;
 		World& world;
 
 		Texture2D underwater;
@@ -69,12 +59,7 @@ export namespace Sandcore {
 		Event& event;
 
 		bool mouse = true;
-		int renderRadius = 6;
-
-		bool cameraFocus = true;
 		bool spectator = false;
-
-		std::unordered_map<Vector3D<int>, RenderChunk, Vector3DHash<int>> chunks;
 
 		friend class Engine;
 	};

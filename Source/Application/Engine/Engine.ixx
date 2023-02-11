@@ -43,7 +43,12 @@ export namespace Sandcore {
 
 		void createEntity(int id);
 
-		int yourId = 0;
+		void breakBlock();
+		void placeBlock();
+
+		int distance = 7;
+		int precision = 10;
+		int currentID = 0;
 
 		TPS tps;
 

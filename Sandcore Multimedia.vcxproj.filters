@@ -40,22 +40,22 @@
     <ClCompile Include="Source\Application\Engine\Render\Camera\RenderCamera.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Application\Engine\Render\Chunk\Vertex\RenderChunkVertex.cpp">
+    <ClCompile Include="Source\Application\Engine\Render\Chunks\Chunk\Vertex\RenderChunkVertex.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Application\Engine\Render\Chunk\Vertex\RenderChunkVertex.ixx">
+    <ClCompile Include="Source\Application\Engine\Render\Chunks\Chunk\Vertex\RenderChunkVertex.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Application\Engine\Render\Chunk\RenderChunk.cpp">
+    <ClCompile Include="Source\Application\Engine\Render\Chunks\Chunk\RenderChunk.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Application\Engine\Render\Chunk\RenderChunk.ixx">
+    <ClCompile Include="Source\Application\Engine\Render\Chunks\Chunk\RenderChunk.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Application\Engine\Render\TexturePackage\TexturePackage.cpp">
+    <ClCompile Include="Source\Application\Engine\Render\Textures\RenderTextures.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Application\Engine\Render\TexturePackage\TexturePackage.ixx">
+    <ClCompile Include="Source\Application\Engine\Render\Textures\RenderTextures.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Source\Application\Engine\Render\Cube.ixx">
@@ -269,6 +269,12 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Source\main.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\Engine\Render\Chunks\RenderChunks.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\Engine\Render\Chunks\RenderChunks.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

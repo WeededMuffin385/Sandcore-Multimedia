@@ -12,10 +12,6 @@ namespace Sandcore {
 		return chunks[position];
 	}
 
-	std::unordered_map<Vector3D<int>, WorldChunk, Vector3DHash<int>>& World::getChunks() {
-		return chunks;
-	}
-
 	std::unordered_map<int, std::unique_ptr<Entity>>& World::getEntities() {
 		return entities;
 	}

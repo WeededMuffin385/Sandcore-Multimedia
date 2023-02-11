@@ -1,7 +1,7 @@
 export module Sandcore.Cube;
 
 import Sandcore.World.Block;
-import Sandcore.TexturePackage;
+import Sandcore.Render.Textures;
 
 export namespace Sandcore {
 	struct Axis {
@@ -21,18 +21,20 @@ export namespace Sandcore {
 	};
 
 	Cube Cube::getCube(Block::Identification identification) {
+		using T = RenderTextures::BlockIdentification;
+
 		switch (identification) { // switch - because faster
-			case Sandcore::Block::grass:	return { {(float)TexturePackage::BlockIdentification::grassSide, (float)TexturePackage::BlockIdentification::grassSide}, {(float)TexturePackage::BlockIdentification::grassSide, (float)TexturePackage::BlockIdentification::grassSide}, {(float)TexturePackage::BlockIdentification::dirt, (float)TexturePackage::BlockIdentification::grassTop} };
-			case Sandcore::Block::stone:	return { {(float)TexturePackage::BlockIdentification::stone,(float)TexturePackage::BlockIdentification::stone}, {(float)TexturePackage::BlockIdentification::stone,(float)TexturePackage::BlockIdentification::stone}, {(float)TexturePackage::BlockIdentification::stone,(float)TexturePackage::BlockIdentification::stone} };
-			case Sandcore::Block::dirt:		return { {(float)TexturePackage::BlockIdentification::dirt, (float)TexturePackage::BlockIdentification::dirt}, {(float)TexturePackage::BlockIdentification::dirt, (float)TexturePackage::BlockIdentification::dirt}, {(float)TexturePackage::BlockIdentification::dirt, (float)TexturePackage::BlockIdentification::dirt} };
-			case Sandcore::Block::water:	return { {(float)TexturePackage::BlockIdentification::waterTop,(float)TexturePackage::BlockIdentification::waterTop }, {(float)TexturePackage::BlockIdentification::waterTop,(float)TexturePackage::BlockIdentification::waterTop}, {(float)TexturePackage::BlockIdentification::waterTop,(float)TexturePackage::BlockIdentification::waterTop} };
-			case Sandcore::Block::sand:		return { {(float)TexturePackage::BlockIdentification::sand,(float)TexturePackage::BlockIdentification::sand}, {(float)TexturePackage::BlockIdentification::sand,(float)TexturePackage::BlockIdentification::sand}, {(float)TexturePackage::BlockIdentification::sand,(float)TexturePackage::BlockIdentification::sand} };
-			case Sandcore::Block::wood:		return { {(float)TexturePackage::BlockIdentification::woodSide, (float)TexturePackage::BlockIdentification::woodSide}, {(float)TexturePackage::BlockIdentification::woodSide,(float)TexturePackage::BlockIdentification::woodSide}, {(float)TexturePackage::BlockIdentification::woodTop,(float)TexturePackage::BlockIdentification::woodTop} };
-			case Sandcore::Block::leaves:	return { {(float)TexturePackage::BlockIdentification::leaves, (float)TexturePackage::BlockIdentification::leaves},{(float)TexturePackage::BlockIdentification::leaves, (float)TexturePackage::BlockIdentification::leaves},{(float)TexturePackage::BlockIdentification::leaves, (float)TexturePackage::BlockIdentification::leaves} };
-			case Sandcore::Block::lava:		return { {(float)TexturePackage::BlockIdentification::lava,(float)TexturePackage::BlockIdentification::lava}, {(float)TexturePackage::BlockIdentification::lava,(float)TexturePackage::BlockIdentification::lava}, {(float)TexturePackage::BlockIdentification::lava,(float)TexturePackage::BlockIdentification::lava} };
-			case Sandcore::Block::ironOre:	return { {(float)TexturePackage::BlockIdentification::ironOre, (float)TexturePackage::BlockIdentification::ironOre}, {(float)TexturePackage::BlockIdentification::ironOre, (float)TexturePackage::BlockIdentification::ironOre}, {(float)TexturePackage::BlockIdentification::ironOre, (float)TexturePackage::BlockIdentification::ironOre} };
-			case Sandcore::Block::coalOre:	return { {(float)TexturePackage::BlockIdentification::coalOre, (float)TexturePackage::BlockIdentification::coalOre}, {(float)TexturePackage::BlockIdentification::coalOre, (float)TexturePackage::BlockIdentification::coalOre}, {(float)TexturePackage::BlockIdentification::coalOre, (float)TexturePackage::BlockIdentification::coalOre} };
-			case Sandcore::Block::goldOre:	return { {(float)TexturePackage::BlockIdentification::goldOre, (float)TexturePackage::BlockIdentification::goldOre}, {(float)TexturePackage::BlockIdentification::goldOre, (float)TexturePackage::BlockIdentification::goldOre}, {(float)TexturePackage::BlockIdentification::goldOre, (float)TexturePackage::BlockIdentification::goldOre} };
+			case Sandcore::Block::Grass:	return { {(float)T::GrassSide,	(float)T::GrassSide},	{(float)T::GrassSide,	(float)T::GrassSide},	{(float)T::Dirt,		(float)T::GrassTop} };
+			case Sandcore::Block::Stone:	return { {(float)T::Stone,		(float)T::Stone},		{(float)T::Stone,		(float)T::Stone},		{(float)T::Stone,		(float)T::Stone} };
+			case Sandcore::Block::Dirt:		return { {(float)T::Dirt,		(float)T::Dirt},		{(float)T::Dirt,		(float)T::Dirt},		{(float)T::Dirt,		(float)T::Dirt} };
+			case Sandcore::Block::Water:	return { {(float)T::WaterTop,	(float)T::WaterTop },	{(float)T::WaterTop,	(float)T::WaterTop},	{(float)T::WaterTop,	(float)T::WaterTop} };
+			case Sandcore::Block::Sand:		return { {(float)T::Sand,		(float)T::Sand},		{(float)T::Sand,		(float)T::Sand},		{(float)T::Sand,		(float)T::Sand} };
+			case Sandcore::Block::Wood:		return { {(float)T::WoodSide,	(float)T::WoodSide},	{(float)T::WoodSide,	(float)T::WoodSide},	{(float)T::WoodTop,		(float)T::WoodTop} };
+			case Sandcore::Block::Leaves:	return { {(float)T::Leaves,		(float)T::Leaves},		{(float)T::Leaves,		(float)T::Leaves},		{(float)T::Leaves,		(float)T::Leaves} };
+			case Sandcore::Block::Lava:		return { {(float)T::Lava,		(float)T::Lava},		{(float)T::Lava,		(float)T::Lava},		{(float)T::Lava,		(float)T::Lava} };
+			case Sandcore::Block::IronOre:	return { {(float)T::IronOre,	(float)T::IronOre},		{(float)T::IronOre,		(float)T::IronOre},		{(float)T::IronOre,		(float)T::IronOre} };
+			case Sandcore::Block::CoalOre:	return { {(float)T::CoalOre,	(float)T::CoalOre},		{(float)T::CoalOre,		(float)T::CoalOre},		{(float)T::CoalOre,		(float)T::CoalOre} };
+			case Sandcore::Block::GoldOre:	return { {(float)T::GoldOre,	(float)T::GoldOre},		{(float)T::GoldOre,		(float)T::GoldOre},		{(float)T::GoldOre,		(float)T::GoldOre} };
 			default:						return { 0,0,0,0,0,0 };
 		}
 	}

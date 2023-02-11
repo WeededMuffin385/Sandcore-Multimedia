@@ -44,9 +44,5 @@ export namespace Sandcore {
 
 		double lastx;
 		double lasty;
-
-	protected:
-
-		friend class Frustum;
 	};
 }

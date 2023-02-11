@@ -3,6 +3,7 @@
 #include <iostream>
 
 #include <asio.hpp>
+#include <limits>
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -24,7 +25,7 @@ import Sandcore.World.Bounds;
 import Sandcore.Vector3D.GLM;
 
 namespace Sandcore {
-	Engine::Engine(Window& window, Event& event) : Scene(window, event) , render(window, event, world) {
+	Engine::Engine(Window& window, Event& event) : Scene(window, event), render(window, event, world) {
 		while (!connect()) std::cout << "Re-connecting...\n";
 	}
 
@@ -43,18 +44,62 @@ namespace Sandcore {
 
 		if (event.type == Event::Type::mouse) {
 			if (event.mouse.button == GLFW_MOUSE_BUTTON_RIGHT) {
-				if (event.mouse.action == GLFW_RELEASE) {
-					Vector3D<double> chunkPosition = render.camera.getChunkPosition();
-					Vector3D<int> worldPosition = render.camera.getWorldPosition();
+				if (event.mouse.action == GLFW_RELEASE) breakBlock();
+			}
 
-					auto vec = render.camera.getFront();
+			if (event.mouse.button == GLFW_MOUSE_BUTTON_LEFT) {
+				if (event.mouse.action == GLFW_RELEASE) placeBlock();
+			}
+		}
+	}
 
-					chunkPosition += Vector3D<double>(vec.x, vec.y, vec.z);
+	void Engine::breakBlock() {
+		Vector3D<double> chunkPosition = render.camera.getChunkPosition();
+		Vector3D<int> worldPosition = render.camera.getWorldPosition();
 
-					bounds<WorldChunk::size>(worldPosition, chunkPosition);
+		Vector3D<double>	vec; {
+			auto v = render.camera.getFront() ;
+			vec = Vector3D<double>(v.x / precision, v.y / precision, v.z / precision);
+		}
 
-					client.connection->send(Sandcore::Message::generateBreakMessage(worldPosition, chunkPosition));
-				}
+		for (int i = 0; i < distance * precision; ++i) {
+			chunkPosition += Vector3D<double>(vec.x, vec.y, vec.z);
+			bounds<WorldChunk::size>(worldPosition, chunkPosition);
+
+			if (world.getChunk(worldPosition).getBlock(chunkPosition).getId() != Block::Identification::Vacuum) {
+				client.connection->send(Sandcore::Message::generateBreakMessage(worldPosition, chunkPosition));
+				break;
+			}
+		}
+	}
+
+	void Engine::placeBlock() {
+		Vector3D<int>		emptyChunkPosition;
+		Vector3D<int>		emptyWorldPosition;
+
+		bool found = false;
+
+		Vector3D<double>	chunkPosition = render.camera.getChunkPosition();
+		Vector3D<int>		worldPosition = render.camera.getWorldPosition();
+
+		Vector3D<double>	vec; {
+			auto v = render.camera.getFront();
+			vec = Vector3D<double>(v.x / precision, v.y / precision, v.z / precision);
+		}
+
+		for (int i = 0; i < distance * precision; ++i) {
+			chunkPosition += vec;
+			bounds<WorldChunk::size>(worldPosition, chunkPosition);
+
+			if (world.getChunk(worldPosition).getBlock(chunkPosition).getId() == Block::Identification::Vacuum) {
+				emptyWorldPosition = worldPosition;
+				emptyChunkPosition = chunkPosition;
+				found = true;
+			}
+
+			if (world.getChunk(worldPosition).getBlock(chunkPosition).getId() != Block::Identification::Vacuum && found) {
+				client.connection->send(Sandcore::Message::generatePlaceMessage(emptyWorldPosition, emptyChunkPosition, Block::Identification::Stone));
+				break;
 			}
 		}
 	}
@@ -82,7 +127,7 @@ namespace Sandcore {
 	}
 
 	void Engine::requestChunks() {
-		for (auto& [position, chunk] : world.getChunks()) {
+		for (auto& [position, chunk] : world.chunks) {
 			if (!chunk.loadInProgress && (!chunk.loaded || (chunk.drawCount >= 60))) {
 				chunk.loadInProgress = true;
 				client.connection->send(Message::generateRequestChunkMessage(position));
@@ -126,7 +171,7 @@ namespace Sandcore {
 		}
 
 
-		if ((id == yourId) && render.cameraFocus) {
+		if ((id == currentID) && !render.spectator) {
 			render.camera.setPosition(worldPosition, chunkPosition + Vector3D<double>(0, 0, world.getEntities()[id]->getSize().z * 0.8));
 		}
 	}
@@ -142,7 +187,7 @@ namespace Sandcore {
 	
 
 		if (you) {
-			yourId = id;
+			currentID = id;
 		}
 
 		world.getEntities()[id]->loaded = true;
@@ -163,14 +208,14 @@ namespace Sandcore {
 		Message::decompileBlockMessage(client.connection->recieve(), worldPosition, chunkPosition, id);
 		world.getChunk(worldPosition).setBlock(chunkPosition, Block(id));
 
-		if (chunkPosition.x == 0) render.generateChunkMesh(worldPosition - Vector3D(1, 0, 0));
-		if (chunkPosition.x == 15) render.generateChunkMesh(worldPosition + Vector3D(1, 0, 0));
+		if (chunkPosition.x == 0)	world.getChunk(worldPosition - Vector3D(1, 0, 0)).changed = true;
+		if (chunkPosition.x == 15)	world.getChunk(worldPosition + Vector3D(1, 0, 0)).changed = true;
 
-		if (chunkPosition.y == 0) render.generateChunkMesh(worldPosition - Vector3D(0, 1, 0));
-		if (chunkPosition.y == 15) render.generateChunkMesh(worldPosition + Vector3D(0, 1, 0));
+		if (chunkPosition.y == 0)	world.getChunk(worldPosition - Vector3D(0, 1, 0)).changed = true;
+		if (chunkPosition.y == 15)	world.getChunk(worldPosition + Vector3D(0, 1, 0)).changed = true;
 
-		if (chunkPosition.z == 0) render.generateChunkMesh(worldPosition - Vector3D(0, 0, 1));
-		if (chunkPosition.z == 15) render.generateChunkMesh(worldPosition + Vector3D(0, 0, 1));
+		if (chunkPosition.z == 0)	world.getChunk(worldPosition - Vector3D(0, 0, 1)).changed = true;
+		if (chunkPosition.z == 15)	world.getChunk(worldPosition + Vector3D(0, 0, 1)).changed = true;
 	}
 
 	void Engine::recieve() {
@@ -178,23 +223,23 @@ namespace Sandcore {
 			Message::Identification messageIdentification = static_cast<Message::Identification>(client.connection->recieve()[0]);
 
 			switch (messageIdentification) {
-			case Message::Identification::text:
+			case Message::Identification::Text:
 				recieveText();
 				break;
 
-			case Message::Identification::sending_chunk:
+			case Message::Identification::SendingChunk:
 				recieveChunks();
 				break;
 
-			case Message::Identification::sending_entity:
+			case Message::Identification::SendingEntity:
 				recieveEntity();
 				break;
 
-			case Message::Identification::sending_entity_position:
+			case Message::Identification::SendingEntityPosition:
 				recieveEntityPosition();
 				break;
 
-			case Message::Identification::sending_block:
+			case Message::Identification::SendingBlock:
 				recieveBlock();
 				break;
 			}

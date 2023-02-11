@@ -15,16 +15,15 @@ import Sandcore.World.Chunk;
 export namespace Sandcore {
 	class World {
 	public:
-
 		WorldChunk& getChunk(int x, int y, int z);
 		WorldChunk& getChunk(Vector3D<int> position);
 
 		std::unordered_map<int, std::unique_ptr<Entity>>& getEntities();
-		std::unordered_map<Vector3D<int>, WorldChunk, Vector3DHash<int>>& getChunks();
-
 	private:
 
 		std::unordered_map<int, std::unique_ptr<Entity>> entities;
 		std::unordered_map<Vector3D<int>, WorldChunk, Vector3DHash<int>> chunks;
+
+		friend class Engine;
 	};
 }

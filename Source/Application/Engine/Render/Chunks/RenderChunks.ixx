@@ -16,19 +16,21 @@ import Sandcore.Shader.Program;
 import Sandcore.Window;
 import Sandcore.Render.Camera;
 
+import Sandcore.Vertex;
+
 export namespace Sandcore {
 	class RenderChunks {
 	public:
 		RenderChunks(World& world, Window& window, RenderCamera& camera, RenderTextures& textures);
 
 		void update();
-
 		void draw();
-		void draw(RenderChunk::Identification identification);
 
 		void resolution(int width, int height);
 
 	private:
+		void draw(RenderChunk::Identification identification);
+
 		void clearUnwantedChunks();
 		void checkChunks();
 		void extendRenderChunk(Mesh<RenderChunkVertex>& chunk);

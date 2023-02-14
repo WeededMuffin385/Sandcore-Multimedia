@@ -1,6 +1,5 @@
 #include <unordered_map>
 #include <fstream>
-#include <iostream>
 
 #include <asio.hpp>
 #include <limits>
@@ -8,6 +7,7 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <GLFW/glfw3.h>
+
 
 import Sandcore.Engine;
 
@@ -24,9 +24,11 @@ import Sandcore.World.Bounds;
 
 import Sandcore.Vector3D.GLM;
 
+import Sandcore.Print;
+
 namespace Sandcore {
 	Engine::Engine(Window& window, Event& event) : Scene(window, event), render(window, event, world) {
-		while (!connect()) std::cout << "Re-connecting...\n";
+		while (!connect()) std::print("Re-connecting...\n");
 	}
 
 	Engine::~Engine() {

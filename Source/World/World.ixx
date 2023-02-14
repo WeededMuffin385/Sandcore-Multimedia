@@ -5,11 +5,8 @@ export module Sandcore.World;
 
 import Sandcore.Vector3D;
 import Sandcore.Vector3D.Hash;
-
 import Sandcore.World.Entity;
-
 import Sandcore.World.Block;
-
 import Sandcore.World.Chunk;
 
 export namespace Sandcore {

@@ -1,7 +1,6 @@
 #include <string>
 #include <filesystem>
 #include <fstream>
-#include <iostream>
 
 
 
@@ -10,6 +9,8 @@
 #include <GLFW/glfw3.h>
 
 import Sandcore.Shader.Object;
+
+import Sandcore.Print;
 
 namespace Sandcore{
 	
@@ -27,7 +28,8 @@ namespace Sandcore{
 	}
 	
 	void ShaderObject::loadFromFile(std::filesystem::path path) {
-		if (!std::filesystem::exists(path)) std::cout << "SHADERS DOESN'T EXISTS ON: " << path << "\n";
+		if (!std::filesystem::exists(path)) std::print("SHADERS DOESN'T EXISTS ON: {}", path.string());
+
 		std::ifstream file(path);
 		std::string source;
 		std::getline(file, source, '\0');

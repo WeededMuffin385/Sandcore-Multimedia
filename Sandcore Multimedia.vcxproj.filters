@@ -166,12 +166,6 @@
     <ClCompile Include="Source\Graphics\Textures\Texture3D\Texture3D.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Vertex\Vertex.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Vertex\Vertex.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Graphics\Window\Event\Event.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
@@ -275,6 +269,21 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Source\Application\Engine\Render\Chunks\RenderChunks.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore-Engine\Common\Print\Print.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\Engine\Render\Highlight\RenderHighlight.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\Engine\Render\Highlight\RenderHightlight.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Vertex\Vertex.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Vertex\Vertex.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

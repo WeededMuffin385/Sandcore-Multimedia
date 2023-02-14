@@ -5,6 +5,7 @@
 #include <cstdint>
 
 
+
 import Sandcore.Client;
 
 import Sandcore.Byte;
@@ -53,11 +54,9 @@ namespace Sandcore {
 			}
 
 			asio::connect(connection->socket, endpoints);
-		}
-		catch (std::exception& e) {
+		} catch (std::exception& e) {
 			if (debug) {
 			}
-
 			return false;
 		}
 

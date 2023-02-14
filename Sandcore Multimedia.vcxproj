@@ -143,6 +143,7 @@
   <ItemGroup>
     <ClCompile Include="..\Sandcore-Engine\Common\Clock\Clock.cpp" />
     <ClCompile Include="..\Sandcore-Engine\Common\Clock\Clock.ixx" />
+    <ClCompile Include="..\Sandcore-Engine\Common\Print\Print.ixx" />
     <ClCompile Include="..\Sandcore-Engine\Common\TPS\TPS.ixx" />
     <ClCompile Include="..\Sandcore-Engine\Common\Vector3D\Vector3D.cpp" />
     <ClCompile Include="..\Sandcore-Engine\Common\Vector3D\Vector3D.ixx" />
@@ -175,6 +176,8 @@
     <ClCompile Include="Source\Application\Engine\Render\Chunks\Chunk\Vertex\RenderChunkVertex.cpp" />
     <ClCompile Include="Source\Application\Engine\Render\Chunks\Chunk\Vertex\RenderChunkVertex.ixx" />
     <ClCompile Include="Source\Application\Engine\Render\Cube.ixx" />
+    <ClCompile Include="Source\Application\Engine\Render\Highlight\RenderHighlight.ixx" />
+    <ClCompile Include="Source\Application\Engine\Render\Highlight\RenderHightlight.cpp" />
     <ClCompile Include="Source\Application\Engine\Render\Render.cpp" />
     <ClCompile Include="Source\Application\Engine\Render\Render.ixx" />
     <ClCompile Include="Source\Application\Engine\Render\Textures\RenderTextures.cpp" />

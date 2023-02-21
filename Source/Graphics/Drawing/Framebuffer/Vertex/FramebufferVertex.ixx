@@ -2,11 +2,8 @@
 
 export module Sandcore.Framebuffer.Vertex;
 
-export namespace Sandcore {
-	class FramebufferVertex {
-	public:
-		glm::float32 index;
+import Sandcore.Vertex;
 
-		static void setAttributeDescriptions();
-	};
+export namespace Sandcore {
+	using  FramebufferVertex = typename Vertex<glm::float32>;
 }

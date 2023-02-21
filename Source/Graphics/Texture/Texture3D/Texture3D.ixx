@@ -18,7 +18,6 @@ export namespace Sandcore {
 		void loadFromFile(int layer, std::filesystem::path path);
 
 		void generateMipmap();
-
 	private:
 		int width;
 		int height;

@@ -55,6 +55,17 @@ namespace Sandcore {
 		}
 	}
 
+	bool touchable(Block::Identification identification) {
+		switch (identification) {
+		case Block::Identification::Water:
+		case Block::Identification::Vacuum:
+			return false;
+			
+		default:
+			return true;
+		}
+	}
+
 	void Engine::breakBlock() {
 		Vector3D<double> chunkPosition = render.camera.getChunkPosition();
 		Vector3D<int> worldPosition = render.camera.getWorldPosition();
@@ -68,7 +79,7 @@ namespace Sandcore {
 			chunkPosition += Vector3D<double>(vec.x, vec.y, vec.z);
 			bounds<WorldChunk::size>(worldPosition, chunkPosition);
 
-			if (world.getChunk(worldPosition).getBlock(chunkPosition).getId() != Block::Identification::Vacuum) {
+			if (touchable(world.getChunk(worldPosition).getBlock(chunkPosition).getId())) {
 				client.connection->send(Sandcore::Message::generateBreakMessage(worldPosition, chunkPosition));
 				break;
 			}
@@ -93,13 +104,13 @@ namespace Sandcore {
 			chunkPosition += vec;
 			bounds<WorldChunk::size>(worldPosition, chunkPosition);
 
-			if (world.getChunk(worldPosition).getBlock(chunkPosition).getId() == Block::Identification::Vacuum) {
+			if (!touchable(world.getChunk(worldPosition).getBlock(chunkPosition).getId())) {
 				emptyWorldPosition = worldPosition;
 				emptyChunkPosition = chunkPosition;
 				found = true;
 			}
 
-			if (world.getChunk(worldPosition).getBlock(chunkPosition).getId() != Block::Identification::Vacuum && found) {
+			if (touchable(world.getChunk(worldPosition).getBlock(chunkPosition).getId()) && found) {
 				client.connection->send(Sandcore::Message::generatePlaceMessage(emptyWorldPosition, emptyChunkPosition, Block::Identification::Stone));
 				break;
 			}

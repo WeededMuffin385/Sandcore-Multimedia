@@ -135,8 +135,8 @@ namespace Sandcore {
 				int offset = chunk.vertices.size();
 				float light = 0.95f;
 
-				chunk.vertices.push_back({ { x + 1,y,z }, light,cube.x.plus, 2 });
-				chunk.vertices.push_back({ { x + 1,y + 1,z }, light,cube.x.plus, 3 });
+				chunk.vertices.push_back({ { x + 1,y,z }, light,cube.x.plus, 2});
+				chunk.vertices.push_back({ { x + 1,y + 1,z }, light,cube.x.plus, 3});
 				chunk.vertices.push_back({ { x + 1,y + 1,z + 1 }, light,cube.x.plus, 0 });
 				chunk.vertices.push_back({ { x + 1,y,z + 1 }, light,cube.x.plus, 1 });
 
@@ -190,7 +190,7 @@ namespace Sandcore {
 				int offset = chunk.vertices.size();
 				float light = 0.75f;
 
-				chunk.vertices.push_back({ { x ,y ,z }, light,cube.z.minus, 0 });
+				chunk.vertices.push_back({ { x ,y ,z }, light,cube.z.minus, 0});
 				chunk.vertices.push_back({ { x ,y + 1 ,z }, light,cube.z.minus, 1 });
 				chunk.vertices.push_back({ { x + 1 ,y + 1 ,z }, light,cube.z.minus, 2 });
 				chunk.vertices.push_back({ { x + 1,y ,z }, light,cube.z.minus, 3 });

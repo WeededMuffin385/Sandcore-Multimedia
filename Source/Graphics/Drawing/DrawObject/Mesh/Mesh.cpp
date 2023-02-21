@@ -11,7 +11,7 @@ import Sandcore.Render.Chunk.Vertex;
 import Sandcore.Graphics.Draw.Target;
 
 namespace Sandcore {
-	template class Mesh<Vertex>;
+	// template class Mesh<Vertex>;
 	template class Mesh<RenderChunkVertex>;
 	template class Mesh<FramebufferVertex>;
 

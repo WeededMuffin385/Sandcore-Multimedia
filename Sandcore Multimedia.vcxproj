@@ -150,6 +150,7 @@
     <ClCompile Include="..\Sandcore-Engine\Common\Vector3D\Vector3DHash.ixx" />
     <ClCompile Include="..\Sandcore-Engine\Graphics\Image\Image.cpp" />
     <ClCompile Include="..\Sandcore-Engine\Graphics\Image\Image.ixx" />
+    <ClCompile Include="..\Sandcore-Engine\Graphics\Vertex\Vertex.ixx" />
     <ClCompile Include="..\Sandcore-Engine\Network\Connection\Connection.cpp" />
     <ClCompile Include="..\Sandcore-Engine\Network\Connection\Connection.ixx" />
     <ClCompile Include="..\Sandcore-Engine\Network\Message\Byte.ixx" />
@@ -173,7 +174,6 @@
     <ClCompile Include="Source\Application\Engine\Render\Chunks\RenderChunks.ixx" />
     <ClCompile Include="Source\Application\Engine\Render\Chunks\Chunk\RenderChunk.cpp" />
     <ClCompile Include="Source\Application\Engine\Render\Chunks\Chunk\RenderChunk.ixx" />
-    <ClCompile Include="Source\Application\Engine\Render\Chunks\Chunk\Vertex\RenderChunkVertex.cpp" />
     <ClCompile Include="Source\Application\Engine\Render\Chunks\Chunk\Vertex\RenderChunkVertex.ixx" />
     <ClCompile Include="Source\Application\Engine\Render\Cube.ixx" />
     <ClCompile Include="Source\Application\Engine\Render\Highlight\RenderHighlight.ixx" />
@@ -197,7 +197,6 @@
     <ClCompile Include="Source\Graphics\Drawing\DrawTarget\DrawTarget.ixx" />
     <ClCompile Include="Source\Graphics\Drawing\Framebuffer\Framebuffer.cpp" />
     <ClCompile Include="Source\Graphics\Drawing\Framebuffer\Framebuffer.ixx" />
-    <ClCompile Include="Source\Graphics\Drawing\Framebuffer\Vertex\FramebufferVertex.cpp" />
     <ClCompile Include="Source\Graphics\Drawing\Framebuffer\Vertex\FramebufferVertex.ixx" />
     <ClCompile Include="Source\Graphics\ShaderProgram\ShaderObject\ShaderObject.cpp" />
     <ClCompile Include="Source\Graphics\ShaderProgram\ShaderObject\ShaderObject.ixx" />
@@ -205,14 +204,12 @@
     <ClCompile Include="Source\Graphics\ShaderProgram\ShaderProgram.ixx" />
     <ClCompile Include="Source\Graphics\Sprite\Sprite.cpp" />
     <ClCompile Include="Source\Graphics\Sprite\Sprite.ixx" />
-    <ClCompile Include="Source\Graphics\Textures\Texture2D\Texture2D.cpp" />
-    <ClCompile Include="Source\Graphics\Textures\Texture2D\Texture2D.ixx" />
-    <ClCompile Include="Source\Graphics\Textures\Texture3D\Texture3D.cpp" />
-    <ClCompile Include="Source\Graphics\Textures\Texture3D\Texture3D.ixx" />
-    <ClCompile Include="Source\Graphics\Textures\Texture\Texture.cpp" />
-    <ClCompile Include="Source\Graphics\Textures\Texture\Texture.ixx" />
-    <ClCompile Include="Source\Graphics\Vertex\Vertex.cpp" />
-    <ClCompile Include="Source\Graphics\Vertex\Vertex.ixx" />
+    <ClCompile Include="Source\Graphics\Texture\Texture2D\Texture2D.cpp" />
+    <ClCompile Include="Source\Graphics\Texture\Texture2D\Texture2D.ixx" />
+    <ClCompile Include="Source\Graphics\Texture\Texture3D\Texture3D.cpp" />
+    <ClCompile Include="Source\Graphics\Texture\Texture3D\Texture3D.ixx" />
+    <ClCompile Include="Source\Graphics\Texture\Texture.cpp" />
+    <ClCompile Include="Source\Graphics\Texture\Texture.ixx" />
     <ClCompile Include="Source\Graphics\Window\Event\Event.cpp" />
     <ClCompile Include="Source\Graphics\Window\Event\Event.ixx" />
     <ClCompile Include="Source\Graphics\Window\Window.cpp" />

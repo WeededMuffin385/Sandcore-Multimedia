@@ -52,7 +52,9 @@ namespace Sandcore {
 
 		glEnable(GL_MULTISAMPLE);
 
-		mesh.vertices = { {0}, {1}, {2}, {3} };
+		using FV = FramebufferVertex;
+
+		mesh.vertices = { {0},{1}, {2}, {3} };
 		mesh.indices = { 0, 1, 2, 0, 2, 3 };
 		mesh.update();
 

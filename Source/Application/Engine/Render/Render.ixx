@@ -8,24 +8,24 @@
 
 export module Sandcore.Render;
 
-import Sandcore.Shader.Program;
-import Sandcore.Camera;
-import Sandcore.World;
-import Sandcore.Vector3D;
-import Sandcore.Vector3D.Hash;
-import Sandcore.Mesh;
-import Sandcore.Render.Textures;
 import Sandcore.Window;
 import Sandcore.Event;
-import Sandcore.Cube;
+
+import Sandcore.Render.Chunk;
+import Sandcore.Render.Camera;
+
+import Sandcore.Shader.Program;
+import Sandcore.Render.Textures;
+import Sandcore.World;
+
 import Sandcore.Graphics.Texture2D;
+import Sandcore.Mesh;
+
+import Sandcore.Vertex;
 
 import Sandcore.Framebuffer;
 import Sandcore.Framebuffer.Vertex;
 import Sandcore.Render.Chunk.Vertex;
-
-import Sandcore.Render.Chunk;
-import Sandcore.Render.Camera;
 
 import Sandcore.Render.Chunks;
 
@@ -53,7 +53,7 @@ export namespace Sandcore {
 		World& world;
 
 		Texture2D underwater;
-		Mesh<FramebufferVertex> mesh;
+		Mesh<Vertex<glm::float32>> mesh;
 
 		Window& window;
 		Event& event;

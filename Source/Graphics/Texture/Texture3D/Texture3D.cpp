@@ -45,7 +45,7 @@ namespace Sandcore {
 						width, height, 1,			// width, height, depth
 						GL_RGBA,					// format
 						GL_UNSIGNED_BYTE,			// type
-						image.get());				// pointer to data
+						image.data());				// pointer to data
 		unbind();
 	}
 }

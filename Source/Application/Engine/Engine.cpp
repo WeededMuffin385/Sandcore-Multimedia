@@ -44,7 +44,7 @@ namespace Sandcore {
 	void Engine::events() {
 		render.events();
 
-		if (event.type == Event::Type::mouse) {
+		if (event.type == Event::Type::Mouse) {
 			if (event.mouse.button == GLFW_MOUSE_BUTTON_RIGHT) {
 				if (event.mouse.action == GLFW_RELEASE) breakBlock();
 			}

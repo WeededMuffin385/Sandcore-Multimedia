@@ -46,7 +46,7 @@ namespace Sandcore {
 
 	void Event::cursor_position_callback(GLFWwindow* window, double xpos, double ypos) {
 		Event event = {
-			.type = Event::Type::cursor,
+			.type = Event::Type::Cursor,
 			.cursor = {
 				.x = xpos,
 				.y = ypos
@@ -58,7 +58,7 @@ namespace Sandcore {
 
 	void Event::mouse_button_callback(GLFWwindow* window, int button, int action, int mode) {
 		Event event = {
-			.type = Event::Type::mouse,
+			.type = Event::Type::Mouse,
 			.mouse = {
 				.button = button,
 				.action = action,
@@ -71,7 +71,7 @@ namespace Sandcore {
 
 	void Event::key_callback(GLFWwindow* window, int key, int scancode, int action, int mode) {
 		Event event = {
-			.type = Event::Type::key,
+			.type = Event::Type::Key,
 			.key = {
 				.key = key,
 				.scancode = scancode,
@@ -85,7 +85,7 @@ namespace Sandcore {
 
 	void Event::window_size_callback(GLFWwindow* window, int width, int height) {
 		Event event = {
-			.type = Event::Type::window,
+			.type = Event::Type::Window,
 			.window = {
 				.width = width,
 				.height = height,

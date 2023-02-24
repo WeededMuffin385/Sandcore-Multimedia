@@ -67,7 +67,7 @@ namespace Sandcore {
 	}
 
 	void Render::events() {
-		if (event.type == Event::Type::key && event.key.action == GLFW_PRESS) {
+		if (event.type == Event::Type::Key && event.key.action == GLFW_PRESS) {
 			if (event.key.key == GLFW_KEY_ESCAPE)
 				window.close();
 
@@ -84,7 +84,7 @@ namespace Sandcore {
 			}
 		}
 
-		if (event.type == Event::Type::window) {
+		if (event.type == Event::Type::Window) {
 
 		}
 	}

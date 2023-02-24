@@ -10,10 +10,10 @@ export namespace Sandcore {
 	class Event {
 	public:
 		enum class Type {
-			cursor,
-			mouse,
-			key,
-			window
+			Cursor,
+			Mouse,
+			Key,
+			Window
 		};
 
 		Type type;

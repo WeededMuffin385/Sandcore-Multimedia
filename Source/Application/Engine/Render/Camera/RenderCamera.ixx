@@ -20,7 +20,6 @@ export namespace Sandcore {
 	private:
 		virtual void updateVectors();
 
-
 		Vector3D<int> worldPosition;
 
 		glm::vec3 front2D;

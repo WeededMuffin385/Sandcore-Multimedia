@@ -141,14 +141,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\Sandcore-Engine\Common\Clock\Clock.cpp" />
     <ClCompile Include="..\Sandcore-Engine\Common\Clock\Clock.ixx" />
     <ClCompile Include="..\Sandcore-Engine\Common\Print\Print.ixx" />
     <ClCompile Include="..\Sandcore-Engine\Common\TPS\TPS.ixx" />
-    <ClCompile Include="..\Sandcore-Engine\Common\Vector2D\Vector2D.cpp" />
     <ClCompile Include="..\Sandcore-Engine\Common\Vector2D\Vector2D.ixx" />
     <ClCompile Include="..\Sandcore-Engine\Common\Vector2D\Vector2DHash.ixx" />
-    <ClCompile Include="..\Sandcore-Engine\Common\Vector3D\Vector3D.cpp" />
     <ClCompile Include="..\Sandcore-Engine\Common\Vector3D\Vector3D.ixx" />
     <ClCompile Include="..\Sandcore-Engine\Common\Vector3D\Vector3DHash.ixx" />
     <ClCompile Include="..\Sandcore-Engine\Graphics\Image\Image.cpp" />
@@ -157,6 +154,7 @@
     <ClCompile Include="..\Sandcore-Engine\Network\Connection\Connection.cpp" />
     <ClCompile Include="..\Sandcore-Engine\Network\Connection\Connection.ixx" />
     <ClCompile Include="..\Sandcore-Engine\Network\Message\Byte.ixx" />
+    <ClCompile Include="..\Sandcore-Engine\Network\Message\Constructor.ixx" />
     <ClCompile Include="..\Sandcore-Engine\Network\Message\Message.cpp" />
     <ClCompile Include="..\Sandcore-Engine\Network\Message\Message.ixx" />
     <ClCompile Include="..\Sandcore-Engine\Network\ThreadSafeQueue\ThreadSafeQueue.cpp" />
@@ -177,7 +175,6 @@
     <ClCompile Include="Source\Application\Engine\Render\Chunks\RenderChunks.ixx" />
     <ClCompile Include="Source\Application\Engine\Render\Chunks\Chunk\RenderChunk.cpp" />
     <ClCompile Include="Source\Application\Engine\Render\Chunks\Chunk\RenderChunk.ixx" />
-    <ClCompile Include="Source\Application\Engine\Render\Chunks\Chunk\Vertex\RenderChunkVertex.ixx" />
     <ClCompile Include="Source\Application\Engine\Render\Cube.ixx" />
     <ClCompile Include="Source\Application\Engine\Render\Highlight\RenderHighlight.ixx" />
     <ClCompile Include="Source\Application\Engine\Render\Highlight\RenderHightlight.cpp" />
@@ -194,7 +191,6 @@
     <ClCompile Include="Source\Graphics\Camera\Camera.ixx" />
     <ClCompile Include="Source\Graphics\Drawing\DrawObject\DrawObject.cpp" />
     <ClCompile Include="Source\Graphics\Drawing\DrawObject\DrawObject.ixx" />
-    <ClCompile Include="Source\Graphics\Drawing\DrawObject\Mesh\Mesh.cpp" />
     <ClCompile Include="Source\Graphics\Drawing\DrawObject\Mesh\Mesh.ixx" />
     <ClCompile Include="Source\Graphics\Drawing\DrawTarget\DrawTarget.cpp" />
     <ClCompile Include="Source\Graphics\Drawing\DrawTarget\DrawTarget.ixx" />

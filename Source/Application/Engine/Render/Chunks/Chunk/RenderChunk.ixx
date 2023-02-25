@@ -1,13 +1,17 @@
+#include <glm/glm.hpp>
 #include <chrono>
 
 export module Sandcore.Render.Chunk;
 
 import Sandcore.Mesh;
-import Sandcore.Render.Chunk.Vertex;
+import Sandcore.Vertex;
 import Sandcore.World.Chunk;
 import Sandcore.World.Block;
 
+
 export namespace Sandcore {
+	using RenderChunkVertex = typename Vertex<glm::vec3, glm::float32, glm::float32, glm::float32>;
+
 	class RenderChunk {
 	public:
 		enum Identification {

@@ -40,9 +40,6 @@
     <ClCompile Include="Source\Application\Engine\Render\Camera\RenderCamera.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Application\Engine\Render\Chunks\Chunk\Vertex\RenderChunkVertex.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Application\Engine\Render\Chunks\Chunk\RenderChunk.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
@@ -95,9 +92,6 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Source\Graphics\Camera\Camera.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Drawing\DrawObject\Mesh\Mesh.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Source\Graphics\Drawing\DrawObject\Mesh\Mesh.ixx">
@@ -226,16 +220,10 @@
     <ClCompile Include="..\Sandcore-Engine\Network\ThreadSafeQueue\ThreadSafeQueue.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\Sandcore-Engine\Common\Clock\Clock.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="..\Sandcore-Engine\Common\Clock\Clock.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="..\Sandcore-Engine\Common\TPS\TPS.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore-Engine\Common\Vector3D\Vector3D.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="..\Sandcore-Engine\Common\Vector3D\Vector3D.ixx">
@@ -271,13 +259,13 @@
     <ClCompile Include="..\Sandcore-Engine\Graphics\Vertex\Vertex.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\Sandcore-Engine\Common\Vector2D\Vector2D.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="..\Sandcore-Engine\Common\Vector2D\Vector2D.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="..\Sandcore-Engine\Common\Vector2D\Vector2DHash.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore-Engine\Network\Message\Constructor.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

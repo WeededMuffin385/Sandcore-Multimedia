@@ -13,7 +13,6 @@ export namespace Sandcore {
 		
 		~Window();
 
-
 		bool pollEvent(Event& event);
 
 		void setIcon(Image& image);

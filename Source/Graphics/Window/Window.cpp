@@ -15,6 +15,13 @@ namespace Sandcore {
 	Window::Window(int width, int height, const char* title, GLFWmonitor* monitor, GLFWwindow* share) {
 		glfwInit();
 		create(width, height, title, monitor, share);
+
+		static bool first = true;
+		if (first) {
+			setContext();
+			setCurrent();
+			first = false;
+		}
 	}
 
 	Window::~Window() {
@@ -39,7 +46,7 @@ namespace Sandcore {
 	}
 
 	void Window::setCurrent() {
-		return Event::setCurrentWindow(window);
+		Event::setCurrentWindow(window);
 	}
 
 	void Window::setIcon(Image& image) {

@@ -3,7 +3,6 @@
 #include <GLFW/glfw3.h>
 
 import Sandcore.Framebuffer;
-import Sandcore.Render.Chunk.Vertex;
 import Sandcore.Print;
 
 namespace Sandcore {

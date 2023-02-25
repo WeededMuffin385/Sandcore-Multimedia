@@ -11,21 +11,18 @@ import Sandcore.Graphics.Texture;
 import Sandcore.Shader.Program;
 
 namespace Sandcore {
-	void DrawTarget::draw(DrawObject& drawObject, ShaderProgram& shaderProgram, Texture& texture) {
+	void DrawTarget::draw(DrawObject& object, ShaderProgram& shader, Texture& texture) {
 		bindFramebuffer();
-		shaderProgram.use();
+		shader.use();
 		texture.bind();
-		drawObject.draw();
+		object.draw();
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 	}
 
-	void DrawTarget::draw(Sprite& sprite) {
-		static ShaderProgram screenShader("C:/Users/Mi/Documents/GitHub/Sandcore-Multimedia/Userdata/shaders/screen_shader");
-
-
+	void DrawTarget::draw(DrawObject& object, ShaderProgram& shader) {
 		bindFramebuffer();
-		screenShader.use();
-		sprite.draw();
+		shader.use();
+		object.draw();
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 	}
 

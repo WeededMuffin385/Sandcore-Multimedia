@@ -46,11 +46,15 @@ namespace Sandcore {
 
 		if (event.type == Event::Type::Mouse) {
 			if (event.mouse.button == GLFW_MOUSE_BUTTON_RIGHT) {
-				if (event.mouse.action == GLFW_RELEASE) breakBlock();
+				if (event.mouse.action == GLFW_PRESS) breakBlock();
 			}
 
 			if (event.mouse.button == GLFW_MOUSE_BUTTON_LEFT) {
-				if (event.mouse.action == GLFW_RELEASE) placeBlock();
+				if (event.mouse.action == GLFW_PRESS) placeBlock();
+			}
+
+			if (event.mouse.button == GLFW_MOUSE_BUTTON_MIDDLE) {
+
 			}
 		}
 	}

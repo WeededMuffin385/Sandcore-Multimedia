@@ -19,6 +19,17 @@ export namespace Sandcore {
 
 		void use();
 
+
+		template<typename T>
+		void set(std::string title, T value) {
+
+		}
+
+		template<>
+		void set<int>(std::string title, int value) {
+
+		}
+
 		void setInt(std::string title, int value);
 		void setDouble(std::string title, double value);
 		void setMat4(std::string title, glm::mat4 value);

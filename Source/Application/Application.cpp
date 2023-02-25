@@ -13,9 +13,6 @@ import Sandcore.Image;
 
 namespace Sandcore {
 	Application::Application() : window(800, 600, "Sandcore Multimedia") {
-		window.setContext();
-		window.setCurrent();
-
 		Image image("C:/Workbench/Sandcore/Resources/logo.png");
 		window.setIcon(image);
 

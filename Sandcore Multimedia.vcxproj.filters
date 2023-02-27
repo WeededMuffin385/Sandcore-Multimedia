@@ -28,10 +28,10 @@
     <ClCompile Include="Source\Additional\Vector3DGLM.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Application\Engine\CreatureControls\CreatureControls.cpp">
+    <ClCompile Include="Source\Application\Engine\Controls\Controls.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Application\Engine\CreatureControls\CreatureControls.ixx">
+    <ClCompile Include="Source\Application\Engine\Controls\Controls.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Source\Application\Engine\Render\Camera\RenderCamera.cpp">
@@ -94,28 +94,22 @@
     <ClCompile Include="Source\Graphics\Camera\Camera.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Drawing\DrawObject\Mesh\Mesh.ixx">
+    <ClCompile Include="Source\Graphics\Rendering\Mesh\Mesh.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Drawing\DrawObject\DrawObject.cpp">
+    <ClCompile Include="Source\Graphics\Rendering\Drawable\Drawable.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Drawing\DrawObject\DrawObject.ixx">
+    <ClCompile Include="Source\Graphics\Rendering\Canvas\Canvas.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Drawing\DrawTarget\DrawTarget.cpp">
+    <ClCompile Include="Source\Graphics\Rendering\Canvas\Canvas.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Drawing\DrawTarget\DrawTarget.ixx">
+    <ClCompile Include="Source\Graphics\Rendering\Framebuffer\Framebuffer.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Drawing\Framebuffer\Vertex\FramebufferVertex.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Drawing\Framebuffer\Framebuffer.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Drawing\Framebuffer\Framebuffer.ixx">
+    <ClCompile Include="Source\Graphics\Rendering\Framebuffer\Framebuffer.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Source\Graphics\ShaderProgram\ShaderObject\ShaderObject.cpp">

@@ -35,7 +35,9 @@ namespace Sandcore {
 	}
 
 	void Engine::update() {
-		tps.tick();
+		world.tick();
+
+		if (tps.tick()) std::print("World chunks:{} | Render chunks:{}\n", world.chunks.size(), render.chunks.chunks.size());
 		render.update();
 		requestChunks();
 		recieve();
@@ -54,7 +56,10 @@ namespace Sandcore {
 			}
 
 			if (event.mouse.button == GLFW_MOUSE_BUTTON_MIDDLE) {
-
+				if (event.mouse.action == GLFW_PRESS) {
+					std::print("MIDDLE BUTTON PRESSED\n");
+					captureBlock();
+				}
 			}
 		}
 	}
@@ -115,11 +120,32 @@ namespace Sandcore {
 			}
 
 			if (touchable(world.getChunk(worldPosition).getBlock(chunkPosition).getId()) && found) {
-				client.connection->send(Sandcore::Message::generatePlaceMessage(emptyWorldPosition, emptyChunkPosition, Block::Identification::Stone));
+				client.connection->send(Sandcore::Message::generatePlaceMessage(emptyWorldPosition, emptyChunkPosition, currentBlockID));
 				break;
 			}
 		}
 	}
+
+	void Engine::captureBlock() {
+		Vector3D<double> chunkPosition = render.camera.getChunkPosition();
+		Vector3D<int> worldPosition = render.camera.getWorldPosition();
+
+		Vector3D<double>	vec; {
+			auto v = render.camera.getFront();
+			vec = Vector3D<double>(v.x / precision, v.y / precision, v.z / precision);
+		}
+
+		for (int i = 0; i < distance * precision; ++i) {
+			chunkPosition += Vector3D<double>(vec.x, vec.y, vec.z);
+			bounds<WorldChunk::size>(worldPosition, chunkPosition);
+
+			if (touchable(world.getChunk(worldPosition).getBlock(chunkPosition).getId())) {
+				currentBlockID = world.getChunk(worldPosition).getBlock(chunkPosition).getId();
+				break;
+			}
+		}
+	}
+
 
 	void Engine::draw() {
 		render.draw();
@@ -127,7 +153,7 @@ namespace Sandcore {
 
 	void Engine::input() {
 		render.input();
-		creatureControls.input(window, render.camera);
+		ñontrols.input(window, render.camera);
 		if (!render.spectator) sendMove();
 	}
 
@@ -145,7 +171,7 @@ namespace Sandcore {
 
 	void Engine::requestChunks() {
 		for (auto& [position, chunk] : world.chunks) {
-			if (!chunk.loadInProgress && (!chunk.loaded || (chunk.drawCount >= 60))) {
+			if (!chunk.loadInProgress && !chunk.loaded) {
 				chunk.loadInProgress = true;
 				client.connection->send(Message::generateRequestChunkMessage(position));
 			}
@@ -159,7 +185,6 @@ namespace Sandcore {
 		world.getChunk(position).upload(data);
 		world.getChunk(position).loadInProgress = false;
 		world.getChunk(position).loaded = true;
-		world.getChunk(position).drawCount = 0;
 	}
 
 	void Engine::createEntity(int id) {
@@ -212,8 +237,8 @@ namespace Sandcore {
 	}
 
 	void Engine::sendMove() {
-		if (creatureControls.isChanged()) {
-			client.connection->send(creatureControls.generateMoveMessage());
+		if (ñontrols.isChanged()) {
+			client.connection->send(ñontrols.generateMoveMessage());
 		}
 	}
 

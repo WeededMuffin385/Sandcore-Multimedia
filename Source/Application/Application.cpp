@@ -21,7 +21,7 @@ namespace Sandcore {
 	}
 
 	void Application::loop() {
-		while (!scenes.empty() && !window.isShouldClose()) {
+		while (!scenes.empty() && window.isOpen()) {
 			scenes.front()->tick();
 		}
 	}

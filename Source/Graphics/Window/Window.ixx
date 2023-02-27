@@ -2,12 +2,12 @@
 
 export module Sandcore.Window;
 
-import Sandcore.Graphics.Draw.Target;
+import Sandcore.Graphics.Canvas;
 import Sandcore.Event;
 import Sandcore.Image;
 
 export namespace Sandcore {
-	class Window : public DrawTarget {
+	class Window : public Canvas {
 	public:
 		Window(int width, int height, const char* title, GLFWmonitor* monitor = nullptr, GLFWwindow* share = nullptr);
 		
@@ -15,7 +15,6 @@ export namespace Sandcore {
 
 		bool pollEvent(Event& event);
 
-		void setIcon(Image& image);
 		void setContext();
 		void setCurrent();
 
@@ -28,10 +27,13 @@ export namespace Sandcore {
 		void setMouseDisabled();
 		void setMouseEnabled();
 
-		bool isShouldClose();
+		bool isOpen();
 		void close();
 
 		void display();
+		void setView(int x, int y, int width, int height);
+
+		void setIcon(Image& image);
 
 		operator GLFWwindow*();
 

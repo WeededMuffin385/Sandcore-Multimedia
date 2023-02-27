@@ -80,8 +80,8 @@ namespace Sandcore {
 		return glfwGetKey(window, key) == GLFW_PRESS;
 	}
 
-	bool Window::isShouldClose() {
-		return glfwWindowShouldClose(window);
+	bool Window::isOpen() {
+		return !glfwWindowShouldClose(window);
 	}
 
 	void Window::close() {
@@ -98,5 +98,9 @@ namespace Sandcore {
 
 	void Window::setMouseEnabled() {
 		glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+	}
+
+	void Window::setView(int x, int y, int width, int height) {
+		glViewport(x, y, width, height);
 	}
 }

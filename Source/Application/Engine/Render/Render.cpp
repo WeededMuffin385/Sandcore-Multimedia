@@ -24,8 +24,7 @@ import Sandcore.Mesh;
 import Sandcore.Cube;
 
 import Sandcore.Framebuffer;
-import Sandcore.Graphics.Draw.Target;
-import Sandcore.Framebuffer.Vertex;
+import Sandcore.Graphics.Canvas;
 
 import Sandcore.Render.Chunk;
 

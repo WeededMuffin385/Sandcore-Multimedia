@@ -33,6 +33,5 @@ export namespace Sandcore {
 		Mesh<RenderChunkVertex> meshes[size];
 
 		std::chrono::high_resolution_clock::time_point wanted = std::chrono::high_resolution_clock::now();
-		enum { wantedChunkTimeout = 10 };
 	};
 }

@@ -1,5 +1,6 @@
 #include <string>
 #include <memory>
+#include <chrono>
 
 import Sandcore.World.Chunk;
 
@@ -25,6 +26,15 @@ namespace Sandcore {
 	}
 
 	void WorldChunk::upload(std::string& data) {
-		std::memcpy(&blocks[0][0][0], data.data(), x * y * z * sizeof(Block));
+		std::memcpy(blocks, data.data(), x * y * z * sizeof(Block));
+	}
+
+	bool WorldChunk::isUnwanted(std::chrono::high_resolution_clock::time_point& end) {
+		const double wantedChunkTimeout = 10;
+		return std::chrono::duration<double>(end - wanted).count() > wantedChunkTimeout;
+	}
+
+	void WorldChunk::setWanted() {
+		wanted = std::chrono::high_resolution_clock::now();
 	}
 }

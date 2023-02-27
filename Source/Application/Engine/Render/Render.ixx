@@ -24,7 +24,6 @@ import Sandcore.Mesh;
 import Sandcore.Vertex;
 
 import Sandcore.Framebuffer;
-import Sandcore.Framebuffer.Vertex;
 
 import Sandcore.Render.Chunks;
 

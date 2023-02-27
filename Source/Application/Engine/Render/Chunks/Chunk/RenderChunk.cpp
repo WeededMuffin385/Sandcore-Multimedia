@@ -22,6 +22,7 @@ namespace Sandcore {
 	}
 
 	bool RenderChunk::isUnwanted(std::chrono::high_resolution_clock::time_point& end) {
+		const double wantedChunkTimeout = 10;
 		return std::chrono::duration<double>(end - wanted).count() > wantedChunkTimeout;
 	}
 

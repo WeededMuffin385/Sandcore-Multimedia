@@ -31,12 +31,16 @@ export namespace Sandcore {
 	private:
 		void draw(RenderChunk::Identification identification);
 
-		void clearUnwantedChunks();
-		void checkChunks();
-		void extendRenderChunk(Mesh<RenderChunkVertex>& chunk);
-		bool isRelatedChunksLoaded(Vector3D<int> position);
+		void deleteUnwantedChunks();
+		void updateWantedChunks();
+
 		void generateChunk(Vector3D<int> position);
+		void generateChunks();
+
+		bool areRelatedChunksLoaded(Vector3D<int> position);
 		bool isBlocked(Vector3D<int> worldPosition, Vector3D<int> chunkPosition, RenderChunk::Identification section);
+		bool isInRadius(Vector3D<int> worldPosition);
+
 
 		RenderTextures& textures;
 		RenderCamera& camera;
@@ -47,5 +51,8 @@ export namespace Sandcore {
 
 		std::unordered_map<Vector3D<int>, RenderChunk, Vector3DHash<int>> chunks;
 		ShaderProgram shader;
+
+	private:
+		friend class Engine;
 	};
 }

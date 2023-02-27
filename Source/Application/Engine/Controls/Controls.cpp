@@ -1,14 +1,14 @@
 #include <string>
 #include <GLFW/glfw3.h>
 
-import Sandcore.Creature.Controls;
+import Sandcore.Controls;
 
 import Sandcore.Message;
 import Sandcore.Window;
 import Sandcore.Camera;
 
 namespace Sandcore {
-	void CreatureControls::input(Window& window, Camera&camera) {
+	void Controls::input(Window& window, Camera&camera) {
 		Vector3D<double> direction = { 0,0,0 };
 
 		direction = camera.getDirection(window);
@@ -22,12 +22,12 @@ namespace Sandcore {
 
 
 
-	std::string CreatureControls::generateMoveMessage() {
+	std::string Controls::generateMoveMessage() {
 		changed = false;
 		return Message::generateMoveMessage(direction);
 	}
 
-	bool CreatureControls::isChanged() {
+	bool Controls::isChanged() {
 		return changed;
 	}
 }

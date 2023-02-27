@@ -3,7 +3,7 @@ export module Sandcore.Sprite;
 import Sandcore.Graphics.Texture2D;
 import Sandcore.Mesh;
 import Sandcore.Interface.Vertex;
-import Sandcore.Graphics.Draw.Object;
+import Sandcore.Graphics.Drawable;
 
 export namespace Sandcore {
 	class Sprite {

@@ -1,13 +1,13 @@
 #include <string>
 
-export module Sandcore.Creature.Controls;
+export module Sandcore.Controls;
 
 import Sandcore.Vector3D;
 import Sandcore.Window;
 import Sandcore.Camera;
 
 export namespace Sandcore {
-	class CreatureControls {
+	class Controls {
 	public:
 		void input(Window& window, Camera& camera);
 		std::string generateMoveMessage();

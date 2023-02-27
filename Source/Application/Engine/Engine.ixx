@@ -8,12 +8,13 @@ export module Sandcore.Engine;
 import Sandcore.Render;
 import Sandcore.TPS;
 import Sandcore.World;
+import Sandcore.World.Block;
 import Sandcore.Client;
 import Sandcore.Clock;
 import Sandcore.World.Entity;
 import Sandcore.Event;
 import Sandcore.Window;
-import Sandcore.Creature.Controls;
+import Sandcore.Controls;
 import Sandcore.Scene;
 
 export namespace Sandcore {
@@ -45,6 +46,9 @@ export namespace Sandcore {
 
 		void breakBlock();
 		void placeBlock();
+		void captureBlock();
+
+		Block::Identification currentBlockID = Block::Identification::Stone;
 
 		int distance = 7;
 		int precision = 10;
@@ -54,7 +58,7 @@ export namespace Sandcore {
 
 		Client client;
 		World world;
-		CreatureControls creatureControls;
+		Controls ñontrols;
 
 		Render render;
 	};

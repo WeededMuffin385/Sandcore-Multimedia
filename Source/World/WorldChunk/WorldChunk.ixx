@@ -1,4 +1,5 @@
 #include <string>
+#include <chrono>
 
 export module Sandcore.World.Chunk;
 
@@ -24,14 +25,15 @@ export namespace Sandcore {
 			z = 16
 		};
 
+		bool isUnwanted(std::chrono::high_resolution_clock::time_point& end);
+		void setWanted();
+
 		bool loaded = false;
 		bool loadInProgress = false;
 
 		bool changed = false;
-
-		int drawCount = 0;
 	private:
-
+		std::chrono::high_resolution_clock::time_point wanted = std::chrono::high_resolution_clock::now();
 		Block blocks[size::x][size::y][size::z];
 	};
 }

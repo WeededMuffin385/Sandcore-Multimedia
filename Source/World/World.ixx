@@ -12,6 +12,8 @@ import Sandcore.World.Chunk;
 export namespace Sandcore {
 	class World {
 	public:
+		void tick();
+
 		WorldChunk& getChunk(int x, int y, int z);
 		WorldChunk& getChunk(Vector3D<int> position);
 
@@ -22,5 +24,6 @@ export namespace Sandcore {
 		std::unordered_map<Vector3D<int>, WorldChunk, Vector3DHash<int>> chunks;
 
 		friend class Engine;
+		friend class RenderChunks;
 	};
 }

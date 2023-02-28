@@ -19,9 +19,9 @@ export namespace Sandcore {
 	using  FramebufferVertex = typename Vertex<glm::float32>;
 	class Framebuffer : public Canvas, public Drawable {
 	public:
-		Framebuffer();
+		Framebuffer(int width = 800, int height = 800);
 
-		void create(int width = 800, int height = 800);
+		void create(int width, int height);
 		void resize(int width, int height);
 
 		~Framebuffer();

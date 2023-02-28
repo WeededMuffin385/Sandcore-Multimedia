@@ -101,12 +101,10 @@ namespace Sandcore {
 		// auto view-porting
 
 		if (prevWidth != width || prevHeight != height) {
-			glViewport(0, 0, width, height);
+			window.viewport(width, height);
 			prevWidth = width;
 			prevHeight = height;
 		}
-
-		chunks.resolution(width, height);
 	}
 
 	void Render::draw() {

@@ -37,8 +37,8 @@ namespace Sandcore {
 	}
 
 	void Window::create(int width, int height, const char*title, GLFWmonitor*monitor, GLFWwindow*share) {
-		glfwWindowHint(GLFW_SAMPLES, 4);
 		window = glfwCreateWindow(width, height, title, monitor, share);
+		glfwSwapInterval(1);
 	}
 
 	bool Window::pollEvent(Event& event) {
@@ -98,9 +98,5 @@ namespace Sandcore {
 
 	void Window::setMouseEnabled() {
 		glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
-	}
-
-	void Window::setView(int x, int y, int width, int height) {
-		glViewport(x, y, width, height);
 	}
 }

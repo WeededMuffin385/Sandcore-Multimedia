@@ -56,10 +56,7 @@ namespace Sandcore {
 			}
 
 			if (event.mouse.button == GLFW_MOUSE_BUTTON_MIDDLE) {
-				if (event.mouse.action == GLFW_PRESS) {
-					std::print("MIDDLE BUTTON PRESSED\n");
-					captureBlock();
-				}
+				if (event.mouse.action == GLFW_PRESS) captureBlock();
 			}
 		}
 	}

@@ -31,7 +31,6 @@ export namespace Sandcore {
 		void close();
 
 		void display();
-		void setView(int x, int y, int width, int height);
 
 		void setIcon(Image& image);
 

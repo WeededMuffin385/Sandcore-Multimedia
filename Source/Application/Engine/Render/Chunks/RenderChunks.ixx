@@ -17,6 +17,9 @@ import Sandcore.Window;
 import Sandcore.Render.Camera;
 
 import Sandcore.Vertex;
+import Sandcore.Graphics.Canvas;
+
+import Sandcore.Framebuffer;
 
 export namespace Sandcore {
 	class RenderChunks {
@@ -26,7 +29,10 @@ export namespace Sandcore {
 		void update();
 		void draw();
 
-		void resolution(int width, int height);
+		struct {
+			int x = 800;
+			int y = 600;
+		} resolution;
 
 	private:
 		void draw(RenderChunk::Identification identification);
@@ -51,6 +57,8 @@ export namespace Sandcore {
 
 		std::unordered_map<Vector3D<int>, RenderChunk, Vector3DHash<int>> chunks;
 		ShaderProgram shader;
+
+		Framebuffer framebuffer;
 
 	private:
 		friend class Engine;

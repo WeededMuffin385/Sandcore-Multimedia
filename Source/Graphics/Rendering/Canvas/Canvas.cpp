@@ -26,9 +26,20 @@ namespace Sandcore {
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 	}
 
+	void Canvas::draw(Drawable& object) {
+		bindFramebuffer();
+		object.draw();
+		glBindFramebuffer(GL_FRAMEBUFFER, 0);
+	}
+
 	void Canvas::clear(float red, float green, float blue, float alpha) {
 		bindFramebuffer();
 		glClearColor(red, green, blue, alpha); // glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	}
+
+	void Canvas::viewport(int width, int height) {
+		bindFramebuffer();
+		glViewport(0, 0, width, height);
 	}
 }

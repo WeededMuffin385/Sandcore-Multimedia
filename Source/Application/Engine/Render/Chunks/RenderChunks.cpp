@@ -21,8 +21,10 @@ import Sandcore.Render.Chunk;
 import Sandcore.World.Bounds;
 import Sandcore.Cube;
 
+import Sandcore.Graphics.Canvas;
+
 namespace Sandcore {
-	RenderChunks::RenderChunks(World& world, Window& window, RenderCamera& camera, RenderTextures& textures) : world(world), window(window), camera(camera), textures(textures), shader("C:/Users/Mi/Documents/GitHub/Sandcore-Multimedia/Userdata/Shaders/BlockShaders") {
+	RenderChunks::RenderChunks(World& world, Window& window, RenderCamera& camera, RenderTextures& textures) : world(world), window(window), camera(camera), textures(textures), framebuffer(resolution.x, resolution.y), shader("C:/Users/Mi/Documents/GitHub/Sandcore-Multimedia/Userdata/Shaders/BlockShaders") {
 		shader.use();
 		shader.setDouble("capacity", textures.getCapacity());
 	}
@@ -34,14 +36,17 @@ namespace Sandcore {
 		generateChunks();
 	}
 
-	void RenderChunks::resolution(int width, int height) {
-		shader.setMat4("projection", camera.getProjMatrix(width, height)); // uniform doesn't changes from call to call
-	}
-
 	void RenderChunks::draw() {
+		int width, height;
+		window.getSize(&width, &height);
+		shader.setMat4("projection", camera.getProjMatrix(width, height));
+
+
+		framebuffer.clear();
 		shader.use();
 		shader.setMat4("view", camera.getViewMatrix());
 
+		framebuffer.viewport(resolution.x, resolution.y);
 		draw(RenderChunk::Identification::opaque);
 
 		glDisable(GL_CULL_FACE);
@@ -51,9 +56,10 @@ namespace Sandcore {
 		glDepthFunc(GL_LESS);
 		draw(RenderChunk::Identification::leaves);
 		glEnable(GL_CULL_FACE);
-
-
 		draw(RenderChunk::Identification::opaque);
+
+		window.viewport(width, height);
+		window.draw(framebuffer);
 	}
 
 	bool RenderChunks::areRelatedChunksLoaded(Vector3D<int> position) {
@@ -263,7 +269,7 @@ namespace Sandcore {
 				if (chunks.contains(position)) {
 					shader.setMat4("model", glm::translate(glm::mat4(1.0f), glm::vec3(WorldChunk::size::x * x, WorldChunk::size::y * y, WorldChunk::size::z * z)));
 
-					window.draw(chunks[position].meshes[identification], shader, textures.blockTextures);
+					framebuffer.Canvas::draw(chunks[position].meshes[identification], shader, textures.blockTextures);
 					drawn[position] = true;
 				}
 			}

@@ -1,3 +1,6 @@
+#include <filesystem>
+#include <glm/glm.hpp>
+
 #define GLEW_STATIC
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
@@ -5,8 +8,14 @@
 import Sandcore.Framebuffer;
 import Sandcore.Print;
 
+import Sandcore.Mesh;
+import Sandcore.Shader.Program;
+
+import Sandcore.Vertex;
+
 namespace Sandcore {
-	Framebuffer::Framebuffer() {
+	Framebuffer::Framebuffer(int width, int height) {
+		create(width, height);
 	}
 
 	Framebuffer::~Framebuffer() {
@@ -52,6 +61,17 @@ namespace Sandcore {
 	}
 
 	void Framebuffer::draw() {
+		static Mesh<Vertex<glm::float32>> frame;
+		static ShaderProgram shader("C:/Users/Mi/Documents/GitHub/Sandcore-Multimedia/Userdata/Shaders/ScreenShaders");
+		static bool first = true;
+		if (first) [[unlikely]]{
+			frame.vertices = { {0}, {1}, {2}, {3} };
+			frame.indices = { 0, 1, 2, 0, 2, 3 };
+			frame.update();
+			first = false;
+		}
+		shader.use();
 		texture.bind();
+		frame.draw();
 	}
 }

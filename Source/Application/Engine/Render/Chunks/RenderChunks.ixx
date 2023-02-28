@@ -30,8 +30,9 @@ export namespace Sandcore {
 		void draw();
 
 		struct {
-			int x = 800;
-			int y = 600;
+			int x = 0;
+			int y = 0;
+			bool dynamic = true;
 		} resolution;
 
 	private:
@@ -62,5 +63,6 @@ export namespace Sandcore {
 
 	private:
 		friend class Engine;
+		friend class Render;
 	};
 }

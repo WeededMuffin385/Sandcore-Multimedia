@@ -79,6 +79,24 @@ namespace Sandcore {
 			if (event.key.key == GLFW_KEY_HOME) {
 				spectator = !spectator;
 			}
+
+			if (event.key.key == GLFW_KEY_EQUAL) {
+				chunks.resolution.x *= 2;
+				chunks.resolution.y *= 2;
+
+				chunks.framebuffer.resize(chunks.resolution.x, chunks.resolution.y);
+			}
+
+			if (event.key.key == GLFW_KEY_MINUS) {
+				chunks.resolution.x /= 2;
+				chunks.resolution.y /= 2;
+
+				chunks.framebuffer.resize(chunks.resolution.x, chunks.resolution.y);
+			}
+
+			if (event.key.key == GLFW_KEY_BACKSLASH) {
+				chunks.resolution.dynamic = !chunks.resolution.dynamic;
+			}
 		}
 
 		if (event.type == Event::Type::Window) {

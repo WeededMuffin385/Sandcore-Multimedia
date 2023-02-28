@@ -38,7 +38,7 @@ export namespace Sandcore {
 
 		double speed		= 25.f;
 		double sensitivity	= 0.1f;
-		double zoom			= 60.f;
+		double zoom			= 45.f;
 
 		bool first = true;
 

@@ -39,12 +39,19 @@ namespace Sandcore {
 	void RenderChunks::draw() {
 		int width, height;
 		window.getSize(&width, &height);
-		shader.setMat4("projection", camera.getProjMatrix(width, height));
 
+		if (resolution.dynamic) {
+			if (width != resolution.x || height != resolution.y) {
+				framebuffer.resize(width, height);
+				resolution.x = width;
+				resolution.y = height;
+			}
+		}
 
 		framebuffer.clear();
 		shader.use();
 		shader.setMat4("view", camera.getViewMatrix());
+		shader.setMat4("projection", camera.getProjMatrix(width, height));
 
 		framebuffer.viewport(resolution.x, resolution.y);
 		draw(RenderChunk::Identification::opaque);

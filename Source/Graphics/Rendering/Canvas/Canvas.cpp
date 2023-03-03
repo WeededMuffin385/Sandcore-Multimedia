@@ -12,6 +12,7 @@ import Sandcore.Shader.Program;
 
 namespace Sandcore {
 	void Canvas::draw(Drawable& object, ShaderProgram& shader, Texture& texture) {
+		glViewport(0, 0, size.x, size.y);
 		bindFramebuffer();
 		shader.use();
 		texture.bind();
@@ -20,6 +21,7 @@ namespace Sandcore {
 	}
 
 	void Canvas::draw(Drawable& object, ShaderProgram& shader) {
+		glViewport(0, 0, size.x, size.y);
 		bindFramebuffer();
 		shader.use();
 		object.draw();
@@ -27,6 +29,7 @@ namespace Sandcore {
 	}
 
 	void Canvas::draw(Drawable& object) {
+		glViewport(0, 0, size.x, size.y);
 		bindFramebuffer();
 		object.draw();
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
@@ -39,7 +42,7 @@ namespace Sandcore {
 	}
 
 	void Canvas::viewport(int width, int height) {
-		bindFramebuffer();
-		glViewport(0, 0, width, height);
+		size.x = width;
+		size.y = height;
 	}
 }

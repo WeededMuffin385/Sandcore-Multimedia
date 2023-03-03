@@ -15,6 +15,7 @@ export namespace Sandcore {
 
 		glm::mat4 getViewMatrix();
 		glm::mat4 getProjMatrix(int width, int height);
+		glm::mat4 getProjViewMatrix(int width, int height);
 
 		void setFirst();
 

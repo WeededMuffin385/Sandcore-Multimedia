@@ -22,9 +22,10 @@ import Sandcore.World.Bounds;
 import Sandcore.Cube;
 
 import Sandcore.Graphics.Canvas;
+import Sandcore.Application.Memory;
 
 namespace Sandcore {
-	RenderChunks::RenderChunks(World& world, Window& window, RenderCamera& camera, RenderTextures& textures) : world(world), window(window), camera(camera), textures(textures), framebuffer(resolution.x, resolution.y), shader("C:/Users/Mi/Documents/GitHub/Sandcore-Multimedia/Userdata/Shaders/BlockShaders") {
+	RenderChunks::RenderChunks(World& world, Window& window, RenderCamera& camera, RenderTextures& textures) : world(world), window(window), camera(camera), textures(textures), framebuffer(resolution.x, resolution.y), shader(Memory::shaderBlockPath) {
 		shader.use();
 		shader.setDouble("capacity", textures.getCapacity());
 	}
@@ -37,21 +38,20 @@ namespace Sandcore {
 	}
 
 	void RenderChunks::draw() {
-		int width, height;
-		window.getSize(&width, &height);
+		auto size = window.size();
 
 		if (resolution.dynamic) {
-			if (width != resolution.x || height != resolution.y) {
-				framebuffer.resize(width, height);
-				resolution.x = width;
-				resolution.y = height;
+			if (size.x != resolution.x || size.y != resolution.y) {
+				framebuffer.resize(size.x, size.y);
+				resolution.x = size.x;
+				resolution.y = size.y;
 			}
 		}
 
 		framebuffer.clear();
 		shader.use();
 		shader.setMat4("view", camera.getViewMatrix());
-		shader.setMat4("projection", camera.getProjMatrix(width, height));
+		shader.setMat4("proj", camera.getProjMatrix(size.x, size.y));
 
 		framebuffer.viewport(resolution.x, resolution.y);
 		draw(RenderChunk::Identification::opaque);
@@ -65,7 +65,7 @@ namespace Sandcore {
 		glEnable(GL_CULL_FACE);
 		draw(RenderChunk::Identification::opaque);
 
-		window.viewport(width, height);
+		window.viewport(size.x, size.y);
 		window.draw(framebuffer);
 	}
 
@@ -123,7 +123,7 @@ namespace Sandcore {
 					chunk.indices.reserve(chunk.indices.size() + 6 * 6);
 
 					if (!isBlocked(position, Vector3D<int>(x - 1, y, z), section)) {
-						int offset = chunk.vertices.size();
+						int offset = static_cast<int>(chunk.vertices.size());
 						float light = 0.85f;
 
 
@@ -143,7 +143,7 @@ namespace Sandcore {
 					}
 
 					if (!isBlocked(position, Vector3D<int>(x + 1, y, z), section)) {
-						int offset = chunk.vertices.size();
+						int offset = static_cast<int>(chunk.vertices.size());
 						float light = 0.95f;
 
 						chunk.vertices.push_back({ { x + 1,y,z }, light,cube.x.plus, 2 });
@@ -162,7 +162,7 @@ namespace Sandcore {
 
 
 					if (!isBlocked(position, Vector3D<int>(x, y - 1, z), section)) {
-						int offset = chunk.vertices.size();
+						int offset = static_cast<int>(chunk.vertices.size());
 						float light = 0.8f;
 
 						chunk.vertices.push_back({ { x,y,z }, light,cube.y.minus, 2 });
@@ -180,7 +180,7 @@ namespace Sandcore {
 					}
 
 					if (!isBlocked(position, Vector3D<int>(x, y + 1, z), section)) {
-						int offset = chunk.vertices.size();
+						int offset = static_cast<int>(chunk.vertices.size());
 						float light = 0.9f;
 
 						chunk.vertices.push_back({ { x,y + 1,z }, light,cube.y.plus, 2 });
@@ -198,7 +198,7 @@ namespace Sandcore {
 					}
 
 					if (!isBlocked(position, Vector3D<int>(x, y, z - 1), section)) {
-						int offset = chunk.vertices.size();
+						int offset = static_cast<int>(chunk.vertices.size());
 						float light = 0.75f;
 
 						chunk.vertices.push_back({ { x ,y ,z }, light,cube.z.minus, 0 });
@@ -216,7 +216,7 @@ namespace Sandcore {
 					}
 
 					if (!isBlocked(position, Vector3D<int>(x, y, z + 1), section)) {
-						int offset = chunk.vertices.size();
+						int offset = static_cast<int>(chunk.vertices.size());
 						float light = 1.0f;
 
 						chunk.vertices.push_back({ { x ,y ,z + 1 }, light,cube.z.plus, 0 });

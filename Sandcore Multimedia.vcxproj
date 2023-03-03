@@ -151,6 +151,8 @@
     <ClCompile Include="..\Sandcore-Engine\Common\Vector3D\Vector3DHash.ixx" />
     <ClCompile Include="..\Sandcore-Engine\Graphics\Image\Image.cpp" />
     <ClCompile Include="..\Sandcore-Engine\Graphics\Image\Image.ixx" />
+    <ClCompile Include="..\Sandcore-Engine\Graphics\Interface\InterfaceButton.ixx" />
+    <ClCompile Include="..\Sandcore-Engine\Graphics\Interface\InterfaceComponent.ixx" />
     <ClCompile Include="..\Sandcore-Engine\Graphics\Vertex\Vertex.ixx" />
     <ClCompile Include="..\Sandcore-Engine\Network\Connection\Connection.cpp" />
     <ClCompile Include="..\Sandcore-Engine\Network\Connection\Connection.ixx" />
@@ -183,8 +185,8 @@
     <ClCompile Include="Source\Application\Engine\Render\Render.ixx" />
     <ClCompile Include="Source\Application\Engine\Render\Textures\RenderTextures.cpp" />
     <ClCompile Include="Source\Application\Engine\Render\Textures\RenderTextures.ixx" />
-    <ClCompile Include="Source\Application\Memory\Memory.cpp" />
     <ClCompile Include="Source\Application\Memory\Memory.ixx" />
+    <ClCompile Include="Source\Application\Menu\MainMenu.ixx" />
     <ClCompile Include="Source\Application\Menu\Menu.ixx" />
     <ClCompile Include="Source\Application\Scene\Scene.cpp" />
     <ClCompile Include="Source\Application\Scene\Scene.ixx" />

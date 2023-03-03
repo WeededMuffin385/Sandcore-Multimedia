@@ -1,3 +1,4 @@
+module;
 #include <unordered_map>
 #include <glm/glm.hpp>
 
@@ -5,7 +6,6 @@
 #define GLEW_STATIC
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
-
 export module Sandcore.Render;
 
 import Sandcore.Window;

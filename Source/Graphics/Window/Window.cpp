@@ -17,11 +17,17 @@ namespace Sandcore {
 		create(width, height, title, monitor, share);
 
 		static bool first = true;
-		if (first) {
+		if (first) [[unlikely]] {
 			setContext();
 			setCurrent();
+			init();
 			first = false;
 		}
+	}
+
+	void Window::init() {
+		glewExperimental = GL_TRUE;
+		glewInit();
 	}
 
 	Window::~Window() {
@@ -45,39 +51,49 @@ namespace Sandcore {
 		return Event::pollEvent(event, window);
 	}
 
-	void Window::setCurrent() {
-		Event::setCurrentWindow(window);
-	}
 
 	void Window::setIcon(Image& image) {
 		GLFWimage icon;
 		icon.pixels = image.data();
-		icon.width = image.size.x;
-		icon.height = image.size.y;
+		icon.width = image.size().x;
+		icon.height = image.size().y;
 		glfwSetWindowIcon(window, 1, &icon);
 	}
 
 	void Window::setContext() {
 		glfwMakeContextCurrent(window);
+	}
 
-		glewExperimental = GL_TRUE;
-		glewInit();
+	void Window::setCurrent() {
+		Event::setCurrentWindow(window);
 	}
 
 	void Window::getFramebufferSize(int*width, int*height) {
 		glfwGetFramebufferSize(window, width, height);
 	}
 
-	void Window::getSize(int* width, int* height) {
-		glfwGetWindowSize(window, width, height);
+	Window::Size Window::size() {
+		int x;
+		int y;
+		glfwGetWindowSize(window, &x, &y);
+
+		return Size(x, y);
 	}
 
-	void Window::getMouse(double* x, double* y) {
-		glfwGetCursorPos(window, x, y);
+	Window::Mouse Window::mouse() {
+		double x;
+		double y;
+		glfwGetCursorPos(window, &x, &y);
+
+		return Mouse(x, y);
 	}
 
-	bool Window::getKey(int key) {
-		return glfwGetKey(window, key) == GLFW_PRESS;
+	bool Window::getMouseButton(int button, int state) {
+		return glfwGetMouseButton(window, button) == state;
+	}
+
+	bool Window::getKey(int key, int state) {
+		return glfwGetKey(window, key) == state;
 	}
 
 	bool Window::isOpen() {

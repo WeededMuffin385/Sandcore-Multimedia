@@ -12,6 +12,7 @@ import Sandcore.Mesh;
 import Sandcore.Shader.Program;
 
 import Sandcore.Vertex;
+import Sandcore.Application.Memory;
 
 namespace Sandcore {
 	Framebuffer::Framebuffer(int width, int height) {
@@ -19,50 +20,54 @@ namespace Sandcore {
 	}
 
 	Framebuffer::~Framebuffer() {
-		glDeleteFramebuffers(1, &FBO);
+		glDeleteFramebuffers(1, &mFBO);
 	}
 
 	void Framebuffer::create(int width, int height) {
+		mSize.x = width;
+		mSize.y = height;
 		texture.create(width, height);
 
 		createFramebuffer();
 		glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, texture, 0);
 
 		createRenderbuffer(width, height);
-		glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, RBO);
+		glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, mRBO);
 	}
 
 	void Framebuffer::resize(int width, int height) {
+		mSize.x = width;
+		mSize.y = height;
 		texture.resize(width, height);
-		glBindRenderbuffer(GL_RENDERBUFFER, RBO);
+		glBindRenderbuffer(GL_RENDERBUFFER, mRBO);
 		glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, width, height);
 		glBindRenderbuffer(GL_RENDERBUFFER, 0);
 	}
 
 	void Framebuffer::createFramebuffer() {
-		glGenFramebuffers(1, &FBO);
-		glBindFramebuffer(GL_FRAMEBUFFER, FBO);
+		glGenFramebuffers(1, &mFBO);
+		glBindFramebuffer(GL_FRAMEBUFFER, mFBO);
 
 		if (glCheckFramebufferStatus(GL_FRAMEBUFFER) == GL_FRAMEBUFFER_COMPLETE) {
 		}
 	}
 
 	void Framebuffer::createRenderbuffer(int width, int height) {
-		glGenRenderbuffers(1, &RBO);
-		glBindRenderbuffer(GL_RENDERBUFFER, RBO);
+		glGenRenderbuffers(1, &mRBO);
+		glBindRenderbuffer(GL_RENDERBUFFER, mRBO);
 		glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, width, height);
 		glBindRenderbuffer(GL_RENDERBUFFER, 0);
 	}
 
 	void Framebuffer::bindFramebuffer() {
-		if (!FBO) std::print("ERROR: FRAMEBUFFER DOESN'T EXISTS");
+		if (!mFBO) std::print("ERROR: FRAMEBUFFER DOESN'T EXISTS");
 
-		glBindFramebuffer(GL_FRAMEBUFFER, FBO);	
+		glBindFramebuffer(GL_FRAMEBUFFER, mFBO);	
 	}
 
 	void Framebuffer::draw() {
 		static Mesh<Vertex<glm::float32>> frame;
-		static ShaderProgram shader("C:/Users/Mi/Documents/GitHub/Sandcore-Multimedia/Userdata/Shaders/ScreenShaders");
+		static ShaderProgram shader(Memory::shaderScreenPath);
 		static bool first = true;
 		if (first) [[unlikely]]{
 			frame.vertices = { {0}, {1}, {2}, {3} };

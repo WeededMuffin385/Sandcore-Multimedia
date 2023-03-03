@@ -1,4 +1,4 @@
-#include <queue>
+#include <stack>
 #include <memory>
 
 export module Sandcore.Application;
@@ -14,10 +14,11 @@ export namespace Sandcore {
 
 		void loop();
 		void push(Scene* scene);
+
 	private:
 		Window window;
 		Event event;
 
-		std::queue<std::unique_ptr<Scene>> scenes;
+		std::stack<std::unique_ptr<Scene>> scenes;
 	};
 }

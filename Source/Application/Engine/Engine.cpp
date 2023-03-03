@@ -27,7 +27,7 @@ import Sandcore.Vector3D.GLM;
 import Sandcore.Print;
 
 namespace Sandcore {
-	Engine::Engine(Window& window, Event& event) : Scene(window, event), render(window, event, world) {
+	Engine::Engine(Window& window, Event& event, Scenes& scenes) : Scene(window, event, scenes), render(window, event, world) {
 		while (!connect()) std::print("Re-connecting...\n");
 	}
 

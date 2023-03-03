@@ -10,6 +10,8 @@ import Sandcore.Application;
 import Sandcore.Engine;
 import Sandcore.Window;
 import Sandcore.Image;
+import Sandcore.MainMenu;
+import Sandcore.Engine;
 
 namespace Sandcore {
 	Application::Application() : window(800, 600, "Sandcore Multimedia") {
@@ -17,12 +19,14 @@ namespace Sandcore {
 		window.setIcon(image);
 
 
-		push(new Engine(window, event));
+		push(new Engine(window, event, scenes));
+
+		// push(new MainMenu(window, event, scenes));
 	}
 
 	void Application::loop() {
 		while (!scenes.empty() && window.isOpen()) {
-			scenes.front()->tick();
+			scenes.top()->tick();
 		}
 	}
 

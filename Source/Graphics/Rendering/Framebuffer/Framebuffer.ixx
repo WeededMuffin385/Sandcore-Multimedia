@@ -19,6 +19,11 @@ export namespace Sandcore {
 	using  FramebufferVertex = typename Vertex<glm::float32>;
 	class Framebuffer : public Canvas, public Drawable {
 	public:
+		struct Size {
+			int x;
+			int y;
+		};
+	public:
 		Framebuffer(int width = 800, int height = 800);
 
 		void create(int width, int height);
@@ -28,7 +33,9 @@ export namespace Sandcore {
 
 		virtual void draw();
 
-		GLuint& getRBO() { return RBO; };
+
+		const Size& size() { return mSize; }
+		GLuint& RBO() { return mRBO; };
 		operator Texture2D&() { return texture; }
 
 	private:
@@ -37,8 +44,9 @@ export namespace Sandcore {
 		void createFramebuffer();
 		void createRenderbuffer(int width, int height);
 
-		GLuint FBO = 0;
-		GLuint RBO = 0;
+		Size mSize;
+		GLuint mFBO = 0;
+		GLuint mRBO = 0;
 		Texture2D texture;
 	};
 }

@@ -40,7 +40,7 @@ namespace Sandcore {
 	void Texture2D::loadFromFile(std::filesystem::path path) {
 		Image image(path);
 
-		create(image.size.x, image.size.y, image.data());
+		create(image.size().x, image.size().y, image.data());
 	}
 
 	Texture2D::Texture2D(Texture2D&& other) {

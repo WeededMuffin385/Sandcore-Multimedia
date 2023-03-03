@@ -27,11 +27,12 @@ import Sandcore.Framebuffer;
 import Sandcore.Graphics.Canvas;
 
 import Sandcore.Render.Chunk;
+import Sandcore.Application.Memory;
 
 namespace Sandcore {
 	Render::Render(Window& window, Event& event, World& world) : window(window), event(event), world(world),
-		screenShader("C:/Users/Mi/Documents/GitHub/Sandcore-Multimedia/Userdata/Shaders/ScreenShaders"),
-		textures("C:/Users/Mi/Documents/GitHub/Sandcore-Multimedia/Userdata/TexturePackage"),
+		screenShader(Memory::shaderScreenPath),
+		textures(Memory::texturesPath),
 		chunks(world, window, camera, textures) {
 
 		glEnable(GL_DEPTH_TEST);
@@ -55,7 +56,7 @@ namespace Sandcore {
 		mesh.indices = { 0, 1, 2, 0, 2, 3 };
 		mesh.update();
 
-		underwater.loadFromFile("C:/Users/Mi/Documents/GitHub/Sandcore-Multimedia/Userdata/TexturePackage/blocks/water_3.png");
+		underwater.loadFromFile(Memory::texturesPath / "blocks/water_3.png");
 	}
 
 	void Render::update() {
@@ -113,15 +114,14 @@ namespace Sandcore {
 
 	void Render::updateViewport() {
 		static int prevWidth = 0, prevHeight = 0;
-		int width, height;
-		window.getSize(&width, &height);
+		auto size = window.size();
 
 		// auto view-porting
 
-		if (prevWidth != width || prevHeight != height) {
-			window.viewport(width, height);
-			prevWidth = width;
-			prevHeight = height;
+		if (prevWidth != size.x || prevHeight != size.y) {
+			window.viewport(size.x, size.y);
+			prevWidth = size.x;
+			prevHeight = size.y;
 		}
 	}
 

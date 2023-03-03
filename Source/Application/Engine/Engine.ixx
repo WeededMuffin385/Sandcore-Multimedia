@@ -1,8 +1,8 @@
+module;
 #include <filesystem>
 #include <fstream>
 
 #include <asio.hpp>
-
 export module Sandcore.Engine;
 
 import Sandcore.Render;
@@ -20,7 +20,7 @@ import Sandcore.Scene;
 export namespace Sandcore {
 	class Engine : public Scene {
 	public:
-		Engine(Window& window, Event& event);
+		Engine(Window& window, Event& event, Scenes& scenes);
 		~Engine();
 
 

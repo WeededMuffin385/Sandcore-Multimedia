@@ -1,9 +1,11 @@
+#include <filesystem>
+
 export module Sandcore.Application.Memory;
 
-import Sandcore.Shader.Program;
-
 export namespace Sandcore {
-	class Memory {
-	public:
+	namespace Memory {
+		std::filesystem::path shaderBlockPath = std::filesystem::current_path() / "Userdata/Shaders/ShaderBlock";
+		std::filesystem::path shaderScreenPath = std::filesystem::current_path() / "Userdata/Shaders/ShaderScreen";
+		std::filesystem::path texturesPath = std::filesystem::current_path() / "Userdata/TexturePackage";
 	};
 }

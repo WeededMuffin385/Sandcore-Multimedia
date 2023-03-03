@@ -1,6 +1,6 @@
+module;
 #include <glm/glm.hpp>
 #include <chrono>
-
 export module Sandcore.Render.Chunk;
 
 import Sandcore.Mesh;

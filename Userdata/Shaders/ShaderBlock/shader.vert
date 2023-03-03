@@ -1,4 +1,5 @@
 #version 330 core
+
 layout (location = 0) in vec3 vPos;
 layout (location = 1) in float vShade;
 layout (location = 2) in float vTexId;
@@ -7,9 +8,10 @@ layout (location = 3) in float vIndex;
 out vec4 fColor;
 out vec3 fTexPos;
 
-uniform mat4 model;
+uniform mat4 proj;
 uniform mat4 view;
-uniform mat4 projection;
+
+uniform mat4 model;
 uniform float capacity;
 
 vec2 texCoords[4] = vec2[4](
@@ -25,7 +27,7 @@ float actual_layer(float layer){
 
 void main()
 {
-	gl_Position = projection * view * model * vec4(vPos, 1.0);
+	gl_Position = proj * view * model * vec4(vPos, 1.0);
 	fColor = vec4(vec3(1.0f, 1.0f, 1.0f) * vShade, 1.0);
 	fTexPos = vec3(texCoords[int(vIndex)], actual_layer(vTexId));
 }

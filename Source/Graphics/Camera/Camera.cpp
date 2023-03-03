@@ -25,6 +25,10 @@ namespace Sandcore {
 		return glm::infinitePerspective(glm::radians(zoom), (double)width / (double)height, (double)0.1);
 	}
 
+	glm::mat4 Camera::getProjViewMatrix(int width, int height) {
+		return getProjMatrix(width, height) * getViewMatrix();
+	}
+
 	void Camera::updateVectors() {
 		front.x = std::sin(glm::radians(yaw)) * cos(glm::radians(pitch));
 		front.y = std::cos(glm::radians(yaw)) * cos(glm::radians(pitch));
@@ -37,20 +41,22 @@ namespace Sandcore {
 
 	void Camera::mouseInput(Window& window) {
 		if (first) {
-			window.getMouse(&lastx, &lasty);
+			auto mouse = window.mouse();
+			lastx = mouse.x;
+			lasty = mouse.y;
 			first = false;
 		}
 
 		double posx;
 		double posy;
 
-		window.getMouse(&posx, &posy);
+		auto mouse = window.mouse();
 
-		double offsetx = posx - lastx;
-		double offsety = lasty - posy;
+		double offsetx = mouse.x - lastx;
+		double offsety = lasty - mouse.y;
 
-		lastx = posx;
-		lasty = posy;
+		lastx = mouse.x;
+		lasty = mouse.y;
 
 		offsetx *= sensitivity;
 		offsety *= sensitivity;

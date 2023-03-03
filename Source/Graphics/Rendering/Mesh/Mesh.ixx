@@ -1,9 +1,9 @@
+module;
 #define GLEW_STATIC
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
 #include <vector>
-
 export module Sandcore.Mesh;
 
 import Sandcore.Graphics.Drawable;
@@ -15,6 +15,7 @@ export namespace Sandcore {
 	class Mesh : public Drawable {
 	public:
 		Mesh() {
+			generateBuffers();
 		}
 
 		~Mesh() {
@@ -26,12 +27,12 @@ export namespace Sandcore {
 		virtual void draw() {
 			if (vertices.empty()) return;
 			glBindVertexArray(VAO);
-			glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, 0);
+			glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(indices.size()), GL_UNSIGNED_INT, 0);
 		}
 
 		void update() {
 			if (vertices.empty()) return;
-			generateBuffers();
+			
 
 			glBindVertexArray(VAO);
 			associateArrays();

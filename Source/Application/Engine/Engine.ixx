@@ -24,13 +24,12 @@ export namespace Sandcore {
 		~Engine();
 
 
+		bool connect(std::string address = "127.0.0.1", std::string port = "16200", std::string mail = "1", std::string username = "1", std::string password = "1");
 	private:
 		virtual void draw();
 		virtual void input();
 		virtual void update();
 		virtual void events();
-
-		bool connect(std::string address = "127.0.0.1", std::string port = "16200", std::string mail = "1", std::string username = "1", std::string password = "1");
 
 		void requestChunks();
 		void sendMove();

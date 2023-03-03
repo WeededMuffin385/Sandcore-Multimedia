@@ -12,21 +12,22 @@ import Sandcore.Window;
 import Sandcore.Image;
 import Sandcore.MainMenu;
 import Sandcore.Engine;
+import Sandcore.Event;
 
 namespace Sandcore {
 	Application::Application() : window(800, 600, "Sandcore Multimedia") {
 		Image image("C:/Workbench/Sandcore/Resources/logo.png");
 		window.setIcon(image);
 
-
-		push(new Engine(window, event, scenes));
-
-		// push(new MainMenu(window, event, scenes));
+		push(new MainMenu(window, event, scenes));
 	}
 
 	void Application::loop() {
 		while (!scenes.empty() && window.isOpen()) {
+			Event::scene = scenes.top().get();
+
 			scenes.top()->tick();
+			if (!scenes.top()->run) scenes.pop();
 		}
 	}
 

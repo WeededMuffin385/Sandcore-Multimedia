@@ -28,10 +28,11 @@ import Sandcore.Print;
 
 namespace Sandcore {
 	Engine::Engine(Window& window, Event& event, Scenes& scenes) : Scene(window, event, scenes), render(window, event, world) {
-		while (!connect()) std::print("Re-connecting...\n");
+		// while (!connect()) std::print("Re-connecting...\n");
 	}
 
 	Engine::~Engine() {
+		std::print("Engine deleted\n");
 	}
 
 	void Engine::update() {
@@ -57,6 +58,12 @@ namespace Sandcore {
 
 			if (event.mouse.button == GLFW_MOUSE_BUTTON_MIDDLE) {
 				if (event.mouse.action == GLFW_PRESS) captureBlock();
+			}
+		}
+
+		if (event.type == Event::Type::Key) {
+			if (event.key.key == GLFW_KEY_ESCAPE) {
+				run = false;
 			}
 		}
 	}

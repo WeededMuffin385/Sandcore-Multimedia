@@ -48,7 +48,7 @@ namespace Sandcore {
 	}
 
 	bool Window::pollEvent(Event& event) {
-		return Event::pollEvent(event, window);
+		return Event::pollEvent(window, event);
 	}
 
 

@@ -22,6 +22,7 @@ import Sandcore.Vertex;
 import Sandcore.World.Bounds;
 import Sandcore.Mesh;
 import Sandcore.Cube;
+import Sandcore.Print;
 
 import Sandcore.Framebuffer;
 import Sandcore.Graphics.Canvas;
@@ -59,6 +60,11 @@ namespace Sandcore {
 		underwater.loadFromFile(Memory::texturesPath / "blocks/water_3.png");
 	}
 
+	Render::~Render() {
+		std::print("Render was deleted!\n");
+		window.setMouseEnabled();
+	}
+
 	void Render::update() {
 		chunks.update();
 		updateViewport();
@@ -66,9 +72,6 @@ namespace Sandcore {
 
 	void Render::events() {
 		if (event.type == Event::Type::Key && event.key.action == GLFW_PRESS) {
-			if (event.key.key == GLFW_KEY_ESCAPE)
-				window.close();
-
 			if (event.key.key == GLFW_KEY_I) {
 				if (mouse) window.setMouseDisabled();
 				if (!mouse) window.setMouseEnabled();
@@ -98,10 +101,6 @@ namespace Sandcore {
 			if (event.key.key == GLFW_KEY_BACKSLASH) {
 				chunks.resolution.dynamic = !chunks.resolution.dynamic;
 			}
-		}
-
-		if (event.type == Event::Type::Window) {
-
 		}
 	}
 

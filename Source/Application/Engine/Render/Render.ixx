@@ -31,7 +31,7 @@ export namespace Sandcore {
 	class Render {
 	public:
 		Render(Window& window, Event& event, World& world);
-
+		~Render();
 	private:
 
 		void draw();

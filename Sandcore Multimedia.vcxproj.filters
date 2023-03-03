@@ -271,5 +271,8 @@
     <ClCompile Include="..\Sandcore-Engine\Graphics\Interface\InterfaceButton.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Application\Menu\ConnectMenu.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -10,17 +10,19 @@ import Sandcore.Interface.Button;
 import Sandcore.Shader.Program;
 import Sandcore.Print;
 import Sandcore.Engine;
+import Sandcore.Application.Memory;
+import Sandcore.ConnectMenu;
 
 export namespace Sandcore {
 	class MainMenu : public Scene {
 	public:
-		MainMenu(Window& window, Event& event, Scenes& scenes) : Scene(window, event, scenes), shader("C:/Workbench/Sphere/Sphere/Userdata/Shaders/Shader/") {
+		MainMenu(Window& window, Event& event, Scenes& scenes) : Scene(window, event, scenes), shader(Memory::shaderInterfacePath) {
 		}
 
 
 	protected:
 		virtual void draw() {
-			window.viewport(size.x, size.y);
+			window.viewport(window.size().x, window.size().y);
 			window.clear(0.8828125, 0.82421875, 0.41796875);
 			window.draw(affiche, shader);
 			window.draw(connect, shader);
@@ -31,8 +33,8 @@ export namespace Sandcore {
 
 		virtual void input() {
 			if (connect.click(window)) {
-				push(new Engine(window, event, scenes));
-				std::printf("Clicked on \"Connect\" button\n");
+				push(new ConnectMenu(window, event, scenes));
+				std::print("Clicked on \"Connect\" button\n");
 			}
 		}
 
@@ -41,15 +43,13 @@ export namespace Sandcore {
 		}
 
 		virtual void update() {
-			size = window.size();
-			
 			float k, x, y;
-			if (size.x < size.y) {
-				k = (float)size.x / (float)size.y;
+			if (window.size().x < window.size().y) {
+				k = (float)window.size().x / (float)window.size().y;
 				x = 0.04f;
 				y = x * k;
 			} else {
-				k = (float)size.y / (float)size.x;
+				k = (float)window.size().y / (float)window.size().x;
 				y = 0.04f;
 				x = y * k;
 			}
@@ -68,8 +68,6 @@ export namespace Sandcore {
 			settings.position = glm::vec2(x * 3 + rect.x * 2, y);
 			settings.size = rect;
 		}
-
-		Window::Size size;
 
 		ShaderProgram shader;
 

@@ -47,20 +47,9 @@ namespace Sandcore {
 	bool Client::connect(std::string address, std::string port) {
 		try {
 			asio::ip::tcp::resolver::results_type endpoints = resolver.resolve(address, port);
-
-			if (debug) {
-				for (auto a : endpoints) {
-				}
-			}
-
 			asio::connect(connection->socket, endpoints);
 		} catch (std::exception& e) {
-			if (debug) {
-			}
 			return false;
-		}
-
-		if (debug) {
 		}
 		return true;
 	}

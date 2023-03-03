@@ -4,6 +4,10 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
+namespace Sandcore {
+	class Scene;
+}
+
 export module Sandcore.Event;
 
 export namespace Sandcore {
@@ -45,7 +49,7 @@ export namespace Sandcore {
 
 	private:
 		friend class Window;
-		static bool pollEvent(Event& event, GLFWwindow* window);
+		static bool pollEvent(GLFWwindow* window, Event& event);
 		static void setCurrentWindow(GLFWwindow* window);
 
 		static void setWindowCallback(GLFWwindow* window);
@@ -58,5 +62,8 @@ export namespace Sandcore {
 		static void mouse_button_callback(GLFWwindow* window, int button, int action, int mode);
 		static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode);
 		static void window_size_callback(GLFWwindow* window, int width, int height);
+		static void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+	public:
+		static Scene*scene;
 	};
 }

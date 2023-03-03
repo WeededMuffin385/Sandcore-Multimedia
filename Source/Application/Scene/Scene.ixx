@@ -11,7 +11,7 @@ export namespace Sandcore {
 	public:
 		using Scenes = std::stack<std::unique_ptr<Scene>>;
 		Scene(Window& window, Event& event, Scenes&scenes);
-		~Scene();
+		virtual ~Scene();
 
 		virtual void tick() final;
 	protected:
@@ -21,9 +21,12 @@ export namespace Sandcore {
 		virtual void update() = 0;
 
 		void push(Scene* scene);
+		bool run = true;
 
 		Scenes& scenes;
 		Window& window;
 		Event& event;
+	protected:
+		friend class Application;
 	};
 }

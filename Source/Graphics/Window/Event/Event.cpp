@@ -6,12 +6,14 @@
 #include <GLFW/glfw3.h>
 
 import Sandcore.Event;
+import Sandcore.Scene;
 
 namespace Sandcore {
 	GLFWwindow* Event::current = nullptr;
+	Scene* Event::scene = nullptr;
 	std::queue<Event> Event::events = {};
 
-	bool Event::pollEvent(Event& event, GLFWwindow* window) {
+	bool Event::pollEvent(GLFWwindow* window, Event& event) {
 		if (window != current) setCurrentWindow(window);
 		glfwPollEvents();
 
@@ -35,6 +37,7 @@ namespace Sandcore {
 		glfwSetMouseButtonCallback(window, mouse_button_callback);
 		glfwSetKeyCallback(window, key_callback);
 		glfwSetWindowSizeCallback(window, window_size_callback);
+		glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 	}
 
 	void Event::removeWindowCallback(GLFWwindow* window) {
@@ -42,6 +45,7 @@ namespace Sandcore {
 		glfwSetMouseButtonCallback(window, NULL);
 		glfwSetKeyCallback(window, NULL);
 		glfwSetWindowSizeCallback(window, NULL);
+		glfwSetFramebufferSizeCallback(window, NULL);
 	}
 
 	void Event::cursor_position_callback(GLFWwindow* window, double xpos, double ypos) {
@@ -93,5 +97,9 @@ namespace Sandcore {
 		};
 
 		events.push(event);
+	}
+
+	void Event::framebuffer_size_callback(GLFWwindow* window, int width, int height) {
+		if (scene) scene->tick();
 	}
 }

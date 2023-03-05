@@ -9,6 +9,7 @@
 import Sandcore.Client;
 
 import Sandcore.Byte;
+import Sandcore.Print;
 
 namespace Sandcore {
 	Client::Client() : resolver(ioContext) {
@@ -47,6 +48,11 @@ namespace Sandcore {
 	bool Client::connect(std::string address, std::string port) {
 		try {
 			asio::ip::tcp::resolver::results_type endpoints = resolver.resolve(address, port);
+			for (auto& endpoint : endpoints) {
+				std::print("endpoint[{}:{}] \n", endpoint.host_name(), endpoint.service_name());
+			}
+
+
 			asio::connect(connection->socket, endpoints);
 		} catch (std::exception& e) {
 			return false;

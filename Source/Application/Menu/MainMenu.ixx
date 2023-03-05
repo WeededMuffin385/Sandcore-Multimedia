@@ -54,9 +54,9 @@ export namespace Sandcore {
 				x = y * k;
 			}
 
-			glm::vec2 rect = glm::vec2((1 - 4 * x) / 3.f , (1.f - y * 3) / 3.f);
+			glm::vec2 rect = glm::vec2((1 - 4 * x) / 3.f , (1.f - y * 3) / 4.f);
 
-			affiche.position = glm::vec2(x, rect.y + y * 2);
+			affiche.position = glm::vec2(x, y * 2 + rect.y);
 			affiche.size = glm::vec2(1 - 2 * x, 1 - rect.y - y * 3);
 
 			connect.position = glm::vec2(x, y);

@@ -28,11 +28,10 @@ import Sandcore.Print;
 
 namespace Sandcore {
 	Engine::Engine(Window& window, Event& event, Scenes& scenes) : Scene(window, event, scenes), render(window, event, world) {
-		// while (!connect()) std::print("Re-connecting...\n");
 	}
 
 	Engine::~Engine() {
-		std::print("Engine deleted\n");
+		std::print("Engine was deleted\n");
 	}
 
 	void Engine::update() {

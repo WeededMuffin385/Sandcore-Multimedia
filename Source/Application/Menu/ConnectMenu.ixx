@@ -20,7 +20,7 @@ export namespace Sandcore {
 		ConnectMenu(Window& window, Event& event, Scenes& scenes) : Scene(window, event, scenes), shader(Memory::shaderInterfacePath), engine(new Engine(window, event, scenes)) {
 			thread = std::thread(
 				[this] {
-					while (!engine->connect() && run);
+					while (!engine->connect() && !stop);
 					ready = true;
 				}
 			);
@@ -43,7 +43,7 @@ export namespace Sandcore {
 
 		virtual void input() {
 			if (back.click(window)) {
-				run = false;
+				stop = true;
 			}
 		}
 
@@ -55,9 +55,8 @@ export namespace Sandcore {
 			back.position = glm::vec2(0.1, 0.1);
 			back.size = glm::vec2(0.8, 0.2);
 
-			if (ready && thread.joinable()) {
-				thread.join();
-				scenes.push(std::move(engine));
+			if (ready) {
+				if (!stop) scenes.push(std::move(engine));
 				run = false;
 			}
 		}
@@ -65,6 +64,7 @@ export namespace Sandcore {
 		std::thread thread;
 		ShaderProgram shader;
 		Interface::Button back;
+		std::atomic<bool> stop = false;
 		std::atomic<bool> ready = false;
 		std::unique_ptr<Engine> engine;
 	};

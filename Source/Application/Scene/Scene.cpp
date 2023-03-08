@@ -1,3 +1,5 @@
+
+#include <memory>
 import Sandcore.Scene;
 
 import Sandcore.Window;
@@ -21,7 +23,11 @@ namespace Sandcore {
 		draw();
 	}
 
+	void Scene::push(std::shared_ptr<Scene> scene) {
+		scenes.push(std::move(scene));
+	}
+
 	void Scene::push(Scene* scene) {
-		scenes.push(std::unique_ptr<Scene>(scene));
+		scenes.push(std::shared_ptr<Scene>(scene));
 	}
 }

@@ -70,9 +70,6 @@
     <ClCompile Include="Source\Application\Memory\Memory.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Application\Menu\Menu.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Application\Scene\Scene.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
@@ -119,12 +116,6 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Source\Graphics\ShaderProgram\ShaderProgram.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Sprite\Sprite.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Sprite\Sprite.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Source\Graphics\Texture\Texture.cpp">

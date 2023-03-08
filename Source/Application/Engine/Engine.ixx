@@ -55,9 +55,9 @@ export namespace Sandcore {
 
 		TPS tps;
 
+		Controls ñontrols;
 		Client client;
 		World world;
-		Controls ñontrols;
 
 		Render render;
 	};

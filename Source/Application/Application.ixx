@@ -16,9 +16,8 @@ export namespace Sandcore {
 		void push(Scene* scene);
 
 	private:
+		Scenes scenes;
 		Window window;
 		Event event;
-
-		std::stack<std::unique_ptr<Scene>> scenes;
 	};
 }

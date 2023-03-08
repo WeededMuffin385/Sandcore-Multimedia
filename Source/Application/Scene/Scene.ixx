@@ -7,9 +7,11 @@ import Sandcore.Window;
 import Sandcore.Event;
 
 export namespace Sandcore {
+	class Scene;
+	using Scenes = std::stack<std::shared_ptr<Scene>>;
+
 	class Scene {
 	public:
-		using Scenes = std::stack<std::unique_ptr<Scene>>;
 		Scene(Window& window, Event& event, Scenes&scenes);
 		virtual ~Scene();
 
@@ -20,13 +22,14 @@ export namespace Sandcore {
 		virtual void events() = 0;
 		virtual void update() = 0;
 
+		void push(std::shared_ptr<Scene> scene);
 		void push(Scene* scene);
 		bool run = true;
 
-		Scenes& scenes;
 		Window& window;
 		Event& event;
-	protected:
+		Scenes& scenes;
+	private:
 		friend class Application;
 	};
 }

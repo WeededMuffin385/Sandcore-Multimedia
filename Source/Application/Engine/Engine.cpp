@@ -31,7 +31,7 @@ namespace Sandcore {
 	}
 
 	Engine::~Engine() {
-		std::print("Engine was deleted\n");
+		std::print("Engine was deleted!\n");
 	}
 
 	void Engine::update() {

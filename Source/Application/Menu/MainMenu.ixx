@@ -2,6 +2,7 @@ module;
 #include <asio.hpp>
 #include <filesystem>
 #include <glm/glm.hpp>
+#include <GLFW/glfw3.h>
 export module Sandcore.MainMenu;
 
 import Sandcore.Scene;
@@ -32,14 +33,16 @@ export namespace Sandcore {
 		}
 
 		virtual void input() {
-			if (connect.click(window)) {
-				push(new ConnectMenu(window, event, scenes));
-				std::print("Clicked on \"Connect\" button\n");
-			}
 		}
 
 		virtual void events() {
-
+			if (event.type == Event::Type::Mouse)
+			if (event.mouse.action == GLFW_PRESS)
+			if (event.mouse.button == GLFW_MOUSE_BUTTON_LEFT) 
+			if (connect.collide(window)){
+				push(new ConnectMenu(window, event, scenes));
+				std::print("Clicked on \"Connect\" button\n");
+			}
 		}
 
 		virtual void update() {

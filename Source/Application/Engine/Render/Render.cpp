@@ -61,7 +61,6 @@ namespace Sandcore {
 	}
 
 	Render::~Render() {
-		std::print("Render was deleted!\n");
 		window.setMouseEnabled();
 	}
 

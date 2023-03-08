@@ -34,7 +34,6 @@ export namespace Sandcore {
 		Mouse mouse();
 
 		bool getKey(int key, int state = GLFW_PRESS);
-
 		bool getMouseButton(int button, int state = GLFW_PRESS);
 
 		void setMouseDisabled();

@@ -78,6 +78,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)\..\Sandcore-Engine\Libraries\glew\include;$(SolutionDir)\..\Sandcore-Engine\Libraries\glfw\include;$(SolutionDir)\..\Sandcore-Engine\Libraries\glm\include;$(SolutionDir)\..\Sandcore-Engine\Libraries\stb\include;$(SolutionDir)\..\Sandcore-Engine\Libraries\asio\include</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -95,6 +96,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)\..\Sandcore-Engine\Libraries\glew\include;$(SolutionDir)\..\Sandcore-Engine\Libraries\glfw\include;$(SolutionDir)\..\Sandcore-Engine\Libraries\glm\include;$(SolutionDir)\..\Sandcore-Engine\Libraries\stb\include;$(SolutionDir)\..\Sandcore-Engine\Libraries\asio\include</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -190,7 +192,6 @@
     <ClCompile Include="Source\Application\Memory\Memory.ixx" />
     <ClCompile Include="Source\Application\Menu\ConnectMenu.ixx" />
     <ClCompile Include="Source\Application\Menu\MainMenu.ixx" />
-    <ClCompile Include="Source\Application\Menu\Menu.ixx" />
     <ClCompile Include="Source\Application\Scene\Scene.cpp" />
     <ClCompile Include="Source\Application\Scene\Scene.ixx" />
     <ClCompile Include="Source\Graphics\Camera\Camera.cpp" />
@@ -205,8 +206,6 @@
     <ClCompile Include="Source\Graphics\ShaderProgram\ShaderObject\ShaderObject.ixx" />
     <ClCompile Include="Source\Graphics\ShaderProgram\ShaderProgram.cpp" />
     <ClCompile Include="Source\Graphics\ShaderProgram\ShaderProgram.ixx" />
-    <ClCompile Include="Source\Graphics\Sprite\Sprite.cpp" />
-    <ClCompile Include="Source\Graphics\Sprite\Sprite.ixx" />
     <ClCompile Include="Source\Graphics\Texture\Texture2D\Texture2D.cpp" />
     <ClCompile Include="Source\Graphics\Texture\Texture2D\Texture2D.ixx" />
     <ClCompile Include="Source\Graphics\Texture\Texture3D\Texture3D.cpp" />

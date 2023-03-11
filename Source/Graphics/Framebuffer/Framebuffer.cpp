@@ -9,7 +9,7 @@ import Sandcore.Framebuffer;
 import Sandcore.Print;
 
 import Sandcore.Graphics.Mesh;
-import Sandcore.Shader.Program;
+import Sandcore.Graphics.Program;
 
 import Sandcore.Vertex;
 import Sandcore.Application.Memory;
@@ -67,7 +67,7 @@ namespace Sandcore {
 
 	void Framebuffer::render() {
 		static Mesh<Vertex<glm::float32>> frame;
-		static ShaderProgram shader(Memory::shaderScreenPath);
+		static Program shader(Memory::shaderScreenPath);
 		static bool first = true;
 		if (first) [[unlikely]]{
 			frame.vertices = { {0}, {1}, {2}, {3} };

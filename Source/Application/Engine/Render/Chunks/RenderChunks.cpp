@@ -13,7 +13,7 @@
 import Sandcore.Render.Chunks;
 
 import Sandcore.World;
-import Sandcore.Shader.Program;
+import Sandcore.Graphics.Program;
 
 import Sandcore.World.Chunk;
 import Sandcore.Render.Chunk;
@@ -27,7 +27,7 @@ import Sandcore.Application.Memory;
 namespace Sandcore {
 	RenderChunks::RenderChunks(World& world, Window& window, RenderCamera& camera, RenderTextures& textures) : world(world), window(window), camera(camera), textures(textures), framebuffer(resolution.x, resolution.y), shader(Memory::shaderBlockPath) {
 		shader.use();
-		shader.setDouble("capacity", textures.getCapacity());
+		shader.setFloat("capacity", textures.getCapacity());
 	}
 
 	void RenderChunks::update() {

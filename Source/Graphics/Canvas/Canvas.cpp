@@ -8,10 +8,10 @@ import Sandcore.Graphics.Canvas;
 import Sandcore.Graphics.Drawable;
 
 import Sandcore.Graphics.Texture;
-import Sandcore.Shader.Program;
+import Sandcore.Graphics.Program;
 
 namespace Sandcore {
-	void Canvas::draw(Drawable& object, ShaderProgram& shader, Texture& texture) {
+	void Canvas::draw(Drawable& object, Program& shader, Texture& texture) {
 		glViewport(0, 0, size.x, size.y);
 		bindFramebuffer();
 		shader.use();
@@ -20,7 +20,7 @@ namespace Sandcore {
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 	}
 
-	void Canvas::draw(Drawable& object, ShaderProgram& shader) {
+	void Canvas::draw(Drawable& object, Program& shader) {
 		glViewport(0, 0, size.x, size.y);
 		bindFramebuffer();
 		shader.use();

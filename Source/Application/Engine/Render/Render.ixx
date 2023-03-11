@@ -14,7 +14,7 @@ import Sandcore.Event;
 import Sandcore.Render.Chunk;
 import Sandcore.Render.Camera;
 
-import Sandcore.Shader.Program;
+import Sandcore.Graphics.Program;
 import Sandcore.Render.Textures;
 import Sandcore.World;
 
@@ -46,7 +46,7 @@ export namespace Sandcore {
 
 		RenderChunks chunks;
 		RenderCamera camera;
-		ShaderProgram screenShader;
+		Program screenShader;
 		RenderTextures textures;
 		World& world;
 

@@ -88,34 +88,22 @@
     <ClCompile Include="Source\Graphics\Camera\Camera.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Rendering\Mesh\Mesh.ixx">
+    <ClCompile Include="Source\Graphics\Mesh\Mesh.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Rendering\Drawable\Drawable.ixx">
+    <ClCompile Include="Source\Graphics\Drawable\Drawable.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Rendering\Canvas\Canvas.cpp">
+    <ClCompile Include="Source\Graphics\Canvas\Canvas.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Rendering\Canvas\Canvas.ixx">
+    <ClCompile Include="Source\Graphics\Canvas\Canvas.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Rendering\Framebuffer\Framebuffer.cpp">
+    <ClCompile Include="Source\Graphics\Framebuffer\Framebuffer.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Rendering\Framebuffer\Framebuffer.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\ShaderProgram\ShaderObject\ShaderObject.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\ShaderProgram\ShaderObject\ShaderObject.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\ShaderProgram\ShaderProgram.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\ShaderProgram\ShaderProgram.ixx">
+    <ClCompile Include="Source\Graphics\Framebuffer\Framebuffer.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Source\Graphics\Texture\Texture.cpp">
@@ -263,6 +251,12 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Source\Application\Menu\ConnectMenu.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Program\Program.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Program\Shader.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

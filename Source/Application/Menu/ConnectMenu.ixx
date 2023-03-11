@@ -3,6 +3,7 @@ module;
 #include <atomic>
 #include <memory>
 #include <filesystem>
+#include <fstream>
 
 #include <asio.hpp>
 #include <glm/glm.hpp>
@@ -11,7 +12,7 @@ export module Sandcore.ConnectMenu;
 
 import Sandcore.Scene;
 import Sandcore.Interface.Button;
-import Sandcore.Shader.Program;
+import Sandcore.Graphics.Program;
 import Sandcore.Application.Memory;
 import Sandcore.Engine;
 import Sandcore.Event;
@@ -71,7 +72,7 @@ export namespace Sandcore {
 
 		std::thread thread;
 
-		ShaderProgram shader;
+		Program shader;
 		Interface::Button back;
 	};
 }

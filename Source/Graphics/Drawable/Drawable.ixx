@@ -1,6 +1,6 @@
 namespace Sandcore {
 	class Canvas;
-	class ShaderProgram;
+	class Program;
 }
 
 export module Sandcore.Graphics.Drawable;

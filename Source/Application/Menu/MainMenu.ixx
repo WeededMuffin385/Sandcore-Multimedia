@@ -1,6 +1,7 @@
 module;
 #include <asio.hpp>
 #include <filesystem>
+#include <fstream>
 #include <glm/glm.hpp>
 #include <GLFW/glfw3.h>
 export module Sandcore.MainMenu;
@@ -8,7 +9,7 @@ export module Sandcore.MainMenu;
 import Sandcore.Scene;
 import Sandcore.Interface.Component;
 import Sandcore.Interface.Button;
-import Sandcore.Shader.Program;
+import Sandcore.Graphics.Program;
 import Sandcore.Print;
 import Sandcore.Engine;
 import Sandcore.Application.Memory;
@@ -72,7 +73,7 @@ export namespace Sandcore {
 			settings.size() = rect;
 		}
 
-		ShaderProgram shader;
+		Program shader;
 
 		Interface::Component affiche;
 

@@ -10,9 +10,8 @@ export module Sandcore.Framebuffer;
 import Sandcore.Graphics.Canvas;
 import Sandcore.Graphics.Drawable;
 
-import Sandcore.Shader.Program;
+import Sandcore.Graphics.Program;
 import Sandcore.Graphics.Texture2D;
-import Sandcore.Shader.Program;
 import Sandcore.Vertex;
 
 export namespace Sandcore {

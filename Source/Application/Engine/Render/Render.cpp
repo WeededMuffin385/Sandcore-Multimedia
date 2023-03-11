@@ -15,7 +15,7 @@
 
 import Sandcore.Render;
 
-import Sandcore.Shader.Program;
+import Sandcore.Graphics.Program;
 
 import Sandcore.World;
 import Sandcore.Vertex;

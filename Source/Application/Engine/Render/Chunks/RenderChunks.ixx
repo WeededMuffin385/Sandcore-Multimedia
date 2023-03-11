@@ -11,7 +11,7 @@ import Sandcore.Vector3D;
 import Sandcore.Vector3D.Hash;
 
 import Sandcore.World;
-import Sandcore.Shader.Program;
+import Sandcore.Graphics.Program;
 
 import Sandcore.Window;
 import Sandcore.Render.Camera;
@@ -57,7 +57,7 @@ export namespace Sandcore {
 		int radius = 6;
 
 		std::unordered_map<Vector3D<int>, RenderChunk, Vector3DHash<int>> chunks;
-		ShaderProgram shader;
+		Program shader;
 
 		Framebuffer framebuffer;
 

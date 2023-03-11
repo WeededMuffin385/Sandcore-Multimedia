@@ -8,7 +8,7 @@
 import Sandcore.Framebuffer;
 import Sandcore.Print;
 
-import Sandcore.Mesh;
+import Sandcore.Graphics.Mesh;
 import Sandcore.Shader.Program;
 
 import Sandcore.Vertex;
@@ -65,7 +65,7 @@ namespace Sandcore {
 		glBindFramebuffer(GL_FRAMEBUFFER, mFBO);	
 	}
 
-	void Framebuffer::draw() {
+	void Framebuffer::render() {
 		static Mesh<Vertex<glm::float32>> frame;
 		static ShaderProgram shader(Memory::shaderScreenPath);
 		static bool first = true;
@@ -77,6 +77,6 @@ namespace Sandcore {
 		}
 		shader.use();
 		texture.bind();
-		frame.draw();
+		frame.render();
 	}
 }

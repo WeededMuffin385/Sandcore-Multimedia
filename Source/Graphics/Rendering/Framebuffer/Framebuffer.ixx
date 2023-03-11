@@ -31,7 +31,7 @@ export namespace Sandcore {
 
 		~Framebuffer();
 
-		virtual void draw();
+		virtual void render();
 
 
 		const Size& size() { return mSize; }

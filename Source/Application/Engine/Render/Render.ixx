@@ -19,7 +19,7 @@ import Sandcore.Render.Textures;
 import Sandcore.World;
 
 import Sandcore.Graphics.Texture2D;
-import Sandcore.Mesh;
+import Sandcore.Graphics.Mesh;
 
 import Sandcore.Vertex;
 

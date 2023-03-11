@@ -16,7 +16,7 @@ namespace Sandcore {
 		bindFramebuffer();
 		shader.use();
 		texture.bind();
-		object.draw();
+		object.render();
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 	}
 
@@ -24,14 +24,14 @@ namespace Sandcore {
 		glViewport(0, 0, size.x, size.y);
 		bindFramebuffer();
 		shader.use();
-		object.draw();
+		object.render();
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 	}
 
 	void Canvas::draw(Drawable& object) {
 		glViewport(0, 0, size.x, size.y);
 		bindFramebuffer();
-		object.draw();
+		object.render();
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 	}
 

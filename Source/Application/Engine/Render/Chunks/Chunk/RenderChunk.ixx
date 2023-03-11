@@ -3,7 +3,7 @@ module;
 #include <chrono>
 export module Sandcore.Render.Chunk;
 
-import Sandcore.Mesh;
+import Sandcore.Graphics.Mesh;
 import Sandcore.Vertex;
 import Sandcore.World.Chunk;
 import Sandcore.World.Block;

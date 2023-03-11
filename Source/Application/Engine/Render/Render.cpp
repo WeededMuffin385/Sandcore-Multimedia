@@ -20,7 +20,7 @@ import Sandcore.Shader.Program;
 import Sandcore.World;
 import Sandcore.Vertex;
 import Sandcore.World.Bounds;
-import Sandcore.Mesh;
+import Sandcore.Graphics.Mesh;
 import Sandcore.Cube;
 import Sandcore.Print;
 

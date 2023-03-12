@@ -196,7 +196,7 @@
     <ClCompile Include="Source\Application\Scene\Scene.ixx" />
     <ClCompile Include="Source\Graphics\Camera\Camera.cpp" />
     <ClCompile Include="Source\Graphics\Camera\Camera.ixx" />
-    <ClCompile Include="Source\Graphics\Drawable\Drawable.ixx" />
+    <ClCompile Include="Source\Graphics\Drawable DSA\Drawable.ixx" />
     <ClCompile Include="Source\Graphics\Framebuffer\Framebuffer.cpp" />
     <ClCompile Include="Source\Graphics\Mesh DSA\Mesh.ixx" />
     <ClCompile Include="Source\Graphics\Canvas DSA\Canvas.ixx" />
@@ -210,12 +210,6 @@
     <ClCompile Include="Source\Graphics\Window\Event\Event.ixx" />
     <ClCompile Include="Source\Graphics\Window\Window.cpp" />
     <ClCompile Include="Source\Graphics\Window\Window.ixx" />
-    <ClCompile Include="Source\Interface\Button\Button.cpp" />
-    <ClCompile Include="Source\Interface\Button\Button.ixx" />
-    <ClCompile Include="Source\Interface\Rectangle\Rectangle.cpp" />
-    <ClCompile Include="Source\Interface\Rectangle\Rectangle.ixx" />
-    <ClCompile Include="Source\Interface\Vertex\InterfaceVertex.cpp" />
-    <ClCompile Include="Source\Interface\Vertex\InterfaceVertex.ixx" />
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\Network\Client\Client.cpp" />
     <ClCompile Include="Source\Network\Client\Client.ixx" />

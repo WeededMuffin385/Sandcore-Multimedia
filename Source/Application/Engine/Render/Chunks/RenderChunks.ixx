@@ -19,7 +19,7 @@ import Sandcore.Render.Camera;
 import Sandcore.Vertex;
 import Sandcore.Graphics.Canvas;
 
-import Sandcore.Framebuffer;
+import Sandcore.Graphics.Framebuffer;
 
 export namespace Sandcore {
 	class RenderChunks {

@@ -5,7 +5,7 @@
 #include <glm/glm.hpp>
 
 
-export module Sandcore.Framebuffer;
+export module Sandcore.Graphics.Framebuffer;
 
 import Sandcore.Graphics.Canvas;
 import Sandcore.Graphics.Drawable;
@@ -34,18 +34,12 @@ export namespace Sandcore {
 
 
 		const Size& size() { return mSize; }
-		GLuint& RBO() { return mRBO; };
-		operator Texture2D&() { return texture; }
-
 	private:
-		virtual void bindFramebuffer();
-
 		void createFramebuffer();
 		void createRenderbuffer(int width, int height);
 
 		Size mSize;
-		GLuint mFBO = 0;
-		GLuint mRBO = 0;
+		GLuint RBO = 0;
 		Texture2D texture;
 	};
 }

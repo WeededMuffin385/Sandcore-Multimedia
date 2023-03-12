@@ -88,40 +88,25 @@
     <ClCompile Include="Source\Graphics\Camera\Camera.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Mesh\Mesh.ixx">
+    <ClCompile Include="Source\Graphics\Mesh DSA\Mesh.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Source\Graphics\Drawable\Drawable.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Canvas\Canvas.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Canvas\Canvas.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Framebuffer\Framebuffer.cpp">
+    <ClCompile Include="Source\Graphics\Canvas DSA\Canvas.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Source\Graphics\Framebuffer\Framebuffer.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Texture\Texture.cpp">
+    <ClCompile Include="Source\Graphics\Texture DSA\Texture.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Texture\Texture.ixx">
+    <ClCompile Include="Source\Graphics\Texture DSA\Texture2D.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Texture\Texture2D\Texture2D.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Texture\Texture2D\Texture2D.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Texture\Texture3D\Texture3D.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Texture\Texture3D\Texture3D.ixx">
+    <ClCompile Include="Source\Graphics\Texture DSA\Texture3D.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Source\Graphics\Window\Event\Event.cpp">
@@ -253,10 +238,13 @@
     <ClCompile Include="Source\Application\Menu\ConnectMenu.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Program\Program.ixx">
+    <ClCompile Include="Source\Graphics\Program DSA\Program.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Program\Shader.ixx">
+    <ClCompile Include="Source\Graphics\Program DSA\Shader.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Framebuffer\Framebuffer.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

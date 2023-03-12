@@ -33,7 +33,7 @@ namespace Sandcore {
 	void RenderTextures::loadBlocks(std::filesystem::path path) {
 		using TPBI = BlockIdentification;
 
-		blockTextures.create(width, height, static_cast<int>(TPBI::size));
+		blockTextures.resize(width, height, static_cast<int>(TPBI::size));
 
 		loadBlock(TPBI::Wrong, path / "wrong.png");
 

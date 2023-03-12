@@ -25,7 +25,7 @@ import Sandcore.Graphics.Canvas;
 import Sandcore.Application.Memory;
 
 namespace Sandcore {
-	RenderChunks::RenderChunks(World& world, Window& window, RenderCamera& camera, RenderTextures& textures) : world(world), window(window), camera(camera), textures(textures), framebuffer(resolution.x, resolution.y), shader(Memory::shaderBlockPath) {
+	RenderChunks::RenderChunks(World& world, Window& window, RenderCamera& camera, RenderTextures& textures) : world(world), window(window), camera(camera), textures(textures), shader(Memory::shaderBlockPath) {
 		shader.use();
 		shader.setFloat("capacity", textures.getCapacity());
 	}

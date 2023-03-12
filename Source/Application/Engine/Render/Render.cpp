@@ -24,7 +24,7 @@ import Sandcore.Graphics.Mesh;
 import Sandcore.Cube;
 import Sandcore.Print;
 
-import Sandcore.Framebuffer;
+import Sandcore.Graphics.Framebuffer;
 import Sandcore.Graphics.Canvas;
 
 import Sandcore.Render.Chunk;
@@ -51,7 +51,7 @@ namespace Sandcore {
 
 		glEnable(GL_MULTISAMPLE);
 
-		using FV = FramebufferVertex;
+		using FV = typename Vertex<glm::float32>;
 
 		mesh.vertices = { {0},{1}, {2}, {3} };
 		mesh.indices = { 0, 1, 2, 0, 2, 3 };

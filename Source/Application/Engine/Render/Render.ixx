@@ -23,7 +23,7 @@ import Sandcore.Graphics.Mesh;
 
 import Sandcore.Vertex;
 
-import Sandcore.Framebuffer;
+import Sandcore.Graphics.Framebuffer;
 
 import Sandcore.Render.Chunks;
 

@@ -61,7 +61,7 @@ namespace Sandcore {
 	}
 
 	Render::~Render() {
-		window.setMouseEnabled();
+		window.toggleCursor(Window::Cursor::Normal);
 	}
 
 	void Render::update() {
@@ -72,8 +72,8 @@ namespace Sandcore {
 	void Render::events() {
 		if (event.type == Event::Type::Key && event.key.action == GLFW_PRESS) {
 			if (event.key.key == GLFW_KEY_I) {
-				if (mouse) window.setMouseDisabled();
-				if (!mouse) window.setMouseEnabled();
+				if (mouse) window.toggleCursor(Window::Cursor::Disabled);
+				if (!mouse) window.toggleCursor(Window::Cursor::Normal);
 
 				camera.setFirst();
 				mouse = !mouse;

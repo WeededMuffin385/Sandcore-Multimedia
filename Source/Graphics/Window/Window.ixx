@@ -18,41 +18,31 @@ export namespace Sandcore {
 			double x;
 			double y;
 		};
+
+		enum Cursor {
+			Disabled = GLFW_CURSOR_DISABLED,
+			Normal = GLFW_CURSOR_NORMAL,
+		};
 	public:
 		Window(int width, int height, const char* title, GLFWmonitor* monitor = nullptr, GLFWwindow* share = nullptr);
-		
 		~Window();
 
 		bool pollEvent(Event& event);
+		bool isOpen();
 
-		void setContext();
-		void setCurrent();
-
-		void getFramebufferSize(int* width, int* height);
+		void display();
 
 		Size size();
 		Mouse mouse();
 
+		void setContext();
+		void toggleCursor(Cursor mode);
+
 		bool getKey(int key, int state = GLFW_PRESS);
 		bool getMouseButton(int button, int state = GLFW_PRESS);
 
-		void setMouseDisabled();
-		void setMouseEnabled();
-
-		bool isOpen();
-		void close();
-
-		void display();
-
 		void setIcon(Image& image);
-
-		operator GLFWwindow*();
-
 	private:
-		virtual void bindFramebuffer();
-		void init();
-
 		GLFWwindow* window = nullptr;
-		void create(int width, int height, const char* title, GLFWmonitor* monitor, GLFWwindow* share);
 	};
 }

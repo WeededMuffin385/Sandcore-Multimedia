@@ -25,6 +25,8 @@ export namespace Sandcore {
 		}
 
 		virtual void draw(Drawable& drawable, Program& program, Texture& texture) {
+			glViewport(0, 0, view.width, view.height);
+
 			bind();
 			program.use();
 			texture.bind();
@@ -32,21 +34,30 @@ export namespace Sandcore {
 		}
 
 		virtual void draw(Drawable& drawable, Program& program) {
+			glViewport(0, 0, view.width, view.height);
+
 			bind();
 			program.use();
 			drawable.render();
 		}
 
 		virtual void draw(Drawable& drawable) {
+			glViewport(0, 0, view.width, view.height);
+
 			bind();
 			drawable.render();
 		}
 
 		virtual void viewport(int width, int height) {
-			glViewport(0, 0, width, height);
+			view = { width, height };
 		}
 
 	protected:
+		struct {
+			int width;
+			int height;
+		} view;
+
 		GLuint FBO = 0;
 		GLfloat color[4] = { 0.f, 0.5f, 0.f, 0.f };
 		GLfloat depth = 1.0f;

@@ -26,7 +26,6 @@ import Sandcore.Application.Memory;
 
 namespace Sandcore {
 	RenderChunks::RenderChunks(World& world, Window& window, RenderCamera& camera, RenderTextures& textures) : world(world), window(window), camera(camera), textures(textures), shader(Memory::shaderBlockPath) {
-		shader.use();
 		shader.setFloat("capacity", textures.getCapacity());
 	}
 
@@ -38,22 +37,18 @@ namespace Sandcore {
 	}
 
 	void RenderChunks::draw() {
-		auto size = window.size();
+		auto size = window.getSize();
+		auto framesize = framebuffer.getSize();
 
 		if (resolution.dynamic) {
-			if (size.x != resolution.x || size.y != resolution.y) {
-				framebuffer.resize(size.x, size.y);
-				resolution.x = size.x;
-				resolution.y = size.y;
-			}
+			framebuffer.resize(size.x, size.y);
 		}
 
 		framebuffer.clear();
-		shader.use();
 		shader.setMat4("view", camera.getViewMatrix());
 		shader.setMat4("proj", camera.getProjMatrix(size.x, size.y));
 
-		framebuffer.viewport(resolution.x, resolution.y);
+		framebuffer.viewport(framesize.x, framesize.y);
 		draw(RenderChunk::Identification::opaque);
 
 		glDisable(GL_CULL_FACE);
@@ -259,7 +254,10 @@ namespace Sandcore {
 
 	void RenderChunks::updateWantedChunks() {
 		for (auto& [position, chunk] : chunks) {
-			if (isInRadius(position)) chunk.setWanted();
+			if (isInRadius(position)) {
+				chunk.setWanted();
+				world.getChunk(position).setWanted();
+			}
 		}
 	}
 
@@ -272,6 +270,7 @@ namespace Sandcore {
 		for (int z = -radius; z <= radius; ++z) {
 			if (x * x + y * y + z * z <= r * r) {
 				auto position = camera.getWorldPosition() + Vector3D<int>(x, y, z);
+
 				if (drawn[position]) continue;
 				if (chunks.contains(position)) {
 					shader.setMat4("model", glm::translate(glm::mat4(1.0f), glm::vec3(WorldChunk::size::x * x, WorldChunk::size::y * y, WorldChunk::size::z * z)));

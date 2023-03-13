@@ -24,7 +24,7 @@ export namespace Sandcore {
 
 	protected:
 		virtual void draw() {
-			window.viewport(window.size().x, window.size().y);
+			window.viewport(window.getSize().x, window.getSize().y);
 			window.clear(0.8828125, 0.82421875, 0.41796875);
 			window.draw(affiche, shader);
 			window.draw(connect, shader);
@@ -39,21 +39,30 @@ export namespace Sandcore {
 		virtual void events() {
 			if (event.type == Event::Type::Mouse)
 			if (event.mouse.action == GLFW_PRESS)
-			if (event.mouse.button == GLFW_MOUSE_BUTTON_LEFT) 
-			if (connect.collide(window)){
-				push(new ConnectMenu(window, event, scenes));
-				std::print("Clicked on \"Connect\" button\n");
+			if (event.mouse.button == GLFW_MOUSE_BUTTON_LEFT) {
+				if (connect.collide(window)) {
+					push(new ConnectMenu(window, event, scenes));
+					std::print("Clicked on \"Connect\" button\n");
+				}
+
+				if (create.collide(window)) {
+					std::print("Clicked on \"Create\" button\n");
+				}
+
+				if (settings.collide(window)) {
+					std::print("Clicked on \"Settings\" button\n");
+				}
 			}
 		}
 
 		virtual void update() {
 			float k, x, y;
-			if (window.size().x < window.size().y) {
-				k = (float)window.size().x / (float)window.size().y;
+			if (window.getSize().x < window.getSize().y) {
+				k = (float)window.getSize().x / (float)window.getSize().y;
 				x = 0.04f;
 				y = x * k;
 			} else {
-				k = (float)window.size().y / (float)window.size().x;
+				k = (float)window.getSize().y / (float)window.getSize().x;
 				y = 0.04f;
 				x = y * k;
 			}

@@ -30,8 +30,7 @@ export namespace Sandcore {
 		void draw();
 
 		struct {
-			int x = 0;
-			int y = 0;
+			float quality = 1;
 			bool dynamic = true;
 		} resolution;
 
@@ -54,7 +53,7 @@ export namespace Sandcore {
 		Window& window;
 		World& world;
 
-		int radius = 6;
+		int radius = 8;
 
 		std::unordered_map<Vector3D<int>, RenderChunk, Vector3DHash<int>> chunks;
 		Program shader;

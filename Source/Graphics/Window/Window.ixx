@@ -9,16 +9,6 @@ import Sandcore.Image;
 export namespace Sandcore {
 	class Window : public Canvas {
 	public:
-		struct Size {
-			int x;
-			int y;
-		};
-
-		struct Mouse {
-			double x;
-			double y;
-		};
-
 		enum Cursor {
 			Disabled = GLFW_CURSOR_DISABLED,
 			Normal = GLFW_CURSOR_NORMAL,
@@ -32,8 +22,8 @@ export namespace Sandcore {
 
 		void display();
 
-		Size size();
-		Mouse mouse();
+		virtual Vector2D<int> getSize();
+		Vector2D<double> mouse();
 
 		void setContext();
 		void toggleCursor(Cursor mode);

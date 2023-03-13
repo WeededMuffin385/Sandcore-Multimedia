@@ -37,7 +37,7 @@ export namespace Sandcore {
 
 	protected:
 		virtual void draw() {
-			window.viewport(window.size().x, window.size().y);
+			window.viewport(window.getSize().x, window.getSize().y);
 			window.clear(1, 1, 0, 1);
 			window.draw(back, shader);
 			window.display();

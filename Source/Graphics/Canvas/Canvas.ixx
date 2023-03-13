@@ -8,6 +8,8 @@ import Sandcore.Graphics.Drawable;
 import Sandcore.Graphics.Texture;
 import Sandcore.Graphics.Program;
 
+import Sandcore.Vector2D;
+
 export namespace Sandcore {
 	class Canvas {
 	public:
@@ -51,6 +53,8 @@ export namespace Sandcore {
 		virtual void viewport(int width, int height) {
 			view = { width, height };
 		}
+
+		virtual Vector2D<int> getSize() = 0;
 
 	protected:
 		struct {

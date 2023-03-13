@@ -49,14 +49,17 @@ export namespace Sandcore {
 		}
 
 		void setInt(std::string title, int value) {
+			glUseProgram(program);
 			glUniform1i(glGetUniformLocation(program, title.c_str()), value);
 		}
 
 		void setFloat(std::string title, float value) {
+			glUseProgram(program);
 			glUniform1f(glGetUniformLocation(program, title.c_str()), value);
 		}
 
 		void setMat4(std::string title, glm::mat4 value) {
+			glUseProgram(program);
 			glUniformMatrix4fv(glGetUniformLocation(program, title.c_str()), 1, GL_FALSE, glm::value_ptr(value));
 		}
 

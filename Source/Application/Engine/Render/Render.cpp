@@ -30,6 +30,8 @@ import Sandcore.Graphics.Canvas;
 import Sandcore.Render.Chunk;
 import Sandcore.Application.Memory;
 
+import Sandcore.Print;
+
 namespace Sandcore {
 	Render::Render(Window& window, Event& event, World& world) : window(window), event(event), world(world),
 		screenShader(Memory::shaderScreenPath),
@@ -83,18 +85,24 @@ namespace Sandcore {
 				spectator = !spectator;
 			}
 
-			if (event.key.key == GLFW_KEY_EQUAL) {
-				chunks.resolution.x *= 2;
-				chunks.resolution.y *= 2;
+			if (!chunks.resolution.dynamic) {
+				if (event.key.key == GLFW_KEY_EQUAL) {
 
-				chunks.framebuffer.resize(chunks.resolution.x, chunks.resolution.y);
+					chunks.resolution.quality *= 2;
+					chunks.framebuffer.resize(chunks.window.getSize().x * chunks.resolution.quality,
+						chunks.window.getSize().y * chunks.resolution.quality);
+				}
+
+				if (event.key.key == GLFW_KEY_MINUS) {
+					chunks.resolution.quality /= 2;
+
+					chunks.framebuffer.resize(chunks.window.getSize().x * chunks.resolution.quality,
+						chunks.window.getSize().y * chunks.resolution.quality);
+				}
 			}
 
-			if (event.key.key == GLFW_KEY_MINUS) {
-				chunks.resolution.x /= 2;
-				chunks.resolution.y /= 2;
-
-				chunks.framebuffer.resize(chunks.resolution.x, chunks.resolution.y);
+			if (event.key.key == GLFW_KEY_SLASH) {
+				chunks.framebuffer.toggle();
 			}
 
 			if (event.key.key == GLFW_KEY_BACKSLASH) {
@@ -112,7 +120,7 @@ namespace Sandcore {
 
 	void Render::updateViewport() {
 		static int prevWidth = 0, prevHeight = 0;
-		auto size = window.size();
+		auto size = window.getSize();
 
 		// auto view-porting
 
@@ -141,7 +149,7 @@ namespace Sandcore {
 			glDisable(GL_DEPTH_TEST);
 			window.draw(mesh, screenShader, underwater);
 			glEnable(GL_DEPTH_TEST);
-		}
+		} // else std::print()
 	}
 }
 

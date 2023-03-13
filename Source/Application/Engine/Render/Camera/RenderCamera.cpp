@@ -25,6 +25,12 @@ namespace Sandcore {
 		return direction;
 	}
 
+	void RenderCamera::updatePosition() {
+		bound(worldPosition.x, position.x, WorldChunk::size::x);
+		bound(worldPosition.y, position.y, WorldChunk::size::y);
+		bound(worldPosition.z, position.z, WorldChunk::size::z);
+	}
+
 	void RenderCamera::mouseInput(Window& window) {
 		Sandcore::Camera::mouseInput(window);
 	}
@@ -32,9 +38,7 @@ namespace Sandcore {
 	void RenderCamera::keyboardInput(Window& window) {
 		Sandcore::Camera::keyboardInput(window);
 
-		bound(worldPosition.x, position.x, WorldChunk::size::x);
-		bound(worldPosition.y, position.y, WorldChunk::size::y);
-		bound(worldPosition.z, position.z, WorldChunk::size::z);
+		updatePosition();
 	}
 
 	void RenderCamera::updateVectors() {

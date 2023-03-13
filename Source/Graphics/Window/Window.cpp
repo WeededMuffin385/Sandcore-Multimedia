@@ -39,20 +39,16 @@ namespace Sandcore {
 		glfwMakeContextCurrent(window);
 	}
 
-	Window::Size Window::size() {
-		int x;
-		int y;
+	Vector2D<int> Window::getSize() {
+		int x, y;
 		glfwGetWindowSize(window, &x, &y);
-
-		return Size(x, y);
+		return { x, y };
 	}
 
-	Window::Mouse Window::mouse() {
-		double x;
-		double y;
+	Vector2D<double> Window::mouse() {
+		double x, y;
 		glfwGetCursorPos(window, &x, &y);
-
-		return Mouse(x, y);
+		return { x ,y };
 	}
 
 	bool Window::getMouseButton(int button, int state) {

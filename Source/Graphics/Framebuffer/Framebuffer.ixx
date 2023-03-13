@@ -28,6 +28,8 @@ export namespace Sandcore {
 		}
 
 		~Framebuffer() {
+			glDeleteTextures(1, &color);
+			glDeleteTextures(1, &depth);
 			glDeleteFramebuffers(1, &FBO);
 		}
 

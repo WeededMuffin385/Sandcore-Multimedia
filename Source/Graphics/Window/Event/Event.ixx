@@ -1,12 +1,9 @@
 #include <queue>
+#include <unordered_map>
 
 #define GLEW_STATIC
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
-
-namespace Sandcore {
-	class Scene;
-}
 
 export module Sandcore.Event;
 
@@ -53,17 +50,12 @@ export namespace Sandcore {
 		static void setCurrentWindow(GLFWwindow* window);
 
 		static void setWindowCallback(GLFWwindow* window);
-		static void removeWindowCallback(GLFWwindow* window);
 
-		static GLFWwindow* current;
-		static std::queue<Event> events;
+		static std::unordered_map<GLFWwindow*, std::queue<Event>> events;
 
 		static void cursor_position_callback(GLFWwindow* window, double xpos, double ypos);
 		static void mouse_button_callback(GLFWwindow* window, int button, int action, int mode);
 		static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode);
 		static void window_size_callback(GLFWwindow* window, int width, int height);
-		static void framebuffer_size_callback(GLFWwindow* window, int width, int height);
-	public:
-		static Scene*scene;
 	};
 }

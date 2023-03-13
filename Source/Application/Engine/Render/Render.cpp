@@ -107,6 +107,7 @@ namespace Sandcore {
 
 			if (event.key.key == GLFW_KEY_BACKSLASH) {
 				chunks.resolution.dynamic = !chunks.resolution.dynamic;
+				chunks.resolution.quality = 1;
 			}
 		}
 	}

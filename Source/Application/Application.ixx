@@ -13,6 +13,7 @@ export namespace Sandcore {
 		Application();
 
 		void loop();
+		void tick();
 		void push(Scene* scene);
 
 	private:

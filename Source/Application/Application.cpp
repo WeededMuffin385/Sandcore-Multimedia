@@ -22,12 +22,14 @@ namespace Sandcore {
 		push(new MainMenu(window, event, scenes));
 	}
 
+	void Application::tick() {
+		scenes.top()->tick();
+		if (!scenes.top()->run) scenes.pop();
+	}
+
 	void Application::loop() {
 		while (!scenes.empty() && window.isOpen()) {
-			Event::scene = scenes.top().get();
-
-			scenes.top()->tick();
-			if (!scenes.top()->run) scenes.pop();
+			tick();
 		}
 	}
 

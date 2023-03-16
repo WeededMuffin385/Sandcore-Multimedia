@@ -12,17 +12,20 @@ namespace Sandcore {
 
 	bool Event::pollEvent(GLFWwindow* window, Event& event) {
 		setCurrentWindow(window);
-		auto& queue = events[window];
 		glfwPollEvents();
 
-		if (queue.empty()) return false;
-		event = queue.front();
-		queue.pop();
+		if (events[window].empty()) return false;
+		event = events[window].front();
+		events[window].pop();
 		return true;
 	}
 
 	void Event::setCurrentWindow(GLFWwindow* window) {
 		if (!events.contains(window)) setWindowCallback(window);
+	}
+
+	void Event::erase(GLFWwindow* window) {
+		events.erase(window);
 	}
 
 	void Event::setWindowCallback(GLFWwindow* window) {
@@ -81,5 +84,6 @@ namespace Sandcore {
 		};
 
 		events[window].push(event);
+		if (foo) foo();
 	}
 }

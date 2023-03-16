@@ -17,6 +17,9 @@ export namespace Sandcore {
 		void push(Scene* scene);
 
 	private:
+		inline static Application* application = nullptr;
+		static void foo();
+
 		Scenes scenes;
 		Window window;
 		Event event;

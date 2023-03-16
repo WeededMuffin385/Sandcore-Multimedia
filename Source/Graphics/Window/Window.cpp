@@ -3,11 +3,11 @@
 #include <GLFW/glfw3.h>
 
 #include <memory>
+#include <unordered_map>
 import Sandcore.Window;
 
 import Sandcore.Event;
 import Sandcore.Image;
-import Sandcore.Graphics.Debug;
 
 namespace Sandcore {
 	Window::Window(int width, int height, const char* title, GLFWmonitor* monitor, GLFWwindow* share) {
@@ -20,6 +20,7 @@ namespace Sandcore {
 	}
 
 	Window::~Window() {
+		Event::erase(window);
 		glfwDestroyWindow(window);
 	}
 

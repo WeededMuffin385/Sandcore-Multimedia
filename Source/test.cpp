@@ -1,49 +1,28 @@
-#define GLEW_STATIC
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
+#include <ft2build.h>
+#include FT_FREETYPE_H 
 
-#include <filesystem>
+#include <stdexcept>
 
-import Sandcore.Shader.Program;
-import Sandcore.Window;
-import Sandcore.Mesh;
-import Sandcore.Event;
-import Sandcore.Graphics.Texture2D;
-import Sandcore.Framebuffer.Vertex;
 
+import Sandcore.Application;
 using namespace Sandcore;
 
 int main() {
-	int width = 700;
-	int height = 700;
-	Window window(width, height, "Test Window");
-	window.setContext();
-	window.setCurrent();
-	Event event;
+	FT_Library ft;
+	FT_Face face;
 
-	glEnable(GL_BLEND);
-	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	if (FT_Init_FreeType(&ft)) {
+		throw std::exception("Could not initialize FreeType!");
+	}
 
-	Texture2D texture0, texture3;
-	texture0.loadFromFile("C:/Users/Mi/Documents/GitHub/Sandcore-Multimedia/Userdata/texture_package/A.png");
-	texture3.loadFromFile("C:/Users/Mi/Documents/GitHub/Sandcore-Multimedia/Userdata/texture_package/B.png");
+	if (FT_New_Face(ft, "C:/Users/Mi/Documents/GitHub/Sandcore-Multimedia/Userdata/Resources/LiberationSans-Regular.ttf", 0, &face)) {
+		throw std::exception("Failed to load font!");
+	}
 
-	ShaderProgram screenShader("C:/Users/Mi/Documents/GitHub/Sandcore-Multimedia/Userdata/shaders/screen_shader");
-	Mesh<FramebufferVertex> mesh;
-	mesh.vertices = { {0}, {1}, {2}, {3} };
-	mesh.indices = { 0,1,2,0,2,3 };
-	mesh.update();
+	FT_Set_Pixel_Sizes(face, 0, 48);
 
-	while (!window.isShouldClose()) {
-		window.pollEvent(event);
-
-		window.getSize(&width, &height);
-
-		window.clear();
-		glViewport(0, 0, width / 2.f, height / 2.f);
-		window.draw(mesh, screenShader, texture0);
-		glViewport(width / 2.f, height / 2.f, width / 2.f, height / 2.f);
-		window.draw(mesh, screenShader, texture3);
-		window.display();
+	if (FT_Load_Char(face, 'X', FT_LOAD_RENDER)) {
+		throw std::exception("Failed to load Glyph");
+		return -1;
 	}
 }

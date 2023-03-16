@@ -19,8 +19,16 @@ export namespace Sandcore {
 		Program(std::filesystem::path path) {
 			program = glCreateProgram();
 
-			Shader vertShader(path / "shader.vert", Shader::Type::Vertex);
-			Shader fragShader(path / "shader.frag", Shader::Type::Fragment);
+			std::filesystem::path vertShaderPath;
+			std::filesystem::path fragShaderPath;
+
+			for (const auto& file : std::filesystem::directory_iterator(path)) {
+				if (file.path().extension() == ".vert") vertShaderPath = file.path();
+				if (file.path().extension() == ".frag") fragShaderPath = file.path();
+			}
+
+			Shader vertShader(vertShaderPath, Shader::Type::Vertex);
+			Shader fragShader(fragShaderPath, Shader::Type::Fragment);
 
 			glAttachShader(program, vertShader);
 			glAttachShader(program, fragShader);

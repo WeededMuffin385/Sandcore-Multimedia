@@ -175,9 +175,6 @@
     <ClCompile Include="..\Sandcore-Engine\Graphics\Image\Image.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Source\main.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Application\Engine\Render\Chunks\RenderChunks.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
@@ -227,6 +224,9 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Source\Graphics\Debug\Debug.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

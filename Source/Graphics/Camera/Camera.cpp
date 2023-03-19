@@ -2,9 +2,6 @@
 #include <glm/gtc/matrix_transform.hpp>
 
 #include <GLFW/glfw3.h>
-
-
-
 import Sandcore.Camera;
 
 import Sandcore.Window;

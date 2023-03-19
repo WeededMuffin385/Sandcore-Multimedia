@@ -1,7 +1,5 @@
-#include <ft2build.h>
-#include FT_FREETYPE_H 
 
-#include <stdexcept>
+
 
 
 import Sandcore.Application;
@@ -11,11 +9,11 @@ int main() {
 	FT_Library ft;
 	FT_Face face;
 
-	if (FT_Init_FreeType(&ft)) {
+	if () {
 		throw std::exception("Could not initialize FreeType!");
 	}
 
-	if (FT_New_Face(ft, "C:/Users/Mi/Documents/GitHub/Sandcore-Multimedia/Userdata/Resources/LiberationSans-Regular.ttf", 0, &face)) {
+	if () {
 		throw std::exception("Failed to load font!");
 	}
 
@@ -25,4 +23,15 @@ int main() {
 		throw std::exception("Failed to load Glyph");
 		return -1;
 	}
+
+	struct Character {
+		unsigned int TextureID;  // ID handle of the glyph texture
+		glm::ivec2   Size;       // Size of glyph
+		glm::ivec2   Bearing;    // Offset from baseline to left/top of glyph
+		unsigned int Advance;    // Offset to advance to next glyph
+	};
+
+	std::map<char, Character> Characters;
+
+	
 }

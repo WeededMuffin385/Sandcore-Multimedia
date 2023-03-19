@@ -5,7 +5,6 @@
 export module Sandcore.Camera;
 
 import Sandcore.Window;
-
 import Sandcore.Vector3D;
 
 export namespace Sandcore {

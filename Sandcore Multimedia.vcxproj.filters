@@ -136,52 +136,10 @@
     <ClCompile Include="..\Sandcore-Server\Source\World\Bounds\Bounds.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\Sandcore-Engine\Network\Connection\Connection.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore-Engine\Network\Connection\Connection.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore-Engine\Network\Message\Byte.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore-Engine\Network\Message\Message.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore-Engine\Network\Message\Message.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore-Engine\Network\ThreadSafeQueue\ThreadSafeQueue.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore-Engine\Network\ThreadSafeQueue\ThreadSafeQueue.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore-Engine\Common\Clock\Clock.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore-Engine\Common\TPS\TPS.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore-Engine\Common\Vector3D\Vector3D.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore-Engine\Common\Vector3D\Vector3DHash.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore-Engine\Graphics\Image\Image.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore-Engine\Graphics\Image\Image.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Application\Engine\Render\Chunks\RenderChunks.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Source\Application\Engine\Render\Chunks\RenderChunks.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore-Engine\Common\Print\Print.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Source\Application\Engine\Render\Highlight\RenderHighlight.ixx">
@@ -190,28 +148,7 @@
     <ClCompile Include="Source\Application\Engine\Render\Highlight\RenderHightlight.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\Sandcore-Engine\Graphics\Vertex\Vertex.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore-Engine\Common\Vector2D\Vector2D.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore-Engine\Common\Vector2D\Vector2DHash.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore-Engine\Network\Message\Constructor.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore-Engine\Common\Timer\Timer.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Application\Menu\MainMenu.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore-Engine\Graphics\Interface\InterfaceComponent.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore-Engine\Graphics\Interface\InterfaceButton.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Source\Application\Menu\ConnectMenu.ixx">
@@ -224,6 +161,69 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Source\Graphics\Debug\Debug.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Font\Font.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Common\Vector\Vector2D.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Common\Vector\Vector2DHash.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Common\Vector\Vector3D.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Common\Vector\Vector3DHash.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Common\Print\Print.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Common\Image\Image.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Common\Image\Image.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Graphics\Vertex\Vertex.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Network\Connection\Connection.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Network\Connection\Connection.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Network\Message\Byte.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Network\Message\Constructor.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Network\Message\Message.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Network\Message\Message.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Network\ThreadSafeQueue\ThreadSafeQueue.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Network\ThreadSafeQueue\ThreadSafeQueue.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Common\TPS\TPS.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Common\Clock\Clock.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Graphics\Interface\InterfaceButton.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Graphics\Interface\InterfaceComponent.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Source\main.cpp">

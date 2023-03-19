@@ -28,8 +28,8 @@ export namespace Sandcore {
 
 		virtual void draw(Drawable& drawable, Program& program, Texture& texture) {
 			glViewport(0, 0, view.width, view.height);
-
 			bind();
+
 			program.use();
 			texture.bind();
 			drawable.render();
@@ -37,16 +37,16 @@ export namespace Sandcore {
 
 		virtual void draw(Drawable& drawable, Program& program) {
 			glViewport(0, 0, view.width, view.height);
-
 			bind();
+
 			program.use();
 			drawable.render();
 		}
 
 		virtual void draw(Drawable& drawable) {
 			glViewport(0, 0, view.width, view.height);
-
 			bind();
+
 			drawable.render();
 		}
 

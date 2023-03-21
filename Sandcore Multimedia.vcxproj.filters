@@ -5,229 +5,349 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="Исходные файлы\Application">
+      <UniqueIdentifier>{030651a4-ad1f-4c3a-b1bb-bba168595e1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Graphics">
+      <UniqueIdentifier>{ddf19476-ebfe-4a9f-bb6b-a560b7d1bcff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Network">
+      <UniqueIdentifier>{40b3faec-ce27-408b-85c0-232a005b7f6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\World">
+      <UniqueIdentifier>{6d9916d2-be0a-45da-8041-8ddd6dd6a6cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\World\Entity">
+      <UniqueIdentifier>{aeeeb84e-b879-423a-8e8f-b5e164081008}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\World\Chunk">
+      <UniqueIdentifier>{0ef2a1f1-997b-4ab3-817f-1047aa42b82b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Network\Client">
+      <UniqueIdentifier>{449ff353-dc27-4fb0-be03-5938e5e7ce13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Graphics\Camera">
+      <UniqueIdentifier>{a5a0c3fd-d229-45e1-8b74-ed60e8571ae3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Graphics\Canvas">
+      <UniqueIdentifier>{34f3e62e-1139-4885-b073-63f315b65e06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Graphics\Debug">
+      <UniqueIdentifier>{08319424-84c9-4a23-97b6-763d83e78c45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Graphics\Drawable">
+      <UniqueIdentifier>{a51ce714-320b-445b-8717-b88b8ad8c432}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Graphics\Font">
+      <UniqueIdentifier>{1d612836-c542-4b61-adc6-119cc1d6786b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Graphics\Framebuffer">
+      <UniqueIdentifier>{f204924b-dbe7-42b3-908f-9e19a8f1d294}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Graphics\Interface">
+      <UniqueIdentifier>{f4086dab-16e6-4d7e-8bdd-44b131c62409}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Graphics\Mesh">
+      <UniqueIdentifier>{9f56b895-4f84-45ac-9efa-97200ec3f4f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Graphics\Program">
+      <UniqueIdentifier>{ba0ea6ac-985a-4cba-82d9-9ff417fb3cd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Graphics\Texture">
+      <UniqueIdentifier>{f11aef2b-31dd-439c-b1cf-fef8d222d86c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Graphics\Vertex">
+      <UniqueIdentifier>{90f25bdb-d1db-4649-a4c3-7dec1520eac8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Graphics\Window">
+      <UniqueIdentifier>{1c44e0ed-35ae-4aea-b0ba-566acf20caf9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Graphics\Window\Event">
+      <UniqueIdentifier>{fcfce63f-7fcd-459d-8760-3f0b2e123321}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\World\Block">
+      <UniqueIdentifier>{8c9dbfc8-e87c-434a-8364-d06b190cacdf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\World\Bounds">
+      <UniqueIdentifier>{1863e8c5-5ed1-4fa1-bf3a-4e1d19222493}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Network\Message">
+      <UniqueIdentifier>{737b565b-b623-4277-a376-7e3cc71adce3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Network\Connection">
+      <UniqueIdentifier>{4eec0fd9-0e93-4319-8f12-f1e42404adfd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Network\ThreadSafeQueue">
+      <UniqueIdentifier>{a3e6a786-4fae-4971-851d-e72282e8cd4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Common">
+      <UniqueIdentifier>{d130e451-7d0e-4a9f-a132-f95320db906f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Optional">
+      <UniqueIdentifier>{39e86fbd-b9be-4fef-866a-b2e069a235e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Common\Vector">
+      <UniqueIdentifier>{e0ac797c-b5d7-4da6-bc59-293b418ca475}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Common\Image">
+      <UniqueIdentifier>{b7cd338d-3374-47cd-9c60-0d99957cd9b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Common\Clock">
+      <UniqueIdentifier>{a42f75b5-ae69-4f0e-aca3-db859f533c2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Common\TPS">
+      <UniqueIdentifier>{217d933c-9828-4821-9795-e02a3110e848}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Common\Print">
+      <UniqueIdentifier>{bde4fd5c-81a6-4d4d-87e9-26dcd9d09dbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Application\Engine">
+      <UniqueIdentifier>{d17d2b20-678d-4e2d-b8fc-3637ea278ef1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Application\Engine\Controls">
+      <UniqueIdentifier>{55aaf020-9c15-410c-bc2c-9454f693e2af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Application\Engine\Render">
+      <UniqueIdentifier>{a8cd5bcc-74d8-4529-91e6-964dad144e65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Application\Engine\Render\Camera">
+      <UniqueIdentifier>{c4be4299-d757-47b6-9205-f500cdb40fb3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Application\Engine\Render\Chunks">
+      <UniqueIdentifier>{d3017b47-684a-4d40-a570-6c416fb56bb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Application\Engine\Render\Textures">
+      <UniqueIdentifier>{a014af5d-aaf4-4df4-aeb9-5f21cf6d2512}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Application\Engine\Render\Chunks\Chunk">
+      <UniqueIdentifier>{7066e7a2-b68d-4a16-b321-97eda37f0f8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Application\Memory">
+      <UniqueIdentifier>{0244f567-6362-40e5-b371-6a3c14c26c15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Application\Menu">
+      <UniqueIdentifier>{d3b1e165-fe23-4c85-9eb6-21bf4e217669}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Application\Scene">
+      <UniqueIdentifier>{b46add72-e71b-4632-94f0-0044be02298e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\World\Entity\Entity.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\World\Entity\Entity.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\World\WorldChunk\WorldChunk.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\World\WorldChunk\WorldChunk.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\World\World.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\World\World.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Additional\Vector3DGLM.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Application\Engine\Controls\Controls.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Application\Engine\Controls\Controls.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Application\Engine\Render\Camera\RenderCamera.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Application\Engine\Render\Camera\RenderCamera.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Application\Engine\Render\Chunks\Chunk\RenderChunk.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Application\Engine\Render\Chunks\Chunk\RenderChunk.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Application\Engine\Render\Textures\RenderTextures.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Application\Engine\Render\Textures\RenderTextures.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Application\Engine\Render\Cube.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Application\Engine\Render\Render.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Application\Engine\Render\Render.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Application\Engine\Engine.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Application\Engine\Engine.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Application\Memory\Memory.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Application\Scene\Scene.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Application\Scene\Scene.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Application\Application.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Application\Application.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Camera\Camera.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Camera\Camera.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Mesh\Mesh.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Drawable\Drawable.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Canvas\Canvas.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Framebuffer\Framebuffer.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Texture\Texture.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Texture\Texture2D.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Texture\Texture3D.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Window\Event\Event.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Window\Event\Event.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Window\Window.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Window\Window.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Network\Client\Client.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Network\Client\Client.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore-Server\Source\World\Block\Block.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore-Server\Source\World\Block\Block.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore-Server\Source\World\Bounds\Bounds.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Application\Engine\Render\Chunks\RenderChunks.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Application\Engine\Render\Chunks\RenderChunks.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Application\Engine\Render\Highlight\RenderHighlight.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Application\Engine\Render\Highlight\RenderHightlight.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Application\Menu\MainMenu.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Application\Menu\ConnectMenu.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Program\Program.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Program\Shader.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Debug\Debug.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Font\Font.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore\Engine\Common\Vector\Vector2D.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore\Engine\Common\Vector\Vector2DHash.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore\Engine\Common\Vector\Vector3D.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore\Engine\Common\Vector\Vector3DHash.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore\Engine\Common\Print\Print.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore\Engine\Common\Image\Image.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore\Engine\Common\Image\Image.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore\Engine\Graphics\Vertex\Vertex.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore\Engine\Network\Connection\Connection.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore\Engine\Network\Connection\Connection.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore\Engine\Network\Message\Byte.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore\Engine\Network\Message\Constructor.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore\Engine\Network\Message\Message.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore\Engine\Network\Message\Message.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore\Engine\Network\ThreadSafeQueue\ThreadSafeQueue.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore\Engine\Network\ThreadSafeQueue\ThreadSafeQueue.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore\Engine\Common\TPS\TPS.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore\Engine\Common\Clock\Clock.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore\Engine\Graphics\Interface\InterfaceButton.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore\Engine\Graphics\Interface\InterfaceComponent.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="Source\main.cpp">
       <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\World\Entity\Entity.cpp">
+      <Filter>Исходные файлы\World\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\World\Entity\Entity.ixx">
+      <Filter>Исходные файлы\World\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\World\Chunk\WorldChunk.cpp">
+      <Filter>Исходные файлы\World\Chunk</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\World\Chunk\WorldChunk.ixx">
+      <Filter>Исходные файлы\World\Chunk</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\World\World.cpp">
+      <Filter>Исходные файлы\World</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\World\World.ixx">
+      <Filter>Исходные файлы\World</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Network\Client\Client.ixx">
+      <Filter>Исходные файлы\Network\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Network\Client\Client.cpp">
+      <Filter>Исходные файлы\Network\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Graphics\Camera\Camera.cpp">
+      <Filter>Исходные файлы\Graphics\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Graphics\Camera\Camera.ixx">
+      <Filter>Исходные файлы\Graphics\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Graphics\Canvas\Canvas.ixx">
+      <Filter>Исходные файлы\Graphics\Canvas</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Graphics\Debug\Debug.ixx">
+      <Filter>Исходные файлы\Graphics\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Graphics\Drawable\Drawable.ixx">
+      <Filter>Исходные файлы\Graphics\Drawable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Graphics\Font\Font.ixx">
+      <Filter>Исходные файлы\Graphics\Font</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Graphics\Framebuffer\Framebuffer.ixx">
+      <Filter>Исходные файлы\Graphics\Framebuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Graphics\Interface\InterfaceComponent.ixx">
+      <Filter>Исходные файлы\Graphics\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Graphics\Interface\InterfaceButton.ixx">
+      <Filter>Исходные файлы\Graphics\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Graphics\Mesh\Mesh.ixx">
+      <Filter>Исходные файлы\Graphics\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Graphics\Program\Program.ixx">
+      <Filter>Исходные файлы\Graphics\Program</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Graphics\Program\Shader.ixx">
+      <Filter>Исходные файлы\Graphics\Program</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Graphics\Texture\Texture.ixx">
+      <Filter>Исходные файлы\Graphics\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Graphics\Texture\Texture2D.ixx">
+      <Filter>Исходные файлы\Graphics\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Graphics\Texture\Texture3D.ixx">
+      <Filter>Исходные файлы\Graphics\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Graphics\Vertex\Vertex.ixx">
+      <Filter>Исходные файлы\Graphics\Vertex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Graphics\Window\Window.cpp">
+      <Filter>Исходные файлы\Graphics\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Graphics\Window\Window.ixx">
+      <Filter>Исходные файлы\Graphics\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Graphics\Window\Event\Event.ixx">
+      <Filter>Исходные файлы\Graphics\Window\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Graphics\Window\Event\Event.cpp">
+      <Filter>Исходные файлы\Graphics\Window\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\Application.ixx">
+      <Filter>Исходные файлы\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\Application.cpp">
+      <Filter>Исходные файлы\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore-Server\Source\World\Block\Block.cpp">
+      <Filter>Исходные файлы\World\Block</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore-Server\Source\World\Block\Block.ixx">
+      <Filter>Исходные файлы\World\Block</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore-Server\Source\World\Bounds\Bounds.ixx">
+      <Filter>Исходные файлы\World\Bounds</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Network\Message\Byte.ixx">
+      <Filter>Исходные файлы\Network\Message</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Network\Connection\Connection.cpp">
+      <Filter>Исходные файлы\Network\Connection</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Network\Connection\Connection.ixx">
+      <Filter>Исходные файлы\Network\Connection</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Network\Message\Message.ixx">
+      <Filter>Исходные файлы\Network\Message</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Network\Message\Message.cpp">
+      <Filter>Исходные файлы\Network\Message</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Network\Message\Constructor.ixx">
+      <Filter>Исходные файлы\Network\Message</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Network\ThreadSafeQueue\ThreadSafeQueue.cpp">
+      <Filter>Исходные файлы\Network\ThreadSafeQueue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Network\ThreadSafeQueue\ThreadSafeQueue.ixx">
+      <Filter>Исходные файлы\Network\ThreadSafeQueue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Common\Vector\Vector2D.ixx">
+      <Filter>Исходные файлы\Common\Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Common\Vector\Vector2DHash.ixx">
+      <Filter>Исходные файлы\Common\Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Common\Vector\Vector3D.ixx">
+      <Filter>Исходные файлы\Common\Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Common\Vector\Vector3DHash.ixx">
+      <Filter>Исходные файлы\Common\Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Common\Image\Image.cpp">
+      <Filter>Исходные файлы\Common\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Common\Image\Image.ixx">
+      <Filter>Исходные файлы\Common\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Common\Clock\Clock.ixx">
+      <Filter>Исходные файлы\Common\Clock</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Common\TPS\TPS.ixx">
+      <Filter>Исходные файлы\Common\TPS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Common\Print\Print.ixx">
+      <Filter>Исходные файлы\Common\Print</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\Engine\Engine.ixx">
+      <Filter>Исходные файлы\Application\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\Engine\Engine.cpp">
+      <Filter>Исходные файлы\Application\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\Engine\Controls\Controls.cpp">
+      <Filter>Исходные файлы\Application\Engine\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\Engine\Controls\Controls.ixx">
+      <Filter>Исходные файлы\Application\Engine\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\Engine\Render\Render.cpp">
+      <Filter>Исходные файлы\Application\Engine\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\Engine\Render\Render.ixx">
+      <Filter>Исходные файлы\Application\Engine\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\Engine\Render\Camera\RenderCamera.cpp">
+      <Filter>Исходные файлы\Application\Engine\Render\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\Engine\Render\Camera\RenderCamera.ixx">
+      <Filter>Исходные файлы\Application\Engine\Render\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\Engine\Render\Chunks\RenderChunks.ixx">
+      <Filter>Исходные файлы\Application\Engine\Render\Chunks</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\Engine\Render\Chunks\RenderChunks.cpp">
+      <Filter>Исходные файлы\Application\Engine\Render\Chunks</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\Engine\Render\Chunks\Chunk\RenderChunk.cpp">
+      <Filter>Исходные файлы\Application\Engine\Render\Chunks\Chunk</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\Engine\Render\Chunks\Chunk\RenderChunk.ixx">
+      <Filter>Исходные файлы\Application\Engine\Render\Chunks\Chunk</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\Engine\Render\Cube.ixx">
+      <Filter>Исходные файлы\Application\Engine\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\Memory\Memory.ixx">
+      <Filter>Исходные файлы\Application\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\Menu\ConnectMenu.ixx">
+      <Filter>Исходные файлы\Application\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\Menu\MainMenu.ixx">
+      <Filter>Исходные файлы\Application\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\Scene\Scene.cpp">
+      <Filter>Исходные файлы\Application\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\Scene\Scene.ixx">
+      <Filter>Исходные файлы\Application\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\Engine\Render\Textures\RenderTextures.cpp">
+      <Filter>Исходные файлы\Application\Engine\Render\Textures</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application\Engine\Render\Textures\RenderTextures.ixx">
+      <Filter>Исходные файлы\Application\Engine\Render\Textures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Optional\GLMSupport\Vector3DGLM.ixx">
+      <Filter>Исходные файлы\Optional</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

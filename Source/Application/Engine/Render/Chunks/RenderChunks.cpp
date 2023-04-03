@@ -49,7 +49,7 @@ namespace Sandcore {
 		shader.setMat4("view", camera.getViewMatrix());
 		shader.setMat4("proj", camera.getProjMatrix(size.x, size.y));
 
-		framebuffer.viewport(framesize.x, framesize.y);
+		framebuffer.setViewport(framesize.x, framesize.y);
 		draw(RenderChunk::Identification::opaque);
 
 		glDisable(GL_CULL_FACE);
@@ -61,7 +61,7 @@ namespace Sandcore {
 		glEnable(GL_CULL_FACE);
 		draw(RenderChunk::Identification::opaque);
 
-		window.viewport(size.x, size.y);
+		window.setViewport(size.x, size.y);
 		window.draw(framebuffer);
 	}
 

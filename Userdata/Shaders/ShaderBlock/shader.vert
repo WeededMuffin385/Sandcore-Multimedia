@@ -10,8 +10,8 @@ out vec3 fTexPos;
 
 uniform mat4 proj;
 uniform mat4 view;
-
 uniform mat4 model;
+
 uniform float capacity;
 
 vec2 texCoords[4] = vec2[4](

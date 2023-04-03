@@ -37,7 +37,7 @@ export namespace Sandcore {
 
 	protected:
 		virtual void draw() {
-			window.viewport(window.getSize().x, window.getSize().y);
+			window.setViewport(window.getSize().x, window.getSize().y);
 			window.clear(1, 1, 0, 1);
 			window.draw(back, shader);
 			window.display();
@@ -57,8 +57,8 @@ export namespace Sandcore {
 		}
 
 		virtual void update() {
-			back.position() = glm::vec2(0.1, 0.1);
-			back.size() = glm::vec2(0.8, 0.2);
+			back.setPosition(glm::vec2(0.1, 0.1));
+			back.setSize(glm::vec2(0.8, 0.2));
 
 			if (*ready && run) {
 				run = false;

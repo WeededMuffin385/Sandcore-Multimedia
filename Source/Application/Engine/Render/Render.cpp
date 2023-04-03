@@ -126,7 +126,7 @@ namespace Sandcore {
 		// auto view-porting
 
 		if (prevWidth != size.x || prevHeight != size.y) {
-			window.viewport(size.x, size.y);
+			window.setViewport(size.x, size.y);
 			prevWidth = size.x;
 			prevHeight = size.y;
 		}

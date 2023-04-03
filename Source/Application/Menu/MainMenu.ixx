@@ -24,7 +24,7 @@ export namespace Sandcore {
 
 	protected:
 		virtual void draw() {
-			window.viewport(window.getSize().x, window.getSize().y);
+			window.setViewport(window.getSize().x, window.getSize().y);
 			window.clear(0.8828125, 0.82421875, 0.41796875);
 			window.draw(affiche, shader);
 			window.draw(connect, shader);
@@ -69,17 +69,17 @@ export namespace Sandcore {
 
 			glm::vec2 rect = glm::vec2((1 - 4 * x) / 3.f , (1.f - y * 3) / 4.f);
 
-			affiche.position() = glm::vec2(x, y * 2 + rect.y);
-			affiche.size() = glm::vec2(1 - 2 * x, 1 - rect.y - y * 3);
+			affiche.setPosition(glm::vec2(x, y * 2 + rect.y));
+			affiche.setSize(glm::vec2(1 - 2 * x, 1 - rect.y - y * 3));
 
-			connect.position() = glm::vec2(x, y);
-			connect.size() = rect;
+			connect.setPosition(glm::vec2(x, y));
+			connect.setSize(rect);
 
-			create.position() = glm::vec2(x * 2 + rect.x, y);
-			create.size() = rect;
+			create.setPosition(glm::vec2(x * 2 + rect.x, y));
+			create.setSize(rect);
 			
-			settings.position() = glm::vec2(x * 3 + rect.x * 2, y);
-			settings.size() = rect;
+			settings.setPosition(glm::vec2(x * 3 + rect.x * 2, y));
+			settings.setSize(rect);
 		}
 
 		Program shader;

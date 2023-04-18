@@ -38,9 +38,6 @@
     <Filter Include="Исходные файлы\Graphics\Drawable">
       <UniqueIdentifier>{a51ce714-320b-445b-8717-b88b8ad8c432}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Исходные файлы\Graphics\Font">
-      <UniqueIdentifier>{1d612836-c542-4b61-adc6-119cc1d6786b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Исходные файлы\Graphics\Framebuffer">
       <UniqueIdentifier>{f204924b-dbe7-42b3-908f-9e19a8f1d294}</UniqueIdentifier>
     </Filter>
@@ -175,9 +172,6 @@
     <ClCompile Include="..\Sandcore\Engine\Graphics\Drawable\Drawable.ixx">
       <Filter>Исходные файлы\Graphics\Drawable</Filter>
     </ClCompile>
-    <ClCompile Include="..\Sandcore\Engine\Graphics\Font\Font.ixx">
-      <Filter>Исходные файлы\Graphics\Font</Filter>
-    </ClCompile>
     <ClCompile Include="..\Sandcore\Engine\Graphics\Framebuffer\Framebuffer.ixx">
       <Filter>Исходные файлы\Graphics\Framebuffer</Filter>
     </ClCompile>
@@ -202,7 +196,7 @@
     <ClCompile Include="..\Sandcore\Engine\Graphics\Texture\Texture2D.ixx">
       <Filter>Исходные файлы\Graphics\Texture</Filter>
     </ClCompile>
-    <ClCompile Include="..\Sandcore\Engine\Graphics\Texture\Texture3D.ixx">
+    <ClCompile Include="..\Sandcore\Engine\Graphics\Texture\Texture2DArray.ixx">
       <Filter>Исходные файлы\Graphics\Texture</Filter>
     </ClCompile>
     <ClCompile Include="..\Sandcore\Engine\Graphics\Vertex\Vertex.ixx">

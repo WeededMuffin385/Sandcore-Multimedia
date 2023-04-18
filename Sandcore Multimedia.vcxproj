@@ -119,8 +119,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>freetype.lib;opengl32.lib;glew32s.lib;glfw3.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)\..\Sandcore\Engine\Libraries\glew\lib\Release\x64;$(SolutionDir)\..\Sandcore\Engine\Libraries\glfw\lib;$(SolutionDir)\..\Sandcore\Engine\Libraries\ft\lib_d</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32s.lib;glfw3.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\..\Sandcore\Engine\Libraries\glew\lib\Release\x64;$(SolutionDir)\..\Sandcore\Engine\Libraries\glfw\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -162,7 +162,6 @@
     <ClCompile Include="..\Sandcore\Engine\Graphics\Canvas\Canvas.ixx" />
     <ClCompile Include="..\Sandcore\Engine\Graphics\Debug\Debug.ixx" />
     <ClCompile Include="..\Sandcore\Engine\Graphics\Drawable\Drawable.ixx" />
-    <ClCompile Include="..\Sandcore\Engine\Graphics\Font\Font.ixx" />
     <ClCompile Include="..\Sandcore\Engine\Graphics\Framebuffer\Framebuffer.ixx" />
     <ClCompile Include="..\Sandcore\Engine\Graphics\Interface\InterfaceButton.ixx" />
     <ClCompile Include="..\Sandcore\Engine\Graphics\Interface\InterfaceComponent.ixx" />
@@ -171,7 +170,7 @@
     <ClCompile Include="..\Sandcore\Engine\Graphics\Program\Shader.ixx" />
     <ClCompile Include="..\Sandcore\Engine\Graphics\Texture\Texture.ixx" />
     <ClCompile Include="..\Sandcore\Engine\Graphics\Texture\Texture2D.ixx" />
-    <ClCompile Include="..\Sandcore\Engine\Graphics\Texture\Texture3D.ixx" />
+    <ClCompile Include="..\Sandcore\Engine\Graphics\Texture\Texture2DArray.ixx" />
     <ClCompile Include="..\Sandcore\Engine\Graphics\Vertex\Vertex.ixx" />
     <ClCompile Include="..\Sandcore\Engine\Graphics\Window\Event\Event.cpp" />
     <ClCompile Include="..\Sandcore\Engine\Graphics\Window\Event\Event.ixx" />

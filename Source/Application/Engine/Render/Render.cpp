@@ -50,9 +50,6 @@ namespace Sandcore {
 		glEnable(GL_ALPHA_TEST);
 		glAlphaFunc(GL_GREATER, 0.1f);
 
-
-		glEnable(GL_MULTISAMPLE);
-
 		using FV = typename Vertex<glm::float32>;
 
 		mesh.vertices = { {0},{1}, {2}, {3} };

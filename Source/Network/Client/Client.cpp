@@ -4,8 +4,6 @@
 #include <sstream>
 #include <cstdint>
 
-
-
 import Sandcore.Client;
 
 import Sandcore.Byte;
@@ -18,7 +16,7 @@ namespace Sandcore {
 
 	Client::~Client() {
 		stop();
-		connection.reset(); // два часа я думал, как пофиксить эту херь с exception'ом... это 3.14здец, оказалось, что необходимо вызывать деструкторы объектов asio до вызова деструктора ioContext
+		connection.reset(); // два часа я думал, как пофиксить, оказалось, что необходимо вызывать деструкторы объектов asio до вызова деструктора ioContext
 	}
 
 	void Client::start() {

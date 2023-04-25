@@ -1,5 +1,7 @@
 module;
 #include <unordered_map>
+#include <filesystem>
+#include <fstream>
 export module Sandcore.Render.Chunks;
 
 import Sandcore.World.Chunk;

@@ -2,6 +2,8 @@ module;
 #include <unordered_map>
 #include <glm/glm.hpp>
 
+#include <filesystem>
+#include <fstream>
 
 #define GLEW_STATIC
 #include <GL/glew.h>

@@ -29,9 +29,9 @@ namespace Sandcore {
 
 	void Window::setIcon(Image& image) {
 		GLFWimage icon;
-		icon.pixels = image.data();
-		icon.width = image.size().x;
-		icon.height = image.size().y;
+		icon.pixels = image.getData();
+		icon.width = image.getSize().x;
+		icon.height = image.getSize().y;
 		glfwSetWindowIcon(window, 1, &icon);
 	}
 

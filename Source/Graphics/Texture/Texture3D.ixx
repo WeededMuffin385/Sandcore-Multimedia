@@ -32,7 +32,7 @@ export namespace Sandcore {
 				0, 0, layer,
 				width, height, 1,
 				GL_RGBA, GL_UNSIGNED_BYTE,
-				image.data()
+				image.getData()
 			);
 		}
 	private:

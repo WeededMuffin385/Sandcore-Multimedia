@@ -24,8 +24,8 @@ export namespace Sandcore {
 
 		void loadFromFile(std::filesystem::path path) {
 			Image image(path);
-			width = image.size().x;
-			height = image.size().y;
+			width = image.getSize().x;
+			height = image.getSize().y;
 			resize(width, height);
 			glTextureSubImage2D(
 				texture,
@@ -33,7 +33,7 @@ export namespace Sandcore {
 				0, 0,
 				width, height,
 				GL_RGBA, GL_UNSIGNED_BYTE,
-				image.data()
+				image.getData()
 			);
 		}
 	private:

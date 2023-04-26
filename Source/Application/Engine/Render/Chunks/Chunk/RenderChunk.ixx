@@ -4,7 +4,7 @@ module;
 export module Sandcore.Render.Chunk;
 
 import Sandcore.Graphics.Mesh;
-import Sandcore.Vertex;
+import Sandcore.Graphics.Vertex;
 import Sandcore.World.Chunk;
 import Sandcore.World.Block;
 

@@ -12,7 +12,7 @@ import Sandcore.Graphics.Canvas;
 import Sandcore.Graphics.Drawable;
 
 import Sandcore.Graphics.Texture2D;
-import Sandcore.Vertex;
+import Sandcore.Graphics.Vertex;
 
 import Sandcore.Graphics.Mesh;
 import Sandcore.Graphics.Program;

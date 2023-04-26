@@ -23,7 +23,7 @@ import Sandcore.World;
 import Sandcore.Graphics.Texture2D;
 import Sandcore.Graphics.Mesh;
 
-import Sandcore.Vertex;
+import Sandcore.Graphics.Vertex;
 
 import Sandcore.Graphics.Framebuffer;
 

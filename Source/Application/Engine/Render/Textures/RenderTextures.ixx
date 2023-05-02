@@ -1,5 +1,5 @@
+module;
 #include <filesystem>
-
 export module Sandcore.Render.Textures;
 
 import Sandcore.Graphics.Texture3D;

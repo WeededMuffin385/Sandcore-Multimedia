@@ -1,5 +1,5 @@
+module;
 #include <string>
-
 export module Sandcore.Controls;
 
 import Sandcore.Vector3D;

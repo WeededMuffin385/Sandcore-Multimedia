@@ -1,5 +1,5 @@
+module;
 #include <glm/glm.hpp>
-
 export module Sandcore.Render.Camera;
 
 import Sandcore.Camera;

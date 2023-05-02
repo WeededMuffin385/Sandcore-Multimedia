@@ -16,7 +16,7 @@ import Sandcore.Graphics.Program;
 import Sandcore.Window;
 import Sandcore.Render.Camera;
 
-import Sandcore.Vertex;
+import Sandcore.Graphics.Vertex;
 import Sandcore.Graphics.Canvas;
 
 import Sandcore.Graphics.Framebuffer;

@@ -1,6 +1,6 @@
+module;
 #include <stack>
 #include <memory>
-
 export module Sandcore.Application;
 
 import Sandcore.Window;
@@ -13,9 +13,13 @@ export namespace Sandcore {
 		Application();
 
 		void loop();
+		void tick();
 		void push(Scene* scene);
 
 	private:
+		inline static Application* application = nullptr;
+		static void foo();
+
 		Scenes scenes;
 		Window window;
 		Event event;

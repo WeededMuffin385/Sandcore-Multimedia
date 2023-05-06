@@ -139,16 +139,10 @@
     <ClCompile Include="..\Sandcore\Engine\Common\Clock\Clock.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\Sandcore\Engine\Network\Connection\Connection.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="..\Sandcore\Engine\Network\Connection\Connection.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="..\Sandcore\Engine\Network\Message\Constructor.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore\Engine\Common\Image\Image.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="..\Sandcore\Engine\Common\Image\Image.ixx">
@@ -164,9 +158,6 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="..\Sandcore\Engine\Network\Message\Message.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore\Engine\Network\ThreadSafeQueue\ThreadSafeQueue.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="..\Sandcore\Engine\Network\ThreadSafeQueue\ThreadSafeQueue.ixx">
@@ -199,13 +190,7 @@
     <ClCompile Include="..\Sandcore\Engine\Optional\GLMSupport\Vector3DGLM.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\Sandcore\Engine\Graphics\Window\Event\Event.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="..\Sandcore\Engine\Graphics\Window\Event\Event.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore\Engine\Graphics\Window\Window.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="..\Sandcore\Engine\Graphics\Window\Window.ixx">
@@ -230,6 +215,18 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="..\Sandcore\Engine\Graphics\Mesh\Mesh.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Graphics\Window\Event\Event.Implementation.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Common\Image\Image.Implementation.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Network\Connection\Connection.Implementation.ixx">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sandcore\Engine\Graphics\Window\Window.Implementation.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

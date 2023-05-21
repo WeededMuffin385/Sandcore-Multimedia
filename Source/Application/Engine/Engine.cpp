@@ -22,8 +22,6 @@ import Sandcore.Render.Camera;
 
 import Sandcore.World.Bounds;
 
-import Sandcore.Vector3D.GLM;
-
 import Sandcore.Print;
 
 namespace Sandcore {
@@ -79,16 +77,16 @@ namespace Sandcore {
 	}
 
 	void Engine::breakBlock() {
-		Vector3D<double> chunkPosition = render.camera.getChunkPosition();
-		Vector3D<int> worldPosition = render.camera.getWorldPosition();
+		glm::f32vec3 chunkPosition = render.camera.getChunkPosition();
+		glm::i32vec3 worldPosition = render.camera.getWorldPosition();
 
-		Vector3D<double>	vec; {
+		glm::f32vec3	vec; {
 			auto v = render.camera.getFront() ;
-			vec = Vector3D<double>(v.x / precision, v.y / precision, v.z / precision);
+			vec = glm::f32vec3(v.x / precision, v.y / precision, v.z / precision);
 		}
 
 		for (int i = 0; i < distance * precision; ++i) {
-			chunkPosition += Vector3D<double>(vec.x, vec.y, vec.z);
+			chunkPosition += glm::f32vec3(vec.x, vec.y, vec.z);
 			bounds<WorldChunk::size>(worldPosition, chunkPosition);
 
 			if (touchable(world.getChunk(worldPosition).getBlock(chunkPosition).getId())) {
@@ -99,17 +97,17 @@ namespace Sandcore {
 	}
 
 	void Engine::placeBlock() {
-		Vector3D<int>		emptyChunkPosition;
-		Vector3D<int>		emptyWorldPosition;
+		glm::i32vec3		emptyChunkPosition;
+		glm::i32vec3		emptyWorldPosition;
 
 		bool found = false;
 
-		Vector3D<double>	chunkPosition = render.camera.getChunkPosition();
-		Vector3D<int>		worldPosition = render.camera.getWorldPosition();
+		glm::f32vec3	chunkPosition = render.camera.getChunkPosition();
+		glm::i32vec3		worldPosition = render.camera.getWorldPosition();
 
-		Vector3D<double>	vec; {
+		glm::f32vec3	vec; {
 			auto v = render.camera.getFront();
-			vec = Vector3D<double>(v.x / precision, v.y / precision, v.z / precision);
+			vec = glm::f32vec3(v.x / precision, v.y / precision, v.z / precision);
 		}
 
 		for (int i = 0; i < distance * precision; ++i) {
@@ -130,16 +128,16 @@ namespace Sandcore {
 	}
 
 	void Engine::captureBlock() {
-		Vector3D<double> chunkPosition = render.camera.getChunkPosition();
-		Vector3D<int> worldPosition = render.camera.getWorldPosition();
+		glm::f32vec3 chunkPosition = render.camera.getChunkPosition();
+		glm::i32vec3 worldPosition = render.camera.getWorldPosition();
 
-		Vector3D<double>	vec; {
+		glm::f32vec3	vec; {
 			auto v = render.camera.getFront();
-			vec = Vector3D<double>(v.x / precision, v.y / precision, v.z / precision);
+			vec = glm::f32vec3(v.x / precision, v.y / precision, v.z / precision);
 		}
 
 		for (int i = 0; i < distance * precision; ++i) {
-			chunkPosition += Vector3D<double>(vec.x, vec.y, vec.z);
+			chunkPosition += glm::f32vec3(vec.x, vec.y, vec.z);
 			bounds<WorldChunk::size>(worldPosition, chunkPosition);
 
 			if (touchable(world.getChunk(worldPosition).getBlock(chunkPosition).getId())) {
@@ -183,7 +181,7 @@ namespace Sandcore {
 
 	void Engine::recieveChunks() {
 		std::string data;
-		Vector3D<int> position;
+		glm::i32vec3 position;
 		Sandcore::Message::decompileChunkMessage(client.connection->recieve(), position, data);
 		world.getChunk(position).upload(data);
 		world.getChunk(position).loadInProgress = false;
@@ -198,8 +196,8 @@ namespace Sandcore {
 
 	void Engine::recieveEntityPosition() {
 		int id;
-		Vector3D<int> worldPosition;
-		Vector3D<double> chunkPosition;
+		glm::i32vec3 worldPosition;
+		glm::f32vec3 chunkPosition;
 
 		Message::decompileEntityPositionMessage(client.connection->recieve(), id, worldPosition, chunkPosition);
 
@@ -217,14 +215,14 @@ namespace Sandcore {
 
 
 		if ((id == currentID) && !render.spectator) {
-			render.camera.setPosition(worldPosition, chunkPosition + Vector3D<double>(0, 0, world.getEntities()[id]->getSize().z * 0.8));
+			render.camera.setPosition(worldPosition, chunkPosition + glm::f32vec3(0, 0, world.getEntities()[id]->getSize().z * 0.8));
 		}
 	}
 
 	void Engine::recieveEntity() {
 		int id;
 		bool you;
-		Vector3D<double> size;
+		glm::f32vec3 size;
 		Message::decompileEntityMessage(client.connection->recieve(), id, you, size);
 
 		createEntity(id);
@@ -246,21 +244,21 @@ namespace Sandcore {
 	}
 
 	void Engine::recieveBlock() {
-		Vector3D<int> worldPosition;
-		Vector3D<int> chunkPosition;
+		glm::i32vec3 worldPosition;
+		glm::i32vec3 chunkPosition;
 		Block::Identification id;
 
 		Message::decompileBlockMessage(client.connection->recieve(), worldPosition, chunkPosition, id);
 		world.getChunk(worldPosition).setBlock(chunkPosition, Block(id));
 
-		if (chunkPosition.x == 0)	world.getChunk(worldPosition - Vector3D(1, 0, 0)).changed = true;
-		if (chunkPosition.x == 15)	world.getChunk(worldPosition + Vector3D(1, 0, 0)).changed = true;
+		if (chunkPosition.x == 0)	world.getChunk(worldPosition - glm::i32vec3(1, 0, 0)).changed = true;
+		if (chunkPosition.x == 15)	world.getChunk(worldPosition + glm::i32vec3(1, 0, 0)).changed = true;
 
-		if (chunkPosition.y == 0)	world.getChunk(worldPosition - Vector3D(0, 1, 0)).changed = true;
-		if (chunkPosition.y == 15)	world.getChunk(worldPosition + Vector3D(0, 1, 0)).changed = true;
+		if (chunkPosition.y == 0)	world.getChunk(worldPosition - glm::i32vec3(0, 1, 0)).changed = true;
+		if (chunkPosition.y == 15)	world.getChunk(worldPosition + glm::i32vec3(0, 1, 0)).changed = true;
 
-		if (chunkPosition.z == 0)	world.getChunk(worldPosition - Vector3D(0, 0, 1)).changed = true;
-		if (chunkPosition.z == 15)	world.getChunk(worldPosition + Vector3D(0, 0, 1)).changed = true;
+		if (chunkPosition.z == 0)	world.getChunk(worldPosition - glm::i32vec3(0, 0, 1)).changed = true;
+		if (chunkPosition.z == 15)	world.getChunk(worldPosition + glm::i32vec3(0, 0, 1)).changed = true;
 	}
 
 	void Engine::recieve() {

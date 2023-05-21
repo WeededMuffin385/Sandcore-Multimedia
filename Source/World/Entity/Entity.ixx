@@ -1,6 +1,6 @@
+module;
+#include <glm/glm.hpp>
 export module Sandcore.World.Entity;
-
-import Sandcore.Vector3D;
 
 export namespace Sandcore {
 	class Entity {
@@ -11,9 +11,9 @@ export namespace Sandcore {
 			elephant
 		};
 
-		Vector3D<int>& getWorldPosition();
-		Vector3D<double>& getChunkPosition();
-		Vector3D<double>& getSize();
+		glm::ivec3& getWorldPosition();
+		glm::fvec3& getChunkPosition();
+		glm::fvec3& getSize();
 
 		Identification& getId();
 
@@ -21,9 +21,9 @@ export namespace Sandcore {
 		bool loadInProgress = false;
 	private:
 
-		Vector3D<int>			worldPosition;	// позиция игрока относительно чанков
-		Vector3D<double>		chunkPosition; // позиция игрока в чанке.
-		Vector3D<double>		size = { 0.95f, 0.95f ,0.95f };
+		glm::ivec3    worldPosition; // позиция игрока относительно чанков
+		glm::fvec3    chunkPosition; // позиция игрока в чанке.
+		glm::fvec3    size = { 0.95f, 0.95f ,0.95f };
 
 		Identification	identification = Identification::human;
 	};

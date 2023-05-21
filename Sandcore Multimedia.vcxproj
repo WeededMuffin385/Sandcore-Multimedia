@@ -154,10 +154,6 @@
     <ClCompile Include="..\Sandcore\Engine\Common\Print\Print.ixx" />
     <ClCompile Include="..\Sandcore\Engine\Common\Timer\Timer.ixx" />
     <ClCompile Include="..\Sandcore\Engine\Common\TPS\TPS.ixx" />
-    <ClCompile Include="..\Sandcore\Engine\Common\Vector\Vector2D.ixx" />
-    <ClCompile Include="..\Sandcore\Engine\Common\Vector\Vector2DHash.ixx" />
-    <ClCompile Include="..\Sandcore\Engine\Common\Vector\Vector3D.ixx" />
-    <ClCompile Include="..\Sandcore\Engine\Common\Vector\Vector3DHash.ixx" />
     <ClCompile Include="..\Sandcore\Engine\Graphics\Interface\InterfaceButton.ixx" />
     <ClCompile Include="..\Sandcore\Engine\Graphics\Interface\InterfaceComponent.ixx" />
     <ClCompile Include="..\Sandcore\Engine\Graphics\Mesh\Mesh.ixx" />
@@ -179,7 +175,6 @@
     <ClCompile Include="..\Sandcore\Engine\Network\Message\Message.cpp" />
     <ClCompile Include="..\Sandcore\Engine\Network\Message\Message.ixx" />
     <ClCompile Include="..\Sandcore\Engine\Network\ThreadSafeQueue\ThreadSafeQueue.ixx" />
-    <ClCompile Include="..\Sandcore\Engine\Optional\GLMSupport\Vector3DGLM.ixx" />
     <ClCompile Include="Source\Application\Application.cpp" />
     <ClCompile Include="Source\Application\Application.ixx" />
     <ClCompile Include="Source\Application\Engine\Controls\Controls.cpp" />

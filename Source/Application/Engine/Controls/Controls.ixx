@@ -1,8 +1,8 @@
+module;
 #include <string>
-
+#include <glm/glm.hpp>
 export module Sandcore.Controls;
 
-import Sandcore.Vector3D;
 import Sandcore.Window;
 import Sandcore.Camera;
 
@@ -15,7 +15,7 @@ export namespace Sandcore {
 
 	private:
 
-		Vector3D<double> direction = { 0,0,0 };
+		glm::f32vec3 direction = { 0,0,0 };
 
 		bool changed = false;
 	};

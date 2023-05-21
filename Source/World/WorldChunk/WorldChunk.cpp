@@ -1,14 +1,14 @@
 #include <string>
 #include <memory>
 #include <chrono>
-
+#include <glm/glm.hpp>
 import Sandcore.World.Chunk;
 
 namespace Sandcore {
 	WorldChunk::WorldChunk() {
 	}
 
-	const Block& WorldChunk::getBlock(Vector3D<int> position) {
+	const Block& WorldChunk::getBlock(glm::i32vec3 position) {
 		return getBlock(position.x, position.y, position.z);
 	}
 
@@ -16,7 +16,7 @@ namespace Sandcore {
 		return blocks[x][y][z];
 	}
 
-	void WorldChunk::setBlock(Vector3D<int> position, Block block) {
+	void WorldChunk::setBlock(glm::i32vec3 position, Block block) {
 		setBlock(position.x, position.y, position.z, block);
 	}
 

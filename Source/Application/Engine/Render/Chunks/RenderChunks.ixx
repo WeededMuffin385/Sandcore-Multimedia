@@ -2,15 +2,14 @@ module;
 #include <unordered_map>
 #include <filesystem>
 #include <fstream>
+#include <glm/glm.hpp>
+#include <glm/gtx/hash.hpp>
 export module Sandcore.Render.Chunks;
 
 import Sandcore.World.Chunk;
 import Sandcore.Render.Chunk;
 
 import Sandcore.Render.Textures;
-
-import Sandcore.Vector3D;
-import Sandcore.Vector3D.Hash;
 
 import Sandcore.World;
 import Sandcore.Graphics.Program;
@@ -42,12 +41,12 @@ export namespace Sandcore {
 		void deleteUnwantedChunks();
 		void updateWantedChunks();
 
-		void generateChunk(Vector3D<int> position);
+		void generateChunk(glm::i32vec3 position);
 		void generateChunks();
 
-		bool areRelatedChunksLoaded(Vector3D<int> position);
-		bool isBlocked(Vector3D<int> worldPosition, Vector3D<int> chunkPosition, RenderChunk::Identification section);
-		bool isInRadius(Vector3D<int> worldPosition);
+		bool areRelatedChunksLoaded(glm::i32vec3 position);
+		bool isBlocked(glm::i32vec3 worldPosition, glm::i32vec3 chunkPosition, RenderChunk::Identification section);
+		bool isInRadius(glm::i32vec3 worldPosition);
 
 
 		RenderTextures& textures;
@@ -57,7 +56,7 @@ export namespace Sandcore {
 
 		int radius = 8;
 
-		std::unordered_map<Vector3D<int>, RenderChunk, Vector3DHash<int>> chunks;
+		std::unordered_map<glm::i32vec3, RenderChunk> chunks;
 		Program shader;
 
 		Framebuffer framebuffer;

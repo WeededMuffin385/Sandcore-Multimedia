@@ -172,22 +172,7 @@
     <ClCompile Include="..\Sandcore\Engine\Common\TPS\TPS.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\Sandcore\Engine\Common\Vector\Vector2D.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore\Engine\Common\Vector\Vector2DHash.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore\Engine\Common\Vector\Vector3D.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore\Engine\Common\Vector\Vector3DHash.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="..\Sandcore\Engine\Graphics\Vertex\Vertex.ixx">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sandcore\Engine\Optional\GLMSupport\Vector3DGLM.ixx">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="..\Sandcore\Engine\Graphics\Window\Event\Event.ixx">

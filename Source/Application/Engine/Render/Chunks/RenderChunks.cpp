@@ -66,14 +66,14 @@ namespace Sandcore {
 		window.draw(framebuffer);
 	}
 
-	bool RenderChunks::areRelatedChunksLoaded(Vector3D<int> position) {
+	bool RenderChunks::areRelatedChunksLoaded(glm::i32vec3 position) {
 		return world.getChunk(position).loaded
-			&& world.getChunk(position + Vector3D(1, 0, 0)).loaded
-			&& world.getChunk(position - Vector3D(1, 0, 0)).loaded
-			&& world.getChunk(position + Vector3D(0, 1, 0)).loaded
-			&& world.getChunk(position - Vector3D(0, 1, 0)).loaded
-			&& world.getChunk(position + Vector3D(0, 0, 1)).loaded
-			&& world.getChunk(position - Vector3D(0, 0, 1)).loaded;
+			&& world.getChunk(position + glm::i32vec3(1, 0, 0)).loaded
+			&& world.getChunk(position - glm::i32vec3(1, 0, 0)).loaded
+			&& world.getChunk(position + glm::i32vec3(0, 1, 0)).loaded
+			&& world.getChunk(position - glm::i32vec3(0, 1, 0)).loaded
+			&& world.getChunk(position + glm::i32vec3(0, 0, 1)).loaded
+			&& world.getChunk(position - glm::i32vec3(0, 0, 1)).loaded;
 	}
 
 	void RenderChunks::generateChunks() {
@@ -82,7 +82,7 @@ namespace Sandcore {
 		for (int y = -radius; y <= radius; ++y)
 		for (int z = -radius; z <= radius; ++z) {
 			if (x * x + y * y + z * z <= r * r) {
-				auto position = camera.getWorldPosition() + Vector3D(x, y, z);
+				auto position = camera.getWorldPosition() + glm::i32vec3(x, y, z);
 				if (!chunks.contains(position) || world.getChunk(position).changed) {
 					if (areRelatedChunksLoaded(position)) {
 						generateChunk(position);
@@ -93,7 +93,7 @@ namespace Sandcore {
 		}
 	}
 
-	bool RenderChunks::isBlocked(Vector3D<int> worldPosition, Vector3D<int> chunkPosition, RenderChunk::Identification section) {
+	bool RenderChunks::isBlocked(glm::i32vec3 worldPosition, glm::i32vec3 chunkPosition, RenderChunk::Identification section) {
 		bounds<WorldChunk::size>(worldPosition, chunkPosition);
 
 		Block::Identification id = world.getChunk(worldPosition).getBlock(chunkPosition).getId();
@@ -103,7 +103,7 @@ namespace Sandcore {
 		return section == RenderChunk::getIdentification(id);
 	}
 
-	void RenderChunks::generateChunk(Vector3D<int> position) {
+	void RenderChunks::generateChunk(glm::i32vec3 position) {
 		chunks[position].clear();
 		for (int x = 0; x < WorldChunk::size::x; ++x)
 			for (int y = 0; y < WorldChunk::size::y; ++y)
@@ -119,7 +119,7 @@ namespace Sandcore {
 					chunk.vertices.reserve(chunk.vertices.size() + 4 * 6);
 					chunk.indices.reserve(chunk.indices.size() + 6 * 6);
 
-					if (!isBlocked(position, Vector3D<int>(x - 1, y, z), section)) {
+					if (!isBlocked(position, glm::i32vec3(x - 1, y, z), section)) {
 						int offset = static_cast<int>(chunk.vertices.size());
 						float light = 0.85f;
 
@@ -139,7 +139,7 @@ namespace Sandcore {
 						chunk.indices.push_back(offset + 0);
 					}
 
-					if (!isBlocked(position, Vector3D<int>(x + 1, y, z), section)) {
+					if (!isBlocked(position, glm::i32vec3(x + 1, y, z), section)) {
 						int offset = static_cast<int>(chunk.vertices.size());
 						float light = 0.95f;
 
@@ -158,7 +158,7 @@ namespace Sandcore {
 					}
 
 
-					if (!isBlocked(position, Vector3D<int>(x, y - 1, z), section)) {
+					if (!isBlocked(position, glm::i32vec3(x, y - 1, z), section)) {
 						int offset = static_cast<int>(chunk.vertices.size());
 						float light = 0.8f;
 
@@ -176,7 +176,7 @@ namespace Sandcore {
 						chunk.indices.push_back(offset + 0);
 					}
 
-					if (!isBlocked(position, Vector3D<int>(x, y + 1, z), section)) {
+					if (!isBlocked(position, glm::i32vec3(x, y + 1, z), section)) {
 						int offset = static_cast<int>(chunk.vertices.size());
 						float light = 0.9f;
 
@@ -194,7 +194,7 @@ namespace Sandcore {
 						chunk.indices.push_back(offset + 0);
 					}
 
-					if (!isBlocked(position, Vector3D<int>(x, y, z - 1), section)) {
+					if (!isBlocked(position, glm::i32vec3(x, y, z - 1), section)) {
 						int offset = static_cast<int>(chunk.vertices.size());
 						float light = 0.75f;
 
@@ -212,7 +212,7 @@ namespace Sandcore {
 						chunk.indices.push_back(offset + 0);
 					}
 
-					if (!isBlocked(position, Vector3D<int>(x, y, z + 1), section)) {
+					if (!isBlocked(position, glm::i32vec3(x, y, z + 1), section)) {
 						int offset = static_cast<int>(chunk.vertices.size());
 						float light = 1.0f;
 
@@ -236,7 +236,7 @@ namespace Sandcore {
 
 	void RenderChunks::deleteUnwantedChunks() {
 		std::chrono::high_resolution_clock::time_point end = std::chrono::high_resolution_clock::now();
-		std::list<Vector3D<int>> unwantedChunks;
+		std::list<glm::i32vec3> unwantedChunks;
 
 		for (auto& [position, chunk] : chunks) {
 			if (chunk.isUnwanted(end)) unwantedChunks.push_back(position);
@@ -247,7 +247,7 @@ namespace Sandcore {
 		}
 	}
 
-	bool RenderChunks::isInRadius(Vector3D<int> worldPosition) {
+	bool RenderChunks::isInRadius(glm::i32vec3 worldPosition) {
 		auto delta = camera.getWorldPosition() - worldPosition;
 		double length = std::sqrt(delta.x * delta.x + delta.y * delta.y + delta.z * delta.z);
 
@@ -264,14 +264,14 @@ namespace Sandcore {
 	}
 
 	void RenderChunks::draw(RenderChunk::Identification identification) {
-		std::unordered_map<Vector3D<int>, bool, Vector3DHash<int>> drawn;
+		std::unordered_map<glm::i32vec3, bool> drawn;
 
 		for (int r = 0; r <= radius; ++r)
 		for (int x = -radius; x <= radius; ++x)
 		for (int y = -radius; y <= radius; ++y)
 		for (int z = -radius; z <= radius; ++z) {
 			if (x * x + y * y + z * z <= r * r) {
-				auto position = camera.getWorldPosition() + Vector3D<int>(x, y, z);
+				auto position = camera.getWorldPosition() + glm::i32vec3(x, y, z);
 
 				if (drawn[position]) continue;
 				if (chunks.contains(position)) {

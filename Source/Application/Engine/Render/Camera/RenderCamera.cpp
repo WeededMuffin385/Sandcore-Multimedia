@@ -1,21 +1,14 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
-
 #include <GLFW/glfw3.h>
 
-
-
 import Sandcore.Render.Camera;
-
 import Sandcore.World.Bounds;
 import Sandcore.World.Chunk;
 
-import Sandcore.Vector3D;
-import Sandcore.Vector3D.GLM;
-
 namespace Sandcore {
-	Vector3D<double> RenderCamera::getDirection(Window& window) {
-		Vector3D<double> direction;
+	glm::f32vec3 RenderCamera::getDirection(Window& window) {
+		glm::f32vec3 direction{};
 
 		if (window.getKey(GLFW_KEY_W)) direction += front2D;
 		if (window.getKey(GLFW_KEY_S)) direction -= front2D;
@@ -50,7 +43,7 @@ namespace Sandcore {
 		right2D = glm::normalize(glm::cross(worldUp, front));
 	}
 
-	void RenderCamera::setPosition(Vector3D<int> worldPosition, Vector3D<double> chunkPosition) {
+	void RenderCamera::setPosition(glm::i32vec3 worldPosition, glm::f32vec3 chunkPosition) {
 		bounds<WorldChunk::size>(worldPosition, chunkPosition);
 
 		this->worldPosition = worldPosition;

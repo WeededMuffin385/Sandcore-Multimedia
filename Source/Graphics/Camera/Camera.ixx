@@ -1,12 +1,10 @@
+module;
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
-
 export module Sandcore.Camera;
 
 import Sandcore.Window;
-
-import Sandcore.Vector3D;
 
 export namespace Sandcore {
 	class Camera {
@@ -19,7 +17,7 @@ export namespace Sandcore {
 
 		void setFirst();
 
-		virtual Vector3D<double> getDirection(Window& window);
+		virtual glm::f32vec3 getDirection(Window& window);
 		glm::vec3 getFront();
 
 		virtual void mouseInput(Window& window);

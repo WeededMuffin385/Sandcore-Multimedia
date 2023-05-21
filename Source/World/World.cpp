@@ -1,14 +1,12 @@
 #include <list>
 #include <chrono>
-
+#include <glm/glm.hpp>
 import Sandcore.World;
-
-import Sandcore.Vector3D;
 import Sandcore.World.Chunk;
 
 namespace Sandcore {
 	void World::tick() {
-		std::list<Vector3D<int>> unwantedChunks;
+		std::list<glm::i32vec3> unwantedChunks;
 
 		auto now = std::chrono::high_resolution_clock::now();
 
@@ -22,10 +20,10 @@ namespace Sandcore {
 	}
 
 	WorldChunk& World::getChunk(int x, int y, int z) {
-		return getChunk(Vector3D<int>(x, y, z));
+		return getChunk(glm::i32vec3(x, y, z));
 	}
 
-	WorldChunk& World::getChunk(Vector3D<int> position) {
+	WorldChunk& World::getChunk(glm::i32vec3 position) {
 		return chunks[position];
 	}
 

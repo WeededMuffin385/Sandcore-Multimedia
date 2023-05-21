@@ -1,3 +1,4 @@
+module;
 #define GLEW_STATIC
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
@@ -18,7 +19,6 @@ import Sandcore.Graphics.Mesh;
 import Sandcore.Graphics.Program;
 
 import Sandcore.Application.Memory;
-import Sandcore.Vector2D;
 
 export namespace Sandcore {
 	class Framebuffer : public Canvas, public Drawable {
@@ -40,7 +40,7 @@ export namespace Sandcore {
 			return resize({ width, height });
 		}
 
-		void resize(Vector2D<int> size) {
+		void resize(glm::i32vec2 size) {
 			if (this->size == size) return;
 			this->size = size;
 
@@ -78,12 +78,12 @@ export namespace Sandcore {
 			frame.render();
 		}
 
-		virtual Vector2D<int> getSize() {
+		virtual glm::i32vec2 getSize() {
 			return size;
 		}
 
 	private:
-		Vector2D<int> size;
+		glm::i32vec2 size;
 		GLenum magnification = GL_NEAREST;
 
 		GLuint depth;

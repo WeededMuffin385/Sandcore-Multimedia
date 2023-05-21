@@ -2,13 +2,12 @@ module;
 #define GLEW_STATIC
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
+#include <glm/glm.hpp>
 export module Sandcore.Graphics.Canvas;
 
 import Sandcore.Graphics.Drawable;
 import Sandcore.Graphics.Texture;
 import Sandcore.Graphics.Program;
-
-import Sandcore.Vector2D;
 
 export namespace Sandcore {
 	class Canvas {
@@ -54,7 +53,7 @@ export namespace Sandcore {
 			view = { width, height };
 		}
 
-		virtual Vector2D<int> getSize() = 0;
+		virtual glm::ivec2 getSize() = 0;
 
 	protected:
 		struct {

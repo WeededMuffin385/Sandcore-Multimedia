@@ -1,17 +1,10 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
-
 #include <GLFW/glfw3.h>
 
-
-
 import Sandcore.Camera;
-
 import Sandcore.Window;
 import Sandcore.Clock;
-
-import Sandcore.Vector3D;
-import Sandcore.Vector3D.GLM;
 
 namespace Sandcore {
 	Camera::Camera() {
@@ -41,7 +34,7 @@ namespace Sandcore {
 
 	void Camera::mouseInput(Window& window) {
 		if (first) {
-			auto mouse = window.mouse();
+			auto mouse = window.getCursor();
 			lastx = mouse.x;
 			lasty = mouse.y;
 			first = false;
@@ -50,7 +43,7 @@ namespace Sandcore {
 		double posx;
 		double posy;
 
-		auto mouse = window.mouse();
+		auto mouse = window.getCursor();
 
 		double offsetx = mouse.x - lastx;
 		double offsety = lasty - mouse.y;
@@ -75,8 +68,8 @@ namespace Sandcore {
 		updateVectors();
 	}
 
-	Vector3D<double> Camera::getDirection(Window& window) {
-		Vector3D<double> direction;
+	glm::f32vec3 Camera::getDirection(Window& window) {
+		glm::f32vec3 direction{};
 
 		if (window.getKey(GLFW_KEY_W)) direction += front;
 		if (window.getKey(GLFW_KEY_S)) direction -= front;

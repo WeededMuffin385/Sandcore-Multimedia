@@ -1,13 +1,13 @@
+#include <glm/glm.hpp>
+
 import Sandcore.World.Entity;
 
-import Sandcore.Vector3D;
-
 namespace Sandcore {
-	Vector3D<int>& Entity::getWorldPosition() {
+	glm::i32vec3& Entity::getWorldPosition() {
 		return worldPosition;
 	}
 
-	Vector3D<double>& Entity::getChunkPosition() {
+	glm::f32vec3& Entity::getChunkPosition() {
 		return chunkPosition;
 	}
 
@@ -15,7 +15,7 @@ namespace Sandcore {
 		return identification;
 	}
 
-	Vector3D<double>& Entity::getSize() {
+	glm::f32vec3& Entity::getSize() {
 		return size;
 	}
 }
